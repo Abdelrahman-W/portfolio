@@ -6,7 +6,7 @@ Live: **https://abdelrahman-w.github.io/portfolio/**
 
 ## What's inside
 
-- `index.html` — the entire site: markup, CSS, and JavaScript in one self-contained file. No build step, no dependencies, no tracking.
+- `index.html` — the entire site (~50 KB): markup, CSS, and JavaScript in one self-contained file. No build step, no dependencies, no tracking.
 - Instant **EN ⇄ AR** switching with full RTL layout, driven by an in-page `i18n` dictionary.
 - **Dark / light** themes; both preferences persist in `localStorage`.
 - All animations are CSS + a small amount of vanilla JS (scroll reveals, counters, pointer effects), and they respect `prefers-reduced-motion`.
@@ -15,7 +15,7 @@ Live: **https://abdelrahman-w.github.io/portfolio/**
 
 ## Sections
 
-Hero · Profile · Experience · Selected work (live client sites) · Capabilities · Services · Contact
+Hero (with a live-sites proof panel) · Selected work · Services · Experience · About · Contact
 
 ## Editing
 

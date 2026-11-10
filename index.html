@@ -3,437 +3,282 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdelrahman Waleed — WordPress Developer & IT Operations</title>
-<meta name="description" content="Abdelrahman Waleed — WordPress developer and IT operations specialist in Suez, Egypt. I build, fix, and run WordPress websites, and keep port control-room systems online.">
+<title>Abdelrahman Waleed — WordPress Developer</title>
+<meta name="description" content="WordPress developer in Suez, Egypt. Seven live sites for paying clients — marketplaces, course platforms and stores. I build them, and I fix the ones that break.">
 <meta name="theme-color" content="#080907">
-<meta property="og:title" content="Abdelrahman Waleed — WordPress Developer & IT Operations">
-<meta property="og:description" content="I build, fix, and run WordPress websites — and keep control-room systems online around the clock.">
+<meta property="og:title" content="Abdelrahman Waleed — WordPress Developer">
+<meta property="og:description" content="Sites that sell. And fixes that hold. Seven live WordPress sites for paying clients.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080907'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='26' font-weight='700' fill='%23CDF95A' text-anchor='middle'%3EAW%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080907'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='25' font-weight='700' fill='%23CDF95A' text-anchor='middle'%3EAW%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ============ TOKENS ============ */
 :root{
-  --bg:#080907; --bg-2:#0C0E0A; --panel:rgba(255,255,255,.034); --panel-solid:#101208;
-  --text:#EFF1E6; --muted:#A3AA9B; --line:rgba(255,255,255,.09); --line-strong:rgba(255,255,255,.2);
-  --accent:#CDF95A; --accent-text:#CDF95A; --accent-ink:#0A0B08;
-  --amber:#FFB65C; --shadow:0 40px 90px -30px rgba(0,0,0,.85);
-  --r:18px; --wrap:1120px; --ease:cubic-bezier(.22,.75,.2,1);
-  --font-display:'Bricolage Grotesque',system-ui,sans-serif;
-  --font-body:'Inter',system-ui,sans-serif;
-  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+  --bg:#080907; --bg2:#0B0D09; --panel:#0F1109;
+  --text:#F0F2E8; --muted:#99A190;
+  --line:rgba(255,255,255,.085); --line2:rgba(255,255,255,.17);
+  --accent:#CDF95A; --accent-ink:#0A0B08; --hl:#CDF95A;
+  --r:16px; --wrap:1060px;
+  --ease:cubic-bezier(.22,.75,.2,1);
+  --ff-d:'Bricolage Grotesque',system-ui,sans-serif;
+  --ff-b:'Inter',system-ui,sans-serif;
+  --ff-m:'JetBrains Mono',ui-monospace,monospace;
 }
 html[data-theme="light"]{
-  --bg:#F4F3EC; --bg-2:#FBFAF4; --panel:rgba(12,14,9,.035); --panel-solid:#FFFFFF;
-  --text:#101208; --muted:#5A6053; --line:rgba(12,14,9,.14); --line-strong:rgba(12,14,9,.26);
-  --accent:#D9FA6B; --accent-text:#3C6A00; --accent-ink:#101208;
-  --amber:#A9601A; --shadow:0 28px 60px -26px rgba(24,30,10,.28);
+  --bg:#F5F4ED; --bg2:#FBFAF4; --panel:#FFFFFF;
+  --text:#0E1008; --muted:#5C6255;
+  --line:rgba(12,14,9,.13); --line2:rgba(12,14,9,.24);
+  --accent:#D9FA6B; --accent-ink:#0E1008; --hl:#41700A;
 }
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%;overflow-x:clip}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:92px;-webkit-text-size-adjust:100%}
 body{
-  font-family:var(--font-body); background:var(--bg); color:var(--text);
-  line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;
-  transition:background .5s ease,color .5s ease;
+  font-family:var(--ff-b);background:var(--bg);color:var(--text);
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+  transition:background .45s ease,color .45s ease;
 }
 img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 ::selection{background:var(--accent);color:var(--accent-ink)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(18px,4vw,32px)}
-.mono{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(18px,4vw,28px)}
+.mono{font-family:var(--ff-m);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip{position:fixed;top:-100px;left:16px;z-index:400;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:8px;font-weight:600}
-.skip:focus{top:16px}
+.skip{position:fixed;top:-80px;left:16px;z-index:400;background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:8px;font-weight:600;font-size:13px}
+.skip:focus{top:14px}
+.grain{position:fixed;inset:0;z-index:80;pointer-events:none;opacity:.03;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
+html[data-theme="light"] .grain{opacity:.045;mix-blend-mode:multiply}
 
-/* ambient layers */
-.grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.032;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E")}
-html[data-theme="light"] .grain{opacity:.05;mix-blend-mode:multiply}
+/* ---------- header ---------- */
+.bar{position:fixed;inset:0 0 auto;z-index:250;border-bottom:1px solid transparent;transition:background .35s,border-color .35s,backdrop-filter .35s}
+.bar.stuck{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(16px) saturate(1.3);border-color:var(--line)}
+.bar-in{display:flex;align-items:center;justify-content:space-between;gap:18px;height:70px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand .mk{width:33px;height:33px;flex:none;border-radius:9px;border:1px solid var(--line2);display:grid;place-items:center;font-family:var(--ff-m);font-size:11px;transition:transform .4s var(--ease),border-color .3s,color .3s}
+.brand:hover .mk{transform:rotate(-6deg);border-color:var(--accent);color:var(--hl)}
+.brand b{font-size:13px;font-weight:600;letter-spacing:-.01em;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:4px;margin-inline-start:auto}
+.nav a{position:relative;padding:8px 11px;font-size:12.5px;font-weight:500;color:var(--muted);border-radius:8px;transition:color .22s}
+.nav a:hover,.nav a.on{color:var(--text)}
+.nav a::after{content:'';position:absolute;inset:auto 11px 4px;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:inline-start;transition:transform .32s var(--ease)}
+.nav a:hover::after,.nav a.on::after{transform:scaleX(1)}
+.tools{display:flex;align-items:center;gap:7px}
+.ib{width:35px;height:35px;border-radius:9px;border:1px solid var(--line);display:grid;place-items:center;transition:border-color .25s,color .25s,transform .25s var(--ease)}
+.ib:hover{border-color:var(--accent);color:var(--hl);transform:translateY(-2px)}
+.ib svg{width:15px;height:15px}
+.lb{height:35px;padding:0 11px;border-radius:9px;border:1px solid var(--line);font-family:var(--ff-m);font-size:10.5px;letter-spacing:.1em;display:flex;align-items:center;gap:6px;transition:border-color .25s,color .25s,transform .25s var(--ease)}
+.lb:hover{border-color:var(--accent);color:var(--hl);transform:translateY(-2px)}
+.lb i{width:5px;height:5px;border-radius:50%;background:var(--accent)}
+.head-cta{display:inline-flex;align-items:center;gap:8px;height:35px;padding:0 15px;border-radius:9px;background:var(--accent);color:var(--accent-ink);font-size:12.5px;font-weight:600;transition:transform .25s var(--ease),box-shadow .3s}
+.head-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px -12px color-mix(in srgb,var(--accent) 80%,transparent)}
+.mtog{display:none}
 
-/* ============ PROGRESS / HEADER ============ */
-.progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:300;background:transparent}
-.progress span{display:block;height:100%;width:0;background:var(--accent);box-shadow:0 0 14px var(--accent)}
-.site-head{
-  position:fixed;top:0;left:0;right:0;z-index:250;
-  transition:background .4s ease,border-color .4s ease,backdrop-filter .4s ease;
-  border-bottom:1px solid transparent;
-}
-.site-head.scrolled{background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(18px) saturate(1.2);border-color:var(--line)}
-.head-in{display:flex;align-items:center;gap:20px;height:72px;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:11px;min-width:0}
-.brand .mark{
-  width:34px;height:34px;flex:none;border-radius:10px;border:1px solid var(--line-strong);
-  display:grid;place-items:center;font-family:var(--font-mono);font-size:12px;font-weight:500;
-  background:var(--panel);transition:transform .4s var(--ease),border-color .3s,color .3s;
-}
-.brand:hover .mark{transform:rotate(-6deg) scale(1.06);border-color:var(--accent);color:var(--accent-text)}
-.brand-txt{display:flex;flex-direction:column;line-height:1.2;min-width:0}
-.brand-txt b{font-size:13.5px;font-weight:600;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.brand-txt em{font-style:normal;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-.nav{display:flex;align-items:center;gap:2px}
-.nav a{position:relative;padding:9px 12px;font-size:12.5px;font-weight:500;color:var(--muted);border-radius:8px;transition:color .25s}
-.nav a::after{content:'';position:absolute;left:12px;right:12px;bottom:5px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
-.nav a:hover,.nav a.active{color:var(--text)}
-.nav a:hover::after,.nav a.active::after{transform:scaleX(1)}
-.head-tools{display:flex;align-items:center;gap:8px}
-.icon-btn{
-  width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--panel);
-  display:grid;place-items:center;color:var(--text);transition:border-color .3s,transform .3s var(--ease),color .3s,background .3s;
-}
-.icon-btn:hover{border-color:var(--accent);color:var(--accent-text);transform:translateY(-2px)}
-.icon-btn svg{width:15px;height:15px}
-.lang-btn{
-  height:36px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:var(--panel);
-  font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--text);
-  display:flex;align-items:center;gap:6px;transition:border-color .3s,color .3s,transform .3s var(--ease);
-}
-.lang-btn:hover{border-color:var(--accent);color:var(--accent-text);transform:translateY(-2px)}
-.lang-btn i{width:5px;height:5px;border-radius:50%;background:var(--accent);display:block}
-.menu-btn{display:none}
+/* ---------- drawer ---------- */
+.drawer{position:fixed;inset:0;z-index:240;background:var(--bg);display:flex;flex-direction:column;justify-content:center;gap:2px;padding:0 26px;clip-path:inset(0 0 100% 0);transition:clip-path .55s var(--ease);pointer-events:none}
+.drawer.on{clip-path:inset(0 0 0 0);pointer-events:auto}
+.drawer a{display:flex;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-family:var(--ff-d);font-size:clamp(26px,8vw,38px);font-weight:500;letter-spacing:-.03em;opacity:0;transform:translateY(14px);transition:opacity .4s,transform .45s var(--ease),color .2s}
+.drawer.on a{opacity:1;transform:none}
+.drawer a span{font-family:var(--ff-m);font-size:9.5px;color:var(--hl);letter-spacing:.1em}
+.drawer a:hover{color:var(--hl)}
+.drawer .dfoot{margin-top:24px;font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
 
-/* mobile drawer */
-.drawer{
-  position:fixed;inset:0;z-index:240;background:var(--bg);
-  display:flex;flex-direction:column;justify-content:center;padding:0 28px;
-  clip-path:inset(0 0 100% 0);transition:clip-path .6s var(--ease);pointer-events:none;
-}
-.drawer.open{clip-path:inset(0 0 0 0);pointer-events:auto}
-.drawer a{
-  font-family:var(--font-display);font-size:clamp(30px,9vw,46px);font-weight:500;letter-spacing:-.03em;
-  padding:10px 0;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:14px;
-  opacity:0;transform:translateY(18px);transition:opacity .4s ease,transform .4s var(--ease),color .25s;
-}
-.drawer.open a{opacity:1;transform:none}
-.drawer a span{font-family:var(--font-mono);font-size:10px;color:var(--accent-text);letter-spacing:.1em}
-.drawer a:hover{color:var(--accent-text)}
-.drawer-foot{margin-top:26px;display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12px}
-
-/* ============ HERO ============ */
-.hero{position:relative;padding:132px 0 0;overflow:hidden}
-.hero-glow{
-  position:absolute;inset:-20% -10% auto;height:900px;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(520px circle at var(--mx,70%) var(--my,18%), color-mix(in srgb,var(--accent) 12%,transparent), transparent 62%),
-    radial-gradient(700px circle at 82% 0%, color-mix(in srgb,var(--accent) 7%,transparent), transparent 68%);
-  transition:background .2s linear;
-}
-.grid-lines{
-  position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:72px 72px;
-  mask-image:radial-gradient(ellipse 80% 62% at 50% 26%,#000 20%,transparent 75%);
-  -webkit-mask-image:radial-gradient(ellipse 80% 62% at 50% 26%,#000 20%,transparent 75%);
-}
-.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.16fr .84fr;gap:clamp(28px,4vw,64px);align-items:start}
-.status{margin-top:6px}
-.badge{
-  display:inline-flex;align-items:center;gap:9px;padding:7px 13px 7px 11px;border-radius:100px;
-  border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));
-  background:color-mix(in srgb,var(--accent) 8%,transparent);
-  font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-text);
-}
-.badge i{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 60%,transparent);animation:ping 2.4s ease-out infinite}
-@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 55%,transparent)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
-.hero h1{
-  font-family:var(--font-display);font-weight:600;font-size:clamp(44px,8.2vw,98px);
-  line-height:.85;letter-spacing:-.045em;margin:26px 0 0;
-}
-.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
-.hero h1 .ln > span{display:block;transform:translateY(108%);animation:rise 1s var(--ease) forwards}
-.hero h1 .ln:nth-child(2) > span{animation-delay:.1s}
-.hero h1 .out{
-  color:transparent;-webkit-text-stroke:1.8px var(--text);
-}
-@keyframes rise{to{transform:translateY(0)}}
-.hero-role{
-  display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:22px;
-  font-size:clamp(14px,2.2vw,17px);font-weight:500;letter-spacing:-.01em;
-  opacity:0;animation:fadeUp .8s var(--ease) .4s forwards;
-}
-.hero-role .sep{width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.8}
-.hero-role .dim{color:var(--muted);font-weight:400}
-.hero-lead{
-  margin-top:22px;max-width:52ch;font-size:clamp(14.5px,1.6vw,16.5px);line-height:1.75;color:var(--muted);
-  opacity:0;animation:fadeUp .8s var(--ease) .5s forwards;
-}
-.hero-lead strong{color:var(--text);font-weight:500}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;opacity:0;animation:fadeUp .8s var(--ease) .6s forwards}
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-
-.btn{
-  position:relative;display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:12px;
-  font-size:13.5px;font-weight:600;letter-spacing:-.01em;border:1px solid transparent;overflow:hidden;
-  transition:transform .35s var(--ease),background .3s,border-color .3s,color .3s,box-shadow .35s;
-  will-change:transform;
-}
-.btn svg{width:15px;height:15px;flex:none;transition:transform .35s var(--ease)}
+/* ---------- hero ---------- */
+.hero{position:relative;padding:clamp(104px,15vh,148px) 0 0;overflow:hidden}
+.glow{position:absolute;inset:-30% -10% auto;height:760px;z-index:0;pointer-events:none;
+  background:radial-gradient(600px circle at 78% 6%,color-mix(in srgb,var(--accent) 11%,transparent),transparent 66%),
+             radial-gradient(460px circle at 12% 0%,color-mix(in srgb,var(--accent) 6%,transparent),transparent 70%)}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(26px,4vw,54px);align-items:start}
+.hero-copy,.hero-grid>*{min-width:0}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 10px;border-radius:100px;border:1px solid color-mix(in srgb,var(--accent) 32%,var(--line));background:color-mix(in srgb,var(--accent) 8%,transparent);font-family:var(--ff-m);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--hl)}
+.pill i{width:5px;height:5px;border-radius:50%;background:var(--accent);animation:ping 2.6s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 55%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+h1{font-family:var(--ff-d);font-weight:600;font-size:clamp(42px,6.8vw,88px);line-height:.94;letter-spacing:-.048em;margin-top:20px}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+h1 .ln>span{display:block;transform:translateY(112%);animation:rise .95s var(--ease) forwards}
+h1 .ln:nth-child(2)>span{animation-delay:.09s}
+@keyframes rise{to{transform:none}}
+h1 em{font-style:normal;color:var(--hl)}
+.lede{margin-top:20px;max-width:44ch;font-size:clamp(14px,1.5vw,16px);line-height:1.7;color:var(--muted);opacity:0;animation:fu .8s var(--ease) .42s forwards}
+.lede b{color:var(--text);font-weight:500}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;opacity:0;animation:fu .8s var(--ease) .52s forwards}
+@keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:11px;font-size:13.5px;font-weight:600;letter-spacing:-.01em;border:1px solid transparent;transition:transform .3s var(--ease),background .25s,border-color .25s,color .25s,box-shadow .3s}
+.btn svg{width:15px;height:15px;flex:none;transition:transform .3s var(--ease)}
 .btn:hover svg{transform:translate(2px,-2px)}
-.btn-primary{background:var(--accent);color:var(--accent-ink);box-shadow:0 10px 30px -12px color-mix(in srgb,var(--accent) 70%,transparent)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -14px color-mix(in srgb,var(--accent) 80%,transparent)}
-.btn-ghost{border-color:var(--line-strong);color:var(--text);background:var(--panel)}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent-text);transform:translateY(-2px)}
-.btn:active{transform:translateY(0) scale(.985)}
+.btn-p{background:var(--accent);color:var(--accent-ink)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 32px -14px color-mix(in srgb,var(--accent) 78%,transparent)}
+.btn-g{border-color:var(--line2)}
+.btn-g:hover{border-color:var(--accent);color:var(--hl);transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.988)}
 
-/* status panel */
-.status{
-  position:relative;border:1px solid var(--line);border-radius:var(--r);
-  background:linear-gradient(180deg,color-mix(in srgb,var(--panel-solid) 70%,transparent),var(--panel));
-  backdrop-filter:blur(14px);padding:18px;box-shadow:var(--shadow);
-  opacity:0;animation:fadeUp .9s var(--ease) .55s forwards;
-}
-.status-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;border-bottom:1px dashed var(--line);margin-bottom:6px}
-.status-top .mono{color:var(--muted);font-size:9.5px}
-.live{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;color:var(--accent-text)}
-.live i{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2.6s ease-in-out infinite}
+.proof{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:6px;box-shadow:0 30px 70px -34px rgba(0,0,0,.6);opacity:0;animation:fu .9s var(--ease) .5s forwards;margin-top:4px}
+html[data-theme="light"] .proof{box-shadow:0 22px 50px -30px rgba(30,36,14,.3)}
+.pf-top{display:flex;align-items:center;justify-content:space-between;padding:10px 11px 11px;border-bottom:1px solid var(--line)}
+.pf-top span:first-child{font-family:var(--ff-m);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.live{display:inline-flex;align-items:center;gap:6px;font-family:var(--ff-m);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--hl)}
+.live i{width:5px;height:5px;border-radius:50%;background:var(--hl);animation:blink 2.6s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-.status-row{display:grid;grid-template-columns:56px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.status-row:last-of-type{border-bottom:none}
-.status-row dt{font-family:var(--font-mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
-.status-row dd{font-size:12px;line-height:1.5;font-weight:500}
-.status-bars{display:flex;align-items:flex-end;gap:3px;height:26px;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
-.status-bars i{flex:1;background:color-mix(in srgb,var(--accent) 55%,transparent);border-radius:2px;animation:bars 2.8s ease-in-out infinite;transform-origin:bottom}
-.status-bars i:nth-child(2n){background:color-mix(in srgb,var(--accent) 30%,transparent)}
-@keyframes bars{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
-.hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:20px;color:var(--muted);font-size:11.5px;opacity:0;animation:fadeUp .8s var(--ease) .7s forwards}
-.hero-meta span{display:flex;align-items:center;gap:7px}
-.hero-meta svg{width:13px;height:13px;color:var(--accent-text)}
+.proof a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 11px;border-bottom:1px solid var(--line);transition:background .22s}
+.proof a:last-of-type{border-bottom:0}
+.proof a:hover{background:color-mix(in srgb,var(--accent) 6%,transparent)}
+.proof a b{display:block;font-size:13.5px;font-weight:600;letter-spacing:-.015em;line-height:1.25}
+.proof a small{display:block;font-family:var(--ff-m);font-size:8.5px;letter-spacing:.05em;color:var(--muted);margin-top:2px}
+.proof a svg{width:13px;height:13px;flex:none;color:var(--muted);transition:transform .3s var(--ease),color .22s}
+.proof a:hover svg{transform:translate(2px,-2px);color:var(--hl)}
 
-/* stats strip */
-.stats{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:64px;border-top:1px solid var(--line);background:var(--line)}
-.stat{background:var(--bg);padding:22px 4px 20px;display:flex;align-items:baseline;gap:12px}
-.stat b{font-family:var(--font-display);font-size:clamp(28px,5vw,42px);font-weight:500;letter-spacing:-.04em;line-height:1}
-.stat span{font-size:11px;color:var(--muted);max-width:12ch;line-height:1.35}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-block:1px solid var(--line);margin-top:clamp(34px,5.5vw,58px)}
+.nums>div{background:var(--bg);padding:18px 6px 16px}
+.nums b{display:block;font-family:var(--ff-d);font-size:clamp(25px,4vw,34px);font-weight:500;letter-spacing:-.045em;line-height:1}
+.nums span{display:block;margin-top:5px;font-size:11px;color:var(--muted)}
 
-/* marquee */
-.marquee{position:relative;margin-top:0;border-block:1px solid var(--line);overflow:hidden;background:color-mix(in srgb,var(--bg-2) 70%,transparent)}
-.marquee .track{display:flex;width:max-content;animation:scrollx 46s linear infinite}
-.marquee:hover .track{animation-play-state:paused}
-@keyframes scrollx{to{transform:translateX(-50%)}}
-.mq{display:flex;align-items:center;gap:26px;padding:15px 13px 15px 0;flex:none}
-.mq span{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-.mq i{width:4px;height:4px;background:var(--accent);border-radius:50%;flex:none;opacity:.7}
+.tick{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:var(--bg2)}
+.tick .tr{display:flex;width:max-content;animation:xl 42s linear infinite}
+.tick:hover .tr{animation-play-state:paused}
+@keyframes xl{to{transform:translateX(-50%)}}
+.tk{display:flex;align-items:center;gap:22px;padding:11px 11px 11px 0;flex:none;font-family:var(--ff-m);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.tk i{width:3px;height:3px;border-radius:50%;background:var(--accent);opacity:.65}
 
-/* ============ SECTIONS ============ */
-.sec{position:relative;padding:clamp(54px,7vw,92px) 0;border-top:1px solid var(--line)}
-.sec-head{display:grid;grid-template-columns:200px 1fr;gap:clamp(18px,4vw,56px);align-items:start;margin-bottom:clamp(26px,4vw,44px)}
-.kicker{display:flex;flex-direction:column;gap:10px;position:sticky;top:100px}
-.kicker .idx{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;color:var(--accent-text);display:flex;align-items:center;gap:9px}
-.kicker .idx::after{content:'';height:1px;width:34px;background:color-mix(in srgb,var(--accent) 55%,transparent)}
-.kicker .lbl{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.sec-title{
-  text-wrap:balance;
-  font-family:var(--font-display);font-weight:500;font-size:clamp(28px,4.6vw,50px);
-  line-height:1.02;letter-spacing:-.04em;max-width:22ch;
-}
-.sec-title em{font-style:normal;color:var(--accent-text)}
-.sec-desc{margin-top:14px;max-width:58ch;color:var(--muted);font-size:14.5px;line-height:1.75}
-
-/* reveal */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .85s var(--ease),transform .85s var(--ease);transition-delay:var(--d,0s)}
+/* ---------- sections ---------- */
+.sec{position:relative;padding:clamp(52px,7vw,88px) 0;border-top:1px solid var(--line)}
+.sec:first-of-type{border-top:0}
+.sh{margin-bottom:clamp(24px,3.4vw,36px)}
+.kick{display:flex;align-items:center;gap:9px;margin-bottom:12px;font-family:var(--ff-m);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.kick b{color:var(--hl);font-weight:400}
+.kick b::after{content:'';display:inline-block;width:22px;height:1px;background:color-mix(in srgb,var(--accent) 60%,transparent);vertical-align:middle;margin-inline-start:9px}
+h2{font-family:var(--ff-d);font-weight:500;font-size:clamp(27px,3.9vw,42px);line-height:1.04;letter-spacing:-.038em;text-wrap:balance;max-width:26ch}
+h2 em{font-style:normal;color:var(--hl)}
+.sub{margin-top:9px;max-width:50ch;font-size:13.5px;line-height:1.65;color:var(--muted)}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
 .rv.in{opacity:1;transform:none}
 
-/* about */
-.about-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(26px,5vw,72px);align-items:start}
-.about-copy p{font-size:clamp(15px,1.7vw,17.5px);line-height:1.8;color:var(--muted);margin-bottom:18px}
-.about-copy p strong{color:var(--text);font-weight:500}
-.quote{
-  margin-top:26px;padding:20px 0 20px 22px;border-left:2px solid var(--accent);
-  font-family:var(--font-display);font-size:clamp(17px,2.2vw,21px);line-height:1.45;letter-spacing:-.02em;color:var(--text);
-}
-.facts{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--panel)}
-.facts div{display:grid;grid-template-columns:1fr;gap:3px;padding:14px 17px;border-bottom:1px solid var(--line)}
-.facts div:last-child{border-bottom:none}
-.facts dt{font-family:var(--font-mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
-.facts dd{font-size:13px;font-weight:500}
-
-/* experience */
-.log{position:relative;display:grid;gap:14px}
-.log::before{content:'';position:absolute;left:11px;top:16px;bottom:16px;width:1px;background:linear-gradient(var(--line-strong),transparent)}
-.role{
-  position:relative;padding:22px 22px 22px 56px;border:1px solid var(--line);border-radius:var(--r);
-  background:var(--panel);transition:border-color .4s,transform .5s var(--ease),background .4s;
-}
-.role:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));transform:translateX(4px);background:color-mix(in srgb,var(--accent) 4%,var(--panel))}
-.role::before{
-  content:'';position:absolute;left:7px;top:30px;width:9px;height:9px;border-radius:50%;
-  background:var(--bg);border:1.5px solid var(--line-strong);transition:border-color .4s,box-shadow .4s;
-}
-.role:hover::before{border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 15%,transparent)}
-.role-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;margin-bottom:4px}
-.role h3{font-family:var(--font-display);font-size:clamp(17px,2.4vw,21px);font-weight:600;letter-spacing:-.02em}
-.chip{
-  font-family:var(--font-mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;
-  padding:4px 9px;border-radius:100px;border:1px solid var(--line-strong);color:var(--muted);white-space:nowrap;
-}
-.chip.now{border-color:color-mix(in srgb,var(--accent) 45%,transparent);color:var(--accent-text);background:color-mix(in srgb,var(--accent) 8%,transparent)}
-.role .org{font-size:12.5px;color:var(--accent-text);font-weight:500;margin-bottom:12px}
-.role p{font-size:13.5px;line-height:1.7;color:var(--muted);max-width:64ch}
-.duties{column-count:2;column-gap:26px;margin-top:14px;list-style:none}
-.duties li{position:relative;padding-left:15px;margin-bottom:7px;break-inside:avoid;font-size:12.5px;line-height:1.55;color:var(--muted)}
-.duties li::before{content:'';position:absolute;left:0;top:.62em;width:5px;height:1px;background:var(--accent);opacity:.85}
-
 /* work */
-.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.card{
-  position:relative;display:flex;flex-direction:column;padding:22px;border:1px solid var(--line);border-radius:var(--r);
-  background:var(--panel);overflow:hidden;transition:border-color .4s,box-shadow .5s,transform .5s var(--ease);
-  transform-style:preserve-3d;
-}
-.card::after{
-  content:'';position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .45s;
-  background:radial-gradient(340px circle at var(--cx,50%) var(--cy,0%),color-mix(in srgb,var(--accent) 10%,transparent),transparent 65%);
-}
-.card:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));box-shadow:var(--shadow)}
-.card:hover::after{opacity:1}
-.card-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
-.card-idx{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;color:var(--muted)}
-.card-kind{font-family:var(--font-mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--accent-text);border:1px solid color-mix(in srgb,var(--accent) 28%,var(--line));padding:3px 8px;border-radius:100px}
-.card h3{font-family:var(--font-display);font-size:clamp(19px,2.7vw,25px);font-weight:600;letter-spacing:-.025em;line-height:1.1}
-.card .sub{font-size:11.5px;color:var(--muted);margin-top:4px;font-family:var(--font-mono);letter-spacing:.05em}
-.card p{font-size:13px;line-height:1.7;color:var(--muted);margin-top:12px;flex:1}
-.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:16px}
-.tag{font-family:var(--font-mono);font-size:9px;letter-spacing:.09em;text-transform:uppercase;padding:4px 8px;border-radius:6px;background:color-mix(in srgb,var(--text) 5%,transparent);color:var(--muted);border:1px solid var(--line)}
-.card-link{
-  display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding-top:14px;border-top:1px solid var(--line);
-  font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text);
-  transition:color .3s,gap .3s var(--ease);
-}
-.card-link svg{width:13px;height:13px;transition:transform .35s var(--ease)}
-.card:hover .card-link{color:var(--accent-text);gap:12px}
-.card:hover .card-link svg{transform:translate(2px,-2px)}
-
-/* lab strip */
-.lab{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:14px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--line)}
-.lab > div{padding:18px;background:var(--bg-2);transition:background .35s}
-.lab > div:hover{background:color-mix(in srgb,var(--accent) 5%,var(--bg-2))}
-.lab h4{font-size:13px;font-weight:600;margin-bottom:5px;display:flex;align-items:center;gap:7px}
-.lab h4::before{content:'';width:5px;height:5px;background:var(--accent);border-radius:50%;flex:none}
-.lab p{font-size:11.5px;line-height:1.6;color:var(--muted)}
-
-/* skills */
-.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.skill-col{border:1px solid var(--line);border-radius:var(--r);padding:20px;background:var(--panel);transition:border-color .4s,transform .45s var(--ease)}
-.skill-col:hover{border-color:color-mix(in srgb,var(--accent) 40%,var(--line));transform:translateY(-3px)}
-.skill-col h3{font-family:var(--font-mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-text);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.skill-col ul{list-style:none;display:grid;gap:8px}
-.skill-col li{position:relative;padding-left:14px;font-size:12.5px;line-height:1.5;color:var(--muted);transition:color .25s,padding-left .3s}
-.skill-col li::before{content:'';position:absolute;left:0;top:.62em;width:4px;height:4px;border-radius:50%;background:var(--line-strong);transition:background .25s}
-.skill-col li:hover{color:var(--text);padding-left:17px}
-.skill-col li:hover::before{background:var(--accent)}
-.how{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:14px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--line)}
-.how > div{background:var(--bg-2);padding:16px}
-.how b{display:block;font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;color:var(--accent-text);margin-bottom:6px}
-.how span{font-size:12px;line-height:1.5;color:var(--muted)}
+.work{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.w{position:relative;display:flex;flex-direction:column;gap:0;padding:20px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);transition:border-color .35s,transform .4s var(--ease),box-shadow .4s}
+.w:hover{border-color:color-mix(in srgb,var(--accent) 42%,var(--line));transform:translateY(-3px);box-shadow:0 24px 50px -30px rgba(0,0,0,.7)}
+.w-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.w .id{font-family:var(--ff-m);font-size:9.5px;letter-spacing:.14em;color:var(--muted)}
+.w .kind{font-family:var(--ff-m);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);border:1px solid color-mix(in srgb,var(--accent) 26%,var(--line));padding:3px 8px;border-radius:100px}
+.w h3{font-family:var(--ff-d);font-size:clamp(19px,2.4vw,24px);font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.w .dom{font-family:var(--ff-m);font-size:9.5px;letter-spacing:.05em;color:var(--muted);margin-top:3px}
+.w p{font-size:12.5px;line-height:1.6;color:var(--muted);margin-top:11px;flex:1}
+.w .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
+.tag{font-family:var(--ff-m);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:5px;border:1px solid var(--line);color:var(--muted)}
+.w .go{display:inline-flex;align-items:center;gap:7px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-family:var(--ff-m);font-size:9px;letter-spacing:.12em;text-transform:uppercase;transition:color .22s,gap .3s var(--ease)}
+.w .go svg{width:12px;height:12px;transition:transform .3s var(--ease)}
+.w:hover .go{color:var(--hl);gap:10px}
+.w:hover .go svg{transform:translate(2px,-2px)}
 
 /* services */
-.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.svc{position:relative;padding:24px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);overflow:hidden;transition:border-color .4s,transform .45s var(--ease),background .4s}
-.svc::before{content:'';position:absolute;left:0;top:0;width:100%;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
-.svc:hover{border-color:color-mix(in srgb,var(--accent) 40%,var(--line));transform:translateY(-3px);background:color-mix(in srgb,var(--accent) 4%,var(--panel))}
-.svc:hover::before{transform:scaleX(1)}
-.svc .num{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;color:var(--accent-text)}
-.svc h3{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.02em;margin:12px 0 8px}
-.svc p{font-size:12.5px;line-height:1.7;color:var(--muted)}
+.sv{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.s{position:relative;padding:22px 20px 24px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);transition:border-color .35s,transform .4s var(--ease)}
+.s::before{content:'';position:absolute;inset:0 0 auto;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:inline-start;transition:transform .45s var(--ease);border-radius:var(--r) var(--r) 0 0}
+.s:hover{border-color:color-mix(in srgb,var(--accent) 38%,var(--line));transform:translateY(-3px)}
+.s:hover::before{transform:scaleX(1)}
+.s .n{font-family:var(--ff-m);font-size:9.5px;letter-spacing:.14em;color:var(--hl)}
+.s h3{font-family:var(--ff-d);font-size:17px;font-weight:600;letter-spacing:-.02em;margin:10px 0 6px}
+.s p{font-size:12.5px;line-height:1.6;color:var(--muted)}
+
+/* experience */
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:17px 0;border-bottom:1px solid var(--line);align-items:start;transition:padding-inline-start .35s var(--ease)}
+.row:hover{padding-inline-start:6px}
+.row h3{font-family:var(--ff-d);font-size:clamp(15.5px,2vw,18px);font-weight:600;letter-spacing:-.02em}
+.row .org{font-size:11.5px;color:var(--muted);margin-top:2px}
+.row .note{grid-column:1/-1;font-size:12.5px;line-height:1.55;color:var(--muted);margin-top:7px;max-width:60ch}
+.chip{font-family:var(--ff-m);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:100px;border:1px solid var(--line2);color:var(--muted);white-space:nowrap;margin-top:3px}
+.chip.on{border-color:color-mix(in srgb,var(--accent) 42%,transparent);color:var(--hl);background:color-mix(in srgb,var(--accent) 7%,transparent)}
+.chip.past{opacity:.72}
+
+/* about */
+.ab{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(24px,4vw,54px);align-items:start}
+.ab p{font-size:clamp(14px,1.5vw,15.5px);line-height:1.75;color:var(--muted);margin-bottom:13px}
+.ab p strong{color:var(--text);font-weight:500}
+.facts{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--panel)}
+.facts div{display:grid;gap:2px;padding:12px 15px;border-bottom:1px solid var(--line)}
+.facts div:last-child{border-bottom:0}
+.facts dt{font-family:var(--ff-m);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.facts dd{font-size:12.5px;font-weight:500}
 
 /* contact */
-.contact{padding-bottom:clamp(56px,8vw,96px)}
-.contact-inner{text-align:center;padding:clamp(34px,6vw,64px) 0 0}
-.contact h2{font-family:var(--font-display);font-weight:500;font-size:clamp(32px,6.4vw,70px);line-height:1;letter-spacing:-.045em;margin:16px auto 0;max-width:20ch}
-.contact h2 em{font-style:normal;color:var(--accent-text)}
-.contact .lead{margin:18px auto 0;max-width:52ch;color:var(--muted);font-size:14.5px;line-height:1.75}
-.contact-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:32px}
-.contact-lines{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:center;margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
-.contact-lines a,.contact-lines span{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);transition:color .25s}
-.contact-lines a:hover{color:var(--accent-text)}
-.contact-lines svg{width:14px;height:14px}
-.copy-state{color:var(--accent-text)!important}
+.ct{text-align:center}
+.ct h2{font-family:var(--ff-d);font-weight:500;font-size:clamp(30px,5.6vw,58px);line-height:1;letter-spacing:-.045em;margin:14px auto 0;max-width:18ch}
+.ct h2 em{font-style:normal;color:var(--hl)}
+.ct .sub{margin:14px auto 0;max-width:44ch}
+.ct .acts{justify-content:center;margin-top:26px}
+.lines{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin-top:26px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.lines a:hover{color:var(--hl)}
+.lines a,.lines span{display:inline-flex;align-items:center;gap:7px;transition:color .22s}
+.lines svg{width:13px;height:13px}
 
 /* footer */
-.foot{border-top:1px solid var(--line);padding:26px 0 34px}
-.foot-in{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;font-size:11.5px;color:var(--muted)}
-.foot-in .mono{font-size:9.5px}
-.to-top{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:color .25s}
-.to-top:hover{color:var(--accent-text)}
-.to-top svg{width:12px;height:12px;transition:transform .3s var(--ease)}
-.to-top:hover svg{transform:translateY(-3px)}
+.ft{border-top:1px solid var(--line);padding:22px 0 28px}
+.ft-in{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;font-size:11px;color:var(--muted)}
+.top{display:inline-flex;align-items:center;gap:6px;font-family:var(--ff-m);font-size:9px;letter-spacing:.12em;text-transform:uppercase;transition:color .22s}
+.top:hover{color:var(--hl)}
+.top svg{width:11px;height:11px;transition:transform .3s var(--ease)}
+.top:hover svg{transform:translateY(-3px)}
 
-/* ============ RTL / ARABIC ============ */
-html[lang="ar"] body{font-family:'IBM Plex Sans Arabic',var(--font-body);line-height:1.85}
-html[lang="ar"] .hero h1,html[lang="ar"] .sec-title,html[lang="ar"] .contact h2,
-html[lang="ar"] .role h3,html[lang="ar"] .card h3,html[lang="ar"] .svc h3,html[lang="ar"] .quote{font-family:'IBM Plex Sans Arabic',var(--font-display);letter-spacing:0;line-height:1.35}
-html[lang="ar"] .hero h1{font-size:clamp(38px,8.4vw,92px);line-height:1.16}
-.hero-copy,.hero-grid > *{min-width:0}
-html[lang="ar"] .hero h1 .out{color:var(--text);-webkit-text-stroke:0}
-html[lang="ar"] .mono,html[lang="ar"] .chip,html[lang="ar"] .tag,html[lang="ar"] .card-link,
-html[lang="ar"] .kicker .lbl,html[lang="ar"] .kicker .idx,html[lang="ar"] .status-row dt,
-html[lang="ar"] .skill-col h3,html[lang="ar"] .how b,html[lang="ar"] .card-kind,html[lang="ar"] .brand-txt em{
-  font-family:'IBM Plex Sans Arabic',var(--font-body);letter-spacing:0;text-transform:none;
+/* ---------- arabic ---------- */
+html[lang="ar"] body{font-family:'IBM Plex Sans Arabic',var(--ff-b);line-height:1.8}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] .w h3,html[lang="ar"] .s h3,html[lang="ar"] .row h3,html[lang="ar"] .drawer a{font-family:'IBM Plex Sans Arabic',var(--ff-d);letter-spacing:0}
+html[lang="ar"] h1{font-size:clamp(38px,6.4vw,78px);line-height:1.16;letter-spacing:0}
+html[lang="ar"] h2{line-height:1.25;font-size:clamp(25px,3.7vw,38px)}
+html[lang="ar"] .mono,html[lang="ar"] .kick,html[lang="ar"] .pill,html[lang="ar"] .tk,
+html[lang="ar"] .tag,html[lang="ar"] .chip,html[lang="ar"] .w .kind,html[lang="ar"] .w .go,
+html[lang="ar"] .pf-top span:first-child,html[lang="ar"] .live,html[lang="ar"] .btn,
+html[lang="ar"] .head-cta,html[lang="ar"] .lb,html[lang="ar"] .w .id,html[lang="ar"] .facts dt,
+html[lang="ar"] .s .n,html[lang="ar"] .top,html[lang="ar"] .proof a small,html[lang="ar"] .w .dom{
+  font-family:'IBM Plex Sans Arabic',var(--ff-b);letter-spacing:0;text-transform:none;font-size:11px
 }
-html[lang="ar"] .facts dd,html[lang="ar"] .role p,html[lang="ar"] .card p,html[lang="ar"] .svc p{line-height:1.85}
-html[lang="ar"] .duties li,html[lang="ar"] .skill-col li{padding-left:0;padding-right:15px}
-html[lang="ar"] .duties li::before{left:auto;right:0}
-html[lang="ar"] .skill-col li::before{left:auto;right:0}
-html[lang="ar"] .skill-col li:hover{padding-left:0;padding-right:17px}
-html[lang="ar"] .quote{border-left:none;border-right:2px solid var(--accent);padding-left:0;padding-right:22px}
-html[lang="ar"] .role{padding:22px 56px 22px 22px}
-html[lang="ar"] .role::before{left:auto;right:7px}
-html[lang="ar"] .role:hover{transform:translateX(-4px)}
-html[lang="ar"] .log::before{left:auto;right:11px}
-html[lang="ar"] .btn svg,html[lang="ar"] .card-link svg{transform:scaleX(-1)}
-html[lang="ar"] .btn:hover svg,html[lang="ar"] .card:hover .card-link svg{transform:scaleX(-1)}
-html[lang="ar"] .marquee .track{animation-direction:reverse}
-html[lang="ar"] .status-row{grid-template-columns:62px 1fr}
-html[lang="ar"] .status-row dt{text-align:end}
+html[lang="ar"] .pill{font-size:10.5px}
+html[lang="ar"] .proof a small{font-size:10px}
+html[lang="ar"] .w .go{font-size:10.5px}
+html[lang="ar"] .chip{font-size:10px}
+html[lang="ar"] .facts dt{font-size:10px}
+html[lang="ar"] .s .n{font-size:11px}
+html[lang="ar"] .acts .btn svg,html[lang="ar"] .w .go svg,html[lang="ar"] .proof a svg{transform:scaleX(-1)}
+html[lang="ar"] .w:hover .go svg{transform:scaleX(-1)}
+html[lang="ar"] .tick .tr{animation-direction:reverse}
 
-/* ============ RESPONSIVE ============ */
-@media (max-width:980px){
-  .hero-grid{grid-template-columns:1fr;align-items:start}
-  .status{max-width:520px}
-  .about-grid{grid-template-columns:1fr}
-  .skill-grid{grid-template-columns:1fr 1fr}
-  .lab{grid-template-columns:1fr 1fr}
-  .how{grid-template-columns:1fr 1fr}
-  .sec-head{grid-template-columns:1fr;gap:16px}
-  .kicker{position:static;flex-direction:row;align-items:center;gap:14px}
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .proof{max-width:460px}
+  .ab{grid-template-columns:1fr}
+  .sv{grid-template-columns:1fr}
+  .work{grid-template-columns:1fr}
 }
-@media (max-width:820px){
-  .nav{display:none}
-  .menu-btn{display:grid}
-  .hero{padding-top:112px}
-  .work-grid,.svc-grid{grid-template-columns:1fr}
-  .duties{grid-template-columns:1fr}
-  .stats{grid-template-columns:1fr;gap:1px;margin-top:48px}
-  .stat{padding:16px 2px}
-  .stat span{max-width:none}
+@media (max-width:780px){
+  .nav,.head-cta{display:none}
+  .mtog{display:grid}
+  .hero{padding-top:96px}
+  .nums{grid-template-columns:1fr}
+  .nums>div{display:flex;align-items:baseline;gap:12px;padding:13px 4px}
+  .nums span{margin-top:0;font-size:11.5px}
+  .row{grid-template-columns:1fr}
+  .row .chip{justify-self:start;margin-top:6px;order:-1}
+  .acts .btn{flex:1 1 100%;justify-content:center}
+  .ct .acts .btn{flex:0 1 auto}
 }
-@media (max-width:600px){
-  .skill-grid,.lab,.how{grid-template-columns:1fr}
-  .brand-txt em{display:none}
-  .head-in{height:64px;gap:10px}
-  .hero h1{font-size:clamp(40px,15vw,64px)}
-  .role{padding:20px 18px 20px 46px}
-  html[lang="ar"] .role{padding:20px 46px 20px 18px}
-  .hero-meta{gap:12px}
-  .hero-actions{gap:10px}
-  .hero-actions .btn{flex:1 1 100%;justify-content:center}
-  .contact-actions .btn{width:100%;justify-content:center}
+@media (max-width:420px){
+  .brand b{font-size:12px}
+  .lb{padding:0 9px}
 }
-
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
   .rv{opacity:1;transform:none}
-  .hero h1 .ln > span{transform:none}
+  h1 .ln>span{transform:none}
+  .lede,.acts,.proof{opacity:1;animation:none}
 }
 @media print{
-  .grain,.progress,.site-head,.drawer,.hero-glow,.grid-lines,.marquee,.to-top,.hero-actions,.contact-actions,.status-bars{display:none!important}
+  .grain,.bar,.drawer,.glow,.tick,.acts,.go,.top,.pill{display:none!important}
   body{background:#fff;color:#000}
-  .sec{padding:24px 0;border-color:#ddd}
+  .sec{padding:18px 0;border-color:#ddd}
   .rv{opacity:1!important;transform:none!important}
-  .card,.role,.svc,.skill-col,.facts{break-inside:avoid;box-shadow:none}
+  .w,.s,.facts,.proof{break-inside:avoid;box-shadow:none}
 }
 </style>
 </head>
@@ -441,31 +286,27 @@ html[lang="ar"] .status-row dt{text-align:end}
 <body>
 <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 <div class="grain" aria-hidden="true"></div>
-<div class="progress" aria-hidden="true"><span id="bar"></span></div>
 
-<header class="site-head" id="head">
-  <div class="wrap head-in">
-    <a class="brand" href="#top" aria-label="Abdelrahman Waleed — home">
-      <span class="mark">AW</span>
-      <span class="brand-txt">
-        <b>Abdelrahman Waleed</b>
-        <em data-i18n="brand.role">WordPress &amp; IT Operations</em>
-      </span>
+<header class="bar" id="bar">
+  <div class="wrap bar-in">
+    <a class="brand" href="#top">
+      <span class="mk">AW</span>
+      <b>Abdelrahman Waleed</b>
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="#about" data-i18n="nav.about">About</a>
-      <a href="#experience" data-i18n="nav.exp">Experience</a>
       <a href="#work" data-i18n="nav.work">Work</a>
-      <a href="#skills" data-i18n="nav.skills">Skills</a>
       <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#experience" data-i18n="nav.experience">Experience</a>
+      <a href="#about" data-i18n="nav.about">About</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
-    <div class="head-tools">
-      <button class="lang-btn" id="langBtn" aria-label="Switch language"><i></i><span id="langTxt">AR</span></button>
-      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path id="themeIcon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <div class="tools">
+      <button class="lb" id="langBtn" aria-label="Switch language"><i></i><span id="langTxt">AR</span></button>
+      <button class="ib" id="themeBtn" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><g id="themeIcon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></g></svg>
       </button>
-      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <a class="head-cta" href="mailto:abdelrahman959@gmail.com"><span data-i18n="nav.cta">Hire me</span></a>
+      <button class="ib mtog" id="menuBtn" aria-label="Open menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
       </button>
     </div>
@@ -473,329 +314,221 @@ html[lang="ar"] .status-row dt{text-align:end}
 </header>
 
 <div class="drawer" id="drawer">
-  <a href="#about"><span>01</span><em style="font-style:normal" data-i18n="nav.about">About</em></a>
-  <a href="#experience"><span>02</span><em style="font-style:normal" data-i18n="nav.exp">Experience</em></a>
-  <a href="#work"><span>03</span><em style="font-style:normal" data-i18n="nav.work">Work</em></a>
-  <a href="#skills"><span>04</span><em style="font-style:normal" data-i18n="nav.skills">Skills</em></a>
-  <a href="#services"><span>05</span><em style="font-style:normal" data-i18n="nav.services">Services</em></a>
-  <a href="#contact"><span>06</span><em style="font-style:normal" data-i18n="nav.contact">Contact</em></a>
-  <div class="drawer-foot">
+  <a href="#work"><span>01</span><em style="font-style:normal" data-i18n="nav.work">Work</em></a>
+  <a href="#services"><span>02</span><em style="font-style:normal" data-i18n="nav.services">Services</em></a>
+  <a href="#experience"><span>03</span><em style="font-style:normal" data-i18n="nav.experience">Experience</em></a>
+  <a href="#about"><span>04</span><em style="font-style:normal" data-i18n="nav.about">About</em></a>
+  <a href="#contact"><span>05</span><em style="font-style:normal" data-i18n="nav.contact">Contact</em></a>
+  <div class="dfoot">
     <a href="mailto:abdelrahman959@gmail.com">abdelrahman959@gmail.com</a>
-    <span>+20 127 475 7241</span>
+    <span dir="ltr">+20 127 475 7241</span>
   </div>
 </div>
 
 <main id="main">
 <section class="hero" id="top">
-  <div class="hero-glow" id="glow" aria-hidden="true"></div>
-  <div class="grid-lines" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-copy">
-        <span class="badge"><i></i><span data-i18n="hero.badge">Open to new opportunities</span></span>
+        <span class="pill"><i></i><span data-i18n="hero.badge">WordPress · open for work</span></span>
         <h1>
-          <span class="ln"><span data-i18n="hero.name1">Abdelrahman</span></span>
-          <span class="ln"><span class="out" data-i18n="hero.name2">Waleed</span></span>
+          <span class="ln"><span data-i18n="hero.l1">I build sites</span></span>
+          <span class="ln"><span data-i18n="hero.l2">that <em>sell</em>.</span></span>
         </h1>
-        <p class="hero-role">
-          <span data-i18n="hero.role">WordPress Developer</span>
-          <span class="sep" aria-hidden="true"></span>
-          <span class="dim" data-i18n="hero.role2">IT Operations</span>
-        </p>
-        <p class="hero-lead" data-i18n="hero.lead">I build, fix, and run WordPress websites for real businesses — and keep port control-room systems online around the clock. Seven live sites, real clients, and a habit of solving the problems nobody else wants to touch.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary mag" href="mailto:abdelrahman959@gmail.com">
-            <span data-i18n="hero.cta1">Start a conversation</span>
+        <p class="lede" data-i18n="hero.lede">Seven live WordPress sites for paying clients — a wedding marketplace, a Gulf e-learning platform, two stores. When one of them breaks, I get it back online.</p>
+        <div class="acts">
+          <a class="btn btn-p" href="#work">
+            <span data-i18n="hero.cta1">See the work</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
           </a>
-          <a class="btn btn-ghost mag" href="#work">
-            <span data-i18n="hero.cta2">See my work</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          <a class="btn btn-g" href="https://wa.me/201274757241" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 21l2.3-5.3A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8.5 9.5c.5 2 2 3.5 4 4l1.2-1.2 1.8.8v1.5c0 .6-.5 1.1-1.1 1.1-3.5-.2-6.3-3-6.4-6.4 0-.6.5-1.1 1.1-1.1h1.4l.8 1.8-1.3 1.2"/></svg>
+            <span data-i18n="hero.cta2">WhatsApp me</span>
           </a>
         </div>
-        <div class="hero-meta">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg><span data-i18n="meta.loc">Suez, Egypt</span></span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg><span data-i18n="meta.lang">Arabic · English</span></span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><span data-i18n="meta.avail">Full-time &amp; freelance</span></span>
-        </div>
       </div>
-      <aside class="status" aria-label="Quick profile">
-        <div class="status-top">
-          <span class="mono" data-i18n="status.title">System status</span>
-          <span class="live"><i></i><span data-i18n="status.live">Live</span></span>
+
+      <aside class="proof" aria-label="Live sites">
+        <div class="pf-top">
+          <span data-i18n="proof.title">Live right now</span>
+          <span class="live"><i></i><span data-i18n="proof.live">Online</span></span>
         </div>
-        <dl>
-          <div class="status-row"><dt data-i18n="status.k1">Role</dt><dd data-i18n="status.v1">Control Room Operator · DP World</dd></div>
-          <div class="status-row"><dt data-i18n="status.k2">Stack</dt><dd data-i18n="status.v2">WordPress · Linux · Networks</dd></div>
-          <div class="status-row"><dt data-i18n="status.k3">Focus</dt><dd data-i18n="status.v3">Building &amp; rescuing live sites</dd></div>
-          <div class="status-row"><dt data-i18n="status.k4">Base</dt><dd data-i18n="status.v4">Suez, Egypt · Remote ready</dd></div>
-          <div class="status-row"><dt data-i18n="status.k5">Coverage</dt><dd data-i18n="status.v5">24/7 operations</dd></div>
-        </dl>
-        <div class="status-bars" aria-hidden="true">
-          <i style="animation-delay:0s"></i><i style="animation-delay:.2s"></i><i style="animation-delay:.4s"></i><i style="animation-delay:.6s"></i><i style="animation-delay:.8s"></i><i style="animation-delay:1s"></i><i style="animation-delay:1.2s"></i><i style="animation-delay:1.4s"></i><i style="animation-delay:1.6s"></i><i style="animation-delay:1.8s"></i><i style="animation-delay:2s"></i><i style="animation-delay:2.2s"></i>
-        </div>
+        <a href="https://eg-app.com" target="_blank" rel="noopener">
+          <span><b>Eg App</b><small>eg-app.com</small></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+        <a href="https://farha.wuaze.com" target="_blank" rel="noopener">
+          <span><b data-i18n="w2.name">Farha</b><small>farha.wuaze.com</small></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+        <a href="https://tamayoz.wuaze.com" target="_blank" rel="noopener">
+          <span><b data-i18n="w3.name">Tamayoz</b><small>tamayoz.wuaze.com</small></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+        <a href="https://screen.eg-app.com" target="_blank" rel="noopener">
+          <span><b>Screen EG</b><small>screen.eg-app.com</small></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
       </aside>
     </div>
-    <div class="stats">
-      <div class="stat"><b data-count="7">0</b><span data-i18n="stat1">WordPress sites delivered</span></div>
-      <div class="stat"><b>24/7</b><span data-i18n="stat2">Operations coverage</span></div>
-      <div class="stat"><b>02</b><span data-i18n="stat3">Arabic &amp; English</span></div>
-    </div>
-  </div>
-  <div class="marquee" aria-hidden="true">
-    <div class="track" id="mqTrack"></div>
-  </div>
-</section>
 
-<section class="sec" id="about">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="kicker"><span class="idx">01</span><span class="lbl" data-i18n="about.lbl">Profile</span></div>
-      <div>
-        <h2 class="sec-title" data-i18n="about.title">Operations discipline.<br><em>Web craft.</em></h2>
-        <p class="sec-desc" data-i18n="about.desc">Two jobs that look different — and are actually the same job: keep critical systems alive, and make them work for people.</p>
-      </div>
-    </div>
-    <div class="about-grid">
-      <div class="about-copy">
-        <p class="rv" data-i18n="about.p1">I'm a Management Information Systems graduate who ended up exactly where technology meets real operations. At <strong>DP World Sokhna</strong> I run the control room: cameras, access control, fire systems, radio traffic, and the coordination that keeps a working port moving.</p>
-        <p class="rv" style="--d:.08s" data-i18n="about.p2">In parallel I build and maintain <strong>WordPress websites for paying clients</strong> — hosting, installation, plugins, and the messy problems nobody wants to touch. I'm not a classically trained programmer. I'm the person who understands how the whole stack fits together, reads the error, traces it, and gets the site back online.</p>
-        <blockquote class="quote rv" style="--d:.14s" data-i18n="about.quote">“Most website problems aren't code problems. They're hosting, configuration, and attention problems.”</blockquote>
-      </div>
-      <div class="facts rv" style="--d:.1s">
-        <div><dt data-i18n="fact.loc">Location</dt><dd data-i18n="fv.loc">Suez, Egypt — open to remote</dd></div>
-        <div><dt data-i18n="fact.now">Current role</dt><dd data-i18n="fv.now">Control Room Operator, DP World</dd></div>
-        <div><dt data-i18n="fact.edu">Education</dt><dd data-i18n="fv.edu">B.Sc. Management Information Systems</dd></div>
-        <div><dt data-i18n="fact.focus">Focus</dt><dd data-i18n="fv.focus">WordPress, hosting &amp; IT operations</dd></div>
-        <div><dt data-i18n="fact.lang">Languages</dt><dd data-i18n="fv.lang">Arabic (native) · English (B2)</dd></div>
-        <div><dt data-i18n="fact.status">Status</dt><dd data-i18n="fv.status">Available for a new role</dd></div>
-      </div>
+    <div class="nums">
+      <div><b>07</b><span data-i18n="n1">live WordPress sites</span></div>
+      <div><b>24h</b><span data-i18n="n2">typical reply time</span></div>
+      <div><b>AR / EN</b><span data-i18n="n3">bilingual builds</span></div>
     </div>
   </div>
-</section>
-
-<section class="sec" id="experience">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="kicker"><span class="idx">02</span><span class="lbl" data-i18n="exp.lbl">Experience</span></div>
-      <div>
-        <h2 class="sec-title" data-i18n="exp.title">Where I've done the work</h2>
-        <p class="sec-desc" data-i18n="exp.desc">One role inside a critical operation, one practice built client by client — and the infrastructure work that connects them.</p>
-      </div>
-    </div>
-    <div class="log">
-      <article class="role rv">
-        <div class="role-top">
-          <h3 data-i18n="e1.role">Control Room Operator</h3>
-          <span class="chip now" data-i18n="e1.tag">Current</span>
-        </div>
-        <div class="org" data-i18n="e1.org">DP World — Sokhna Port, Egypt</div>
-        <p data-i18n="e1.p">First line of awareness for everything happening across the port: security systems, safety systems, and the people who depend on them.</p>
-        <ul class="duties">
-          <li data-i18n="e1.b1">Monitor CCTV, access control, and perimeter security continuously</li>
-          <li data-i18n="e1.b2">Operate fire alarm and life-safety panels and respond to alerts</li>
-          <li data-i18n="e1.b3">Coordinate with shipping lines, port authorities, and logistics teams</li>
-          <li data-i18n="e1.b4">Follow international port security procedures and document incidents</li>
-          <li data-i18n="e1.b5">Keep an accurate control log across shift handovers</li>
-        </ul>
-      </article>
-      <article class="role rv" style="--d:.08s">
-        <div class="role-top">
-          <h3 data-i18n="e2.role">WordPress Developer &amp; Site Manager</h3>
-          <span class="chip now" data-i18n="e2.tag">Ongoing</span>
-        </div>
-        <div class="org" data-i18n="e2.org">Freelance — remote, paid client work</div>
-        <p data-i18n="e2.p">I take a client from an empty hosting account to a live, working website — then keep it alive, updated, and fast.</p>
-        <ul class="duties">
-          <li data-i18n="e2.b1">Set up hosting, domains, DNS, SSL, and business email</li>
-          <li data-i18n="e2.b2">Install and configure WordPress, themes, and plugins</li>
-          <li data-i18n="e2.b3">Build marketplaces (Dokan), course platforms (LearnPress), and stores (WooCommerce)</li>
-          <li data-i18n="e2.b4">Diagnose plugin conflicts, 500 errors, broken layouts, and slow pages</li>
-          <li data-i18n="e2.b5">Manage backups, staging copies, and safe updates on live sites</li>
-          <li data-i18n="e2.b6">Hand over a site the client can actually run themselves</li>
-        </ul>
-      </article>
-      <article class="role rv" style="--d:.16s">
-        <div class="role-top">
-          <h3 data-i18n="e3.role">IT &amp; Network Support</h3>
-          <span class="chip" data-i18n="e3.tag">Independent</span>
-        </div>
-        <div class="org" data-i18n="e3.org">Small business &amp; personal infrastructure</div>
-        <p data-i18n="e3.p">The unglamorous work that keeps devices talking to each other — and keeps a small office or home network usable.</p>
-        <ul class="duties">
-          <li data-i18n="e3.b1">Configure routers, Wi-Fi, DHCP, and DNS; trace connectivity failures</li>
-          <li data-i18n="e3.b2">Run a Debian Linux home server for network-wide ad blocking and file sharing</li>
-          <li data-i18n="e3.b3">Deploy local AI models on consumer hardware for private, offline use</li>
-          <li data-i18n="e3.b4">Set up Windows machines, users, printers, and shared folders</li>
-        </ul>
-      </article>
-    </div>
-  </div>
+  <div class="tick" aria-hidden="true"><div class="tr" id="tr"></div></div>
 </section>
 
 <section class="sec" id="work">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="kicker"><span class="idx">03</span><span class="lbl" data-i18n="work.lbl">Selected work</span></div>
+    <div class="sh rv">
+      <div class="kick"><b>01</b><span data-i18n="work.lbl">Work</span></div>
       <div>
-        <h2 class="sec-title" data-i18n="work.title">Sites that are actually live</h2>
-        <p class="sec-desc" data-i18n="work.desc">Real clients, real traffic, real support after launch. Click through — every one of these is online right now.</p>
+        <h2 data-i18n="work.title">Real clients. <em>Live</em> right now.</h2>
+        <p class="sub" data-i18n="work.sub">Click any card — everything below is online and being used today.</p>
       </div>
     </div>
-    <div class="work-grid">
-      <a class="card rv tilt" href="https://eg-app.com" target="_blank" rel="noopener">
-        <div class="card-top"><span class="card-idx">/ 01</span><span class="card-kind" data-i18n="w1.kind">Agency + store</span></div>
+    <div class="work">
+      <a class="w rv" href="https://eg-app.com" target="_blank" rel="noopener">
+        <div class="w-top"><span class="id">/ 01</span><span class="kind" data-i18n="w1.kind">Agency + store</span></div>
         <h3>Eg App</h3>
-        <div class="sub">eg-app.com</div>
-        <p data-i18n="w1.p">Agency site plus a digital-product store: WordPress templates, plugins, ebooks, and automation kits — fully bilingual in Arabic and English.</p>
-        <div class="tags"><span class="tag">WordPress</span><span class="tag">WooCommerce</span><span class="tag">AR / EN</span></div>
-        <span class="card-link"><span data-i18n="common.visit">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        <div class="dom">eg-app.com</div>
+        <p data-i18n="w1.p">Agency site plus a digital-product store, fully bilingual in Arabic and English.</p>
+        <div class="tags"><span class="tag">WooCommerce</span><span class="tag">AR / EN</span></div>
+        <span class="go"><span data-i18n="visit">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
       </a>
-      <a class="card rv tilt" style="--d:.06s" href="https://farha.wuaze.com" target="_blank" rel="noopener">
-        <div class="card-top"><span class="card-idx">/ 02</span><span class="card-kind" data-i18n="w2.kind">Marketplace</span></div>
+      <a class="w rv" style="--d:.06s" href="https://farha.wuaze.com" target="_blank" rel="noopener">
+        <div class="w-top"><span class="id">/ 02</span><span class="kind" data-i18n="w2.kind">Marketplace</span></div>
         <h3 data-i18n="w2.name">Farha</h3>
-        <div class="sub">farha.wuaze.com</div>
-        <p data-i18n="w2.p">A multi-vendor wedding platform where couples book venues, photography, catering, and styling — with vendor dashboards and request-based booking.</p>
-        <div class="tags"><span class="tag">Dokan</span><span class="tag">Multi-vendor</span><span class="tag">Booking</span></div>
-        <span class="card-link"><span data-i18n="common.visit">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        <div class="dom">farha.wuaze.com</div>
+        <p data-i18n="w2.p">Wedding marketplace: vendors list venues, photography and catering, couples book.</p>
+        <div class="tags"><span class="tag">Dokan</span><span class="tag">Multi-vendor</span></div>
+        <span class="go"><span data-i18n="visit">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
       </a>
-      <a class="card rv tilt" style="--d:.12s" href="https://tamayoz.wuaze.com" target="_blank" rel="noopener">
-        <div class="card-top"><span class="card-idx">/ 03</span><span class="card-kind" data-i18n="w3.kind">E-learning</span></div>
+      <a class="w rv" style="--d:.12s" href="https://tamayoz.wuaze.com" target="_blank" rel="noopener">
+        <div class="w-top"><span class="id">/ 03</span><span class="kind" data-i18n="w3.kind">E-learning</span></div>
         <h3 data-i18n="w3.name">Tamayoz</h3>
-        <div class="sub">tamayoz.wuaze.com</div>
-        <p data-i18n="w3.p">A learning platform for Gulf curricula: recorded and live lessons, structured course sections, and interactive quizzes for every unit.</p>
-        <div class="tags"><span class="tag">LearnPress</span><span class="tag">LMS</span><span class="tag">Quizzes</span></div>
-        <span class="card-link"><span data-i18n="common.visit">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        <div class="dom">tamayoz.wuaze.com</div>
+        <p data-i18n="w3.p">Gulf-curriculum courses with recorded lessons, live classes and quizzes.</p>
+        <div class="tags"><span class="tag">LearnPress</span><span class="tag">LMS</span></div>
+        <span class="go"><span data-i18n="visit">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
       </a>
-      <a class="card rv tilt" style="--d:.18s" href="https://screen.eg-app.com" target="_blank" rel="noopener">
-        <div class="card-top"><span class="card-idx">/ 04</span><span class="card-kind" data-i18n="w4.kind">Store</span></div>
+      <a class="w rv" style="--d:.18s" href="https://screen.eg-app.com" target="_blank" rel="noopener">
+        <div class="w-top"><span class="id">/ 04</span><span class="kind" data-i18n="w4.kind">Store</span></div>
         <h3>Screen EG</h3>
-        <div class="sub">screen.eg-app.com</div>
-        <p data-i18n="w4.p">A bilingual catalogue for digital signage, transparent displays, and hologram units — with detailed specs, clear pricing, and a smooth buying flow.</p>
-        <div class="tags"><span class="tag">WooCommerce</span><span class="tag">Catalogue</span><span class="tag">AR / EN</span></div>
-        <span class="card-link"><span data-i18n="common.visit">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        <div class="dom">screen.eg-app.com</div>
+        <p data-i18n="w4.p">Catalogue and store for digital signage, transparent screens and hologram units.</p>
+        <div class="tags"><span class="tag">WooCommerce</span><span class="tag">AR / EN</span></div>
+        <span class="go"><span data-i18n="visit">Visit site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
       </a>
-    </div>
-    <div class="lab rv" style="--d:.06s">
-      <div>
-        <h4 data-i18n="lab1.t">Debian home server</h4>
-        <p data-i18n="lab1.p">AdGuard Home DNS filtering plus Samba shares — ad-free browsing and shared files across every device on the network.</p>
-      </div>
-      <div>
-        <h4 data-i18n="lab2.t">Local AI, fully offline</h4>
-        <p data-i18n="lab2.p">Language models running on consumer hardware with no cloud dependency — private by design, tuned around the hardware I actually have.</p>
-      </div>
-      <div>
-        <h4 data-i18n="lab3.t">AI-assisted delivery</h4>
-        <p data-i18n="lab3.p">AI agents for build, audit, and testing — then every change verified by hand before it reaches a client's live site.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="skills">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div class="kicker"><span class="idx">04</span><span class="lbl" data-i18n="skills.lbl">Capabilities</span></div>
-      <div>
-        <h2 class="sec-title" data-i18n="skills.title">What I can be trusted with</h2>
-        <p class="sec-desc" data-i18n="skills.desc">No inflated percentages. This is the work I've actually done, on production systems, with clients depending on the result.</p>
-      </div>
-    </div>
-    <div class="skill-grid">
-      <div class="skill-col rv">
-        <h3 data-i18n="g1.t">WordPress &amp; hosting</h3>
-        <ul>
-          <li data-i18n="g1.1">Installation, themes &amp; plugin configuration</li>
-          <li data-i18n="g1.2">WooCommerce, Dokan, LearnPress, Elementor</li>
-          <li data-i18n="g1.3">Hosting panels, domains, DNS, SSL, email</li>
-          <li data-i18n="g1.4">Backups, staging copies, and migrations</li>
-          <li data-i18n="g1.5">Troubleshooting, recovery, and safe updates</li>
-        </ul>
-      </div>
-      <div class="skill-col rv" style="--d:.06s">
-        <h3 data-i18n="g2.t">Systems &amp; networks</h3>
-        <ul>
-          <li data-i18n="g2.1">Windows and Debian Linux</li>
-          <li data-i18n="g2.2">Routers, Wi-Fi, DHCP, and DNS</li>
-          <li data-i18n="g2.3">TCP/IP and connectivity tracing</li>
-          <li data-i18n="g2.4">CCTV, access control, fire panels</li>
-          <li data-i18n="g2.5">Hardware and peripheral setup</li>
-        </ul>
-      </div>
-      <div class="skill-col rv" style="--d:.12s">
-        <h3 data-i18n="g3.t">AI &amp; automation</h3>
-        <ul>
-          <li data-i18n="g3.1">Local LLM deployment (LM Studio, Ollama)</li>
-          <li data-i18n="g3.2">AI-assisted build and audit workflows</li>
-          <li data-i18n="g3.3">Telegram and WhatsApp integrations</li>
-          <li data-i18n="g3.4">Workflow automation and lead routing</li>
-          <li data-i18n="g3.5">Prompting, testing, output verification</li>
-        </ul>
-      </div>
-    </div>
-    <div class="how rv" style="--d:.06s">
-      <div><b>01</b><span data-i18n="how.1">Read the error before touching anything</span></div>
-      <div><b>02</b><span data-i18n="how.2">Test on staging, never on a live site</span></div>
-      <div><b>03</b><span data-i18n="how.3">Document what changed and why</span></div>
-      <div><b>04</b><span data-i18n="how.4">Answer the client the same day</span></div>
     </div>
   </div>
 </section>
 
 <section class="sec" id="services">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div class="kicker"><span class="idx">05</span><span class="lbl" data-i18n="svc.lbl">Services</span></div>
+    <div class="sh rv">
+      <div class="kick"><b>02</b><span data-i18n="sv.lbl">Services</span></div>
       <div>
-        <h2 class="sec-title" data-i18n="svc.title">What I do for clients</h2>
-        <p class="sec-desc" data-i18n="svc.desc">Clear scope, honest timelines, and a site you can manage after I hand it over.</p>
+        <h2 data-i18n="sv.title">What I <em>do</em>.</h2>
+        <p class="sub" data-i18n="sv.sub">Clear scope, honest timing, and a site you can run yourself afterwards.</p>
       </div>
     </div>
-    <div class="svc-grid">
-      <article class="svc rv"><span class="num">01</span><h3 data-i18n="s1.t">WordPress setup</h3><p data-i18n="s1.p">From a blank hosting account to a finished, fast site — installed, configured, and handed over ready to use.</p></article>
-      <article class="svc rv" style="--d:.06s"><span class="num">02</span><h3 data-i18n="s2.t">Fix &amp; rescue</h3><p data-i18n="s2.p">White screen, 500 error, broken layout, plugin conflict, hacked site. I find the cause and get it back online.</p></article>
-      <article class="svc rv" style="--d:.12s"><span class="num">03</span><h3 data-i18n="s3.t">Hosting &amp; domains</h3><p data-i18n="s3.p">DNS, SSL, email, backups, and migrations between hosts — the part everyone forgets until it breaks.</p></article>
-      <article class="svc rv" style="--d:.18s"><span class="num">04</span><h3 data-i18n="s4.t">Stores &amp; courses</h3><p data-i18n="s4.p">Dokan multi-vendor stores, LearnPress course platforms, and WooCommerce catalogues in Arabic and English.</p></article>
+    <div class="sv">
+      <article class="s rv"><span class="n">01</span><h3 data-i18n="s1.t">Build it</h3><p data-i18n="s1.p">Hosting, WordPress install, theme, plugins, content and launch.</p></article>
+      <article class="s rv" style="--d:.06s"><span class="n">02</span><h3 data-i18n="s2.t">Fix it</h3><p data-i18n="s2.p">White screens, 500 errors, plugin conflicts, broken layouts, slow pages.</p></article>
+      <article class="s rv" style="--d:.12s"><span class="n">03</span><h3 data-i18n="s3.t">Run it</h3><p data-i18n="s3.p">Domains, DNS, SSL, email, backups, updates and safe migrations.</p></article>
     </div>
   </div>
 </section>
 
-<section class="sec contact" id="contact">
-  <div class="wrap contact-inner">
-    <div class="kicker rv" style="justify-content:center;position:static;flex-direction:row;margin-bottom:18px">
-      <span class="idx">06</span><span class="lbl" data-i18n="contact.lbl">Contact</span>
+<section class="sec" id="experience">
+  <div class="wrap">
+    <div class="sh rv">
+      <div class="kick"><b>03</b><span data-i18n="ex.lbl">Experience</span></div>
+      <div>
+        <h2 data-i18n="ex.title">Where I learned to <em>stay calm</em>.</h2>
+      </div>
     </div>
-    <h2 class="rv" data-i18n="contact.title">Let's build something that <em>actually works</em>.</h2>
-    <p class="lead rv" style="--d:.06s" data-i18n="contact.lead">I'm looking for a full-time role in IT operations or web operations — and I still take on selected freelance projects. Tell me what's broken, or what you want to launch.</p>
-    <div class="contact-actions rv" style="--d:.12s">
-      <a class="btn btn-primary mag" href="mailto:abdelrahman959@gmail.com">
+    <div class="rows">
+      <article class="row rv">
+        <h3 data-i18n="e1.role">WordPress Developer &amp; Site Manager</h3>
+        <span class="chip on" data-i18n="e1.chip">Ongoing</span>
+        <div class="org" data-i18n="e1.org">Freelance · paid client work</div>
+        <p class="note" data-i18n="e1.note">Hosting, installs, plugins, fixes — from an empty account to a site the client runs alone.</p>
+      </article>
+      <article class="row rv" style="--d:.05s">
+        <h3 data-i18n="e2.role">IT &amp; Network Support</h3>
+        <span class="chip" data-i18n="e2.chip">Independent</span>
+        <div class="org" data-i18n="e2.org">Small business &amp; home infrastructure</div>
+        <p class="note" data-i18n="e2.note">Routers, DNS, Debian servers, printers and every connectivity problem in between.</p>
+      </article>
+      <article class="row rv" style="--d:.1s">
+        <h3 data-i18n="e3.role">Control Room Operator</h3>
+        <span class="chip past" data-i18n="e3.chip">Past</span>
+        <div class="org" data-i18n="e3.org">DP World — Sokhna Port</div>
+        <p class="note" data-i18n="e3.note">CCTV, access control and fire systems. Twelve-hour shifts where a missed alert mattered.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sh rv">
+      <div class="kick"><b>04</b><span data-i18n="ab.lbl">About</span></div>
+      <div>
+        <h2 data-i18n="ab.title">The short version.</h2>
+      </div>
+    </div>
+    <div class="ab">
+      <div class="rv">
+        <p data-i18n="ab.p1">I'm a Management Information Systems graduate from Suez. I learned WordPress the only way that sticks: by running it for real clients who needed it to work on Monday.</p>
+        <p data-i18n="ab.p2">I don't write code from scratch — and I won't pretend to. I understand how the pieces fit, read the error, and fix it. That habit came from the control room: stay calm, find the fault, restore service.</p>
+      </div>
+      <dl class="facts rv" style="--d:.06s">
+        <div><dt data-i18n="f1">Based in</dt><dd data-i18n="f1v">Suez, Egypt · remote</dd></div>
+        <div><dt data-i18n="f2">Focus</dt><dd data-i18n="f2v">WordPress, hosting, IT ops</dd></div>
+        <div><dt data-i18n="f3">Languages</dt><dd data-i18n="f3v">Arabic · English</dd></div>
+        <div><dt data-i18n="f4">Education</dt><dd data-i18n="f4v">B.Sc. Information Systems</dd></div>
+        <div><dt data-i18n="f5">Status</dt><dd data-i18n="f5v">Open to a new role</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="sec ct" id="contact">
+  <div class="wrap">
+    <div class="kick rv" style="justify-content:center"><b>05</b><span data-i18n="ct.lbl">Contact</span></div>
+    <h2 class="rv" data-i18n="ct.title">Got a site that's <em>down</em>?</h2>
+    <p class="sub rv" style="--d:.06s" data-i18n="ct.sub">Or one that doesn't exist yet. Tell me what you need — I'll reply the same day.</p>
+    <div class="acts rv" style="--d:.1s">
+      <a class="btn btn-p" href="mailto:abdelrahman959@gmail.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-9 6-9-6"/></svg>
-        <span data-i18n="contact.emailBtn">Email me</span>
+        <span data-i18n="ct.email">Email me</span>
       </a>
-      <a class="btn btn-ghost mag" href="https://wa.me/201274757241" target="_blank" rel="noopener">
+      <a class="btn btn-g" href="https://wa.me/201274757241" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 21l2.3-5.3A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8.5 9.5c.5 2 2 3.5 4 4l1.2-1.2 1.8.8v1.5c0 .6-.5 1.1-1.1 1.1-3.5-.2-6.3-3-6.4-6.4 0-.6.5-1.1 1.1-1.1h1.4l.8 1.8-1.3 1.2"/></svg>
-        <span data-i18n="contact.waBtn">WhatsApp</span>
+        <span data-i18n="ct.wa">WhatsApp</span>
       </a>
-      <button class="btn btn-ghost" id="copyBtn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        <span id="copyTxt" data-i18n="contact.copy">Copy email</span>
-      </button>
     </div>
-    <div class="contact-lines rv" style="--d:.18s">
+    <div class="lines rv" style="--d:.14s">
       <a href="mailto:abdelrahman959@gmail.com">abdelrahman959@gmail.com</a>
-      <a href="tel:+201274757241">+20 127 475 7241</a>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg><span data-i18n="contact.loc">Suez, Egypt</span></span>
+      <a href="tel:+201274757241" dir="ltr">+20 127 475 7241</a>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg><span data-i18n="ct.loc">Suez, Egypt</span></span>
     </div>
   </div>
 </section>
 </main>
 
-<footer class="foot">
-  <div class="wrap foot-in">
-    <span data-i18n="foot.copy">© 2026 Abdelrahman Waleed. All rights reserved.</span>
-    <span class="mono" data-i18n="foot.made">Designed &amp; maintained by me</span>
-    <a class="to-top" href="#top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span data-i18n="foot.top">Back to top</span></a>
+<footer class="ft">
+  <div class="wrap ft-in">
+    <span data-i18n="ft.copy">© 2026 Abdelrahman Waleed</span>
+    <span class="mono" data-i18n="ft.made">Built and maintained by me</span>
+    <a class="top" href="#top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg><span data-i18n="ft.top">Top</span></a>
   </div>
 </footer>
 
@@ -803,380 +536,204 @@ html[lang="ar"] .status-row dt{text-align:end}
 (function(){
   'use strict';
 
-  /* ================= i18n ================= */
+  var HTML_KEYS = { 'hero.l2':1, 'work.title':1, 'sv.title':1, 'ex.title':1, 'ct.title':1 };
+
   var I18N = {
     en: {
       skip:'Skip to content',
-      'brand.role':'WordPress & IT Operations',
-      'nav.about':'About','nav.exp':'Experience','nav.work':'Work','nav.skills':'Skills','nav.services':'Services','nav.contact':'Contact',
-      'hero.badge':'Open to new opportunities',
-      'hero.name1':'Abdelrahman','hero.name2':'Waleed',
-      'hero.role':'WordPress Developer','hero.role2':'IT Operations',
-      'hero.lead':'I build, fix, and run WordPress websites for real businesses — and keep port control-room systems online around the clock. Seven live sites, real clients, and a habit of solving the problems nobody else wants to touch.',
-      'hero.cta1':'Start a conversation','hero.cta2':'See my work',
-      'meta.loc':'Suez, Egypt','meta.lang':'Arabic · English','meta.avail':'Full-time & freelance',
-      'status.title':'System status','status.live':'Live',
-      'status.k1':'Role','status.v1':'Control Room Operator · DP World',
-      'status.k2':'Stack','status.v2':'WordPress · Linux · Networks',
-      'status.k3':'Focus','status.v3':'Building & rescuing live sites',
-      'status.k4':'Base','status.v4':'Suez, Egypt · Remote ready',
-      'status.k5':'Coverage','status.v5':'24/7 operations',
-      'stat1':'WordPress sites delivered','stat2':'Operations coverage','stat3':'Arabic & English',
-      'about.lbl':'Profile',
-      'about.title':'Operations discipline.<br><em>Web craft.</em>',
-      'about.desc':"Two jobs that look different — and are actually the same job: keep critical systems alive, and make them work for people.",
-      'about.p1':"I'm a Management Information Systems graduate who ended up exactly where technology meets real operations. At <strong>DP World Sokhna</strong> I run the control room: cameras, access control, fire systems, radio traffic, and the coordination that keeps a working port moving.",
-      'about.p2':"In parallel I build and maintain <strong>WordPress websites for paying clients</strong> — hosting, installation, plugins, and the messy problems nobody wants to touch. I'm not a classically trained programmer. I'm the person who understands how the whole stack fits together, reads the error, traces it, and gets the site back online.",
-      'about.quote':'“Most website problems aren’t code problems. They’re hosting, configuration, and attention problems.”',
-      'fact.loc':'Location','fact.now':'Current role','fact.edu':'Education','fact.focus':'Focus','fact.lang':'Languages','fact.status':'Status',
-      'fv.loc':'Suez, Egypt — open to remote','fv.now':'Control Room Operator, DP World',
-      'fv.edu':'B.Sc. Management Information Systems','fv.focus':'WordPress, hosting & IT operations',
-      'fv.lang':'Arabic (native) · English (B2)','fv.status':'Available for a new role',
-      'exp.lbl':'Experience','exp.title':"Where I've done the work",
-      'exp.desc':'One role inside a critical operation, one practice built client by client — and the infrastructure work that connects them.',
-      'e1.role':'Control Room Operator','e1.tag':'Current','e1.org':'DP World — Sokhna Port, Egypt',
-      'e1.p':'First line of awareness for everything happening across the port: security systems, safety systems, and the people who depend on them.',
-      'e1.b1':'Monitor CCTV, access control, and perimeter security continuously',
-      'e1.b2':'Operate fire alarm and life-safety panels and respond to alerts',
-      'e1.b3':'Coordinate with shipping lines, port authorities, and logistics teams',
-      'e1.b4':'Follow international port security procedures and document incidents',
-      'e1.b5':'Keep an accurate control log across shift handovers',
-      'e2.role':'WordPress Developer & Site Manager','e2.tag':'Ongoing','e2.org':'Freelance — remote, paid client work',
-      'e2.p':'I take a client from an empty hosting account to a live, working website — then keep it alive, updated, and fast.',
-      'e2.b1':'Set up hosting, domains, DNS, SSL, and business email',
-      'e2.b2':'Install and configure WordPress, themes, and plugins',
-      'e2.b3':'Build marketplaces (Dokan), course platforms (LearnPress), and stores (WooCommerce)',
-      'e2.b4':'Diagnose plugin conflicts, 500 errors, broken layouts, and slow pages',
-      'e2.b5':'Manage backups, staging copies, and safe updates on live sites',
-      'e2.b6':'Hand over a site the client can actually run themselves',
-      'e3.role':'IT & Network Support','e3.tag':'Independent','e3.org':'Small business & personal infrastructure',
-      'e3.p':'The unglamorous work that keeps devices talking to each other — and keeps a small office or home network usable.',
-      'e3.b1':'Configure routers, Wi-Fi, DHCP, and DNS; trace connectivity failures',
-      'e3.b2':'Run a Debian Linux home server for network-wide ad blocking and file sharing',
-      'e3.b3':'Deploy local AI models on consumer hardware for private, offline use',
-      'e3.b4':'Set up Windows machines, users, printers, and shared folders',
-      'work.lbl':'Selected work','work.title':'Sites that are actually live',
-      'work.desc':'Real clients, real traffic, real support after launch. Click through — every one of these is online right now.',
-      'w1.kind':'Agency + store','w1.p':'Agency site plus a digital-product store: WordPress templates, plugins, ebooks, and automation kits — fully bilingual in Arabic and English.',
-      'w2.kind':'Marketplace','w2.name':'Farha','w2.p':'A multi-vendor wedding platform where couples book venues, photography, catering, and styling — with vendor dashboards and request-based booking.',
-      'w3.kind':'E-learning','w3.name':'Tamayoz','w3.p':'A learning platform for Gulf curricula: recorded and live lessons, structured course sections, and interactive quizzes for every unit.',
-      'w4.kind':'Store','w4.p':'A bilingual catalogue for digital signage, transparent displays, and hologram units — with detailed specs, clear pricing, and a smooth buying flow.',
-      'common.visit':'Visit site',
-      'lab1.t':'Debian home server','lab1.p':'AdGuard Home DNS filtering plus Samba shares — ad-free browsing and shared files across every device on the network.',
-      'lab2.t':'Local AI, fully offline','lab2.p':'Language models running on consumer hardware with no cloud dependency — private by design, tuned around the hardware I actually have.',
-      'lab3.t':'AI-assisted delivery','lab3.p':"AI agents for build, audit, and testing — then every change verified by hand before it reaches a client's live site.",
-      'skills.lbl':'Capabilities','skills.title':'What I can be trusted with',
-      'skills.desc':"No inflated percentages. This is the work I've actually done, on production systems, with clients depending on the result.",
-      'g1.t':'WordPress & hosting','g1.1':'Installation, themes & plugin configuration','g1.2':'WooCommerce, Dokan, LearnPress, Elementor',
-      'g1.3':'Hosting panels, domains, DNS, SSL, email','g1.4':'Backups, staging copies, and migrations','g1.5':'Troubleshooting, recovery, and safe updates',
-      'g2.t':'Systems & networks','g2.1':'Windows and Debian Linux','g2.2':'Routers, Wi-Fi, DHCP, and DNS','g2.3':'TCP/IP and connectivity tracing',
-      'g2.4':'CCTV, access control, fire panels','g2.5':'Hardware and peripheral setup',
-      'g3.t':'AI & automation','g3.1':'Local LLM deployment (LM Studio, Ollama)','g3.2':'AI-assisted build and audit workflows',
-      'g3.3':'Telegram and WhatsApp integrations','g3.4':'Workflow automation and lead routing','g3.5':'Prompting, testing, output verification',
-      'how.1':'Read the error before touching anything','how.2':'Test on staging, never on a live site',
-      'how.3':'Document what changed and why','how.4':'Answer the client the same day',
-      'svc.lbl':'Services','svc.title':'What I do for clients',
-      'svc.desc':'Clear scope, honest timelines, and a site you can manage after I hand it over.',
-      's1.t':'WordPress setup','s1.p':'From a blank hosting account to a finished, fast site — installed, configured, and handed over ready to use.',
-      's2.t':'Fix & rescue','s2.p':'White screen, 500 error, broken layout, plugin conflict, hacked site. I find the cause and get it back online.',
-      's3.t':'Hosting & domains','s3.p':'DNS, SSL, email, backups, and migrations between hosts — the part everyone forgets until it breaks.',
-      's4.t':'Stores & courses','s4.p':'Dokan multi-vendor stores, LearnPress course platforms, and WooCommerce catalogues in Arabic and English.',
-      'contact.lbl':'Contact','contact.title':"Let's build something that <em>actually works</em>.",
-      'contact.lead':"I'm looking for a full-time role in IT operations or web operations — and I still take on selected freelance projects. Tell me what's broken, or what you want to launch.",
-      'contact.emailBtn':'Email me','contact.waBtn':'WhatsApp','contact.copy':'Copy email','contact.loc':'Suez, Egypt',
-      'foot.copy':'© 2026 Abdelrahman Waleed. All rights reserved.','foot.made':'Designed & maintained by me','foot.top':'Back to top',
-      mq:['WordPress','Hosting & DNS','Plugin Fixes','WooCommerce','Dokan','LearnPress','Debian Linux','Networking','CCTV & Access Control','Local AI','Site Recovery','Backups'],
-      title:'Abdelrahman Waleed — WordPress Developer & IT Operations',
-      desc:'WordPress developer and IT operations specialist in Suez, Egypt. I build, fix, and run WordPress websites, and keep port control-room systems online.'
+      'nav.work':'Work','nav.services':'Services','nav.experience':'Experience','nav.about':'About','nav.contact':'Contact','nav.cta':'Hire me',
+      'hero.badge':'WordPress · open for work',
+      'hero.l1':'I build sites',
+      'hero.l2':'that <em>sell</em>.',
+      'hero.lede':'Seven live WordPress sites for paying clients — a wedding marketplace, a Gulf e-learning platform, two stores. When one of them breaks, I get it back online.',
+      'hero.cta1':'See the work','hero.cta2':'WhatsApp me',
+      'proof.title':'Live right now','proof.live':'Online',
+      'n1':'live WordPress sites','n2':'typical reply time','n3':'bilingual builds',
+      'work.lbl':'Work','work.title':'Real clients. <em>Live</em> right now.',
+      'work.sub':'Click any card — everything below is online and being used today.',
+      'w1.kind':'Agency + store','w1.p':'Agency site plus a digital-product store, fully bilingual in Arabic and English.',
+      'w2.kind':'Marketplace','w2.name':'Farha','w2.p':'Wedding marketplace: vendors list venues, photography and catering, couples book.',
+      'w3.kind':'E-learning','w3.name':'Tamayoz','w3.p':'Gulf-curriculum courses with recorded lessons, live classes and quizzes.',
+      'w4.kind':'Store','w4.p':'Catalogue and store for digital signage, transparent screens and hologram units.',
+      visit:'Visit site',
+      'sv.lbl':'Services','sv.title':'What I <em>do</em>.','sv.sub':'Clear scope, honest timing, and a site you can run yourself afterwards.',
+      's1.t':'Build it','s1.p':'Hosting, WordPress install, theme, plugins, content and launch.',
+      's2.t':'Fix it','s2.p':'White screens, 500 errors, plugin conflicts, broken layouts, slow pages.',
+      's3.t':'Run it','s3.p':'Domains, DNS, SSL, email, backups, updates and safe migrations.',
+      'ex.lbl':'Experience','ex.title':'Where I learned to <em>stay calm</em>.',
+      'e1.role':'WordPress Developer & Site Manager','e1.chip':'Ongoing','e1.org':'Freelance · paid client work',
+      'e1.note':'Hosting, installs, plugins, fixes — from an empty account to a site the client runs alone.',
+      'e2.role':'IT & Network Support','e2.chip':'Independent','e2.org':'Small business & home infrastructure',
+      'e2.note':'Routers, DNS, Debian servers, printers and every connectivity problem in between.',
+      'e3.role':'Control Room Operator','e3.chip':'Past','e3.org':'DP World — Sokhna Port',
+      'e3.note':'CCTV, access control and fire systems. Twelve-hour shifts where a missed alert mattered.',
+      'ab.lbl':'About','ab.title':'The short version.',
+      'ab.p1':"I'm a Management Information Systems graduate from Suez. I learned WordPress the only way that sticks: by running it for real clients who needed it to work on Monday.",
+      'ab.p2':"I don't write code from scratch — and I won't pretend to. I understand how the pieces fit, read the error, and fix it. That habit came from the control room: stay calm, find the fault, restore service.",
+      f1:'Based in',f1v:'Suez, Egypt · remote',
+      f2:'Focus',f2v:'WordPress, hosting, IT ops',
+      f3:'Languages',f3v:'Arabic · English',
+      f4:'Education',f4v:'B.Sc. Information Systems',
+      f5:'Status',f5v:'Open to a new role',
+      'ct.lbl':'Contact','ct.title':"Got a site that's <em>down</em>?",
+      'ct.sub':"Or one that doesn't exist yet. Tell me what you need — I'll reply the same day.",
+      'ct.email':'Email me','ct.wa':'WhatsApp','ct.loc':'Suez, Egypt',
+      'ft.copy':'© 2026 Abdelrahman Waleed','ft.made':'Built and maintained by me','ft.top':'Top',
+      mq:['WordPress','WooCommerce','Dokan','LearnPress','Hosting & DNS','Plugin fixes','Site recovery','Arabic / English'],
+      title:'Abdelrahman Waleed — WordPress Developer',
+      desc:'WordPress developer in Suez, Egypt. Seven live sites for paying clients — marketplaces, course platforms and stores. I build them, and I fix the ones that break.'
     },
     ar: {
       skip:'تخطَّ إلى المحتوى',
-      'brand.role':'ووردبريس وتشغيل الأنظمة',
-      'nav.about':'نبذة','nav.exp':'الخبرة','nav.work':'الأعمال','nav.skills':'المهارات','nav.services':'الخدمات','nav.contact':'تواصل',
-      'hero.badge':'متاح لفرصة عمل جديدة',
-      'hero.name1':'عبدالرحمن','hero.name2':'وليد',
-      'hero.role':'مطوّر ووردبريس','hero.role2':'تشغيل الأنظمة',
-      'hero.lead':'أبني وأصلح وأدير مواقع ووردبريس لشركات حقيقية — وأحافظ على أنظمة غرفة التحكم في الميناء شغّالة على مدار الساعة. سبعة مواقع حيّة، عملاء بيدفعوا، وعادة إني أحلّ المشاكل اللي محدش بيحب يلمسها.',
-      'hero.cta1':'ابدأ الكلام','hero.cta2':'شوف شغلي',
-      'meta.loc':'السويس، مصر','meta.lang':'عربي · إنجليزي','meta.avail':'دوام كامل وفريلانس',
-      'status.title':'حالة النظام','status.live':'مباشر',
-      'status.k1':'الدور','status.v1':'مشغّل غرفة تحكم · موانئ دبي',
-      'status.k2':'التقنيات','status.v2':'ووردبريس · لينكس · شبكات',
-      'status.k3':'التركيز','status.v3':'بناء وإنقاذ المواقع الحيّة',
-      'status.k4':'المقر','status.v4':'السويس، مصر · جاهز عن بُعد',
-      'status.k5':'التغطية','status.v5':'تشغيل 24/7',
-      'stat1':'موقع ووردبريس مُسلَّم','stat2':'تغطية تشغيلية','stat3':'عربي وإنجليزي',
-      'about.lbl':'نبذة',
-      'about.title':'انضباط تشغيلي.<br><em>وصنعة ويب.</em>',
-      'about.desc':'وظيفتان تبدوان مختلفتين — لكنهما في الحقيقة وظيفة واحدة: أن تُبقي الأنظمة الحيوية شغّالة، وتجعلها مفيدة للناس.',
-      'about.p1':'أنا خريج نظم معلومات إدارية، ووصلت لمكان بيجمع التقنية بالتشغيل الحقيقي. في <strong>موانئ دبي العالمية بالسخنة</strong> بشغّل غرفة التحكم: كاميرات، إنتركم، أنظمة حريق، وراديو — والتنسيق اللي بيخلّي ميناء شغّال فعلًا يتحرّك.',
-      'about.p2':'وعلى الجنب أبني وأدير <strong>مواقع ووردبريس لعملاء بيدفعوا</strong> — استضافة، تثبيت، إضافات، والمشاكل اللي محدش بيحب يلمسها. أنا مش مبرمج بالمعنى الأكاديمي؛ أنا الشخص اللي فاهم كل طبقات النظام مع بعض، بيقرأ الخطأ، يتتبعه، ويرجّع الموقع شغّال.',
-      'about.quote':'«أغلب مشاكل المواقع مش مشاكل كود. هي مشاكل استضافة وإعدادات واهتمام بالتفاصيل.»',
-      'fact.loc':'الموقع','fact.now':'الدور الحالي','fact.edu':'التعليم','fact.focus':'التخصص','fact.lang':'اللغات','fact.status':'الحالة',
-      'fv.loc':'السويس، مصر — متاح عن بُعد','fv.now':'مشغّل غرفة تحكم، موانئ دبي العالمية',
-      'fv.edu':'بكالوريوس نظم معلومات إدارية','fv.focus':'ووردبريس والاستضافة وتشغيل الأنظمة',
-      'fv.lang':'العربية (أم) · الإنجليزية (B2)','fv.status':'متاح لفرصة عمل جديدة',
-      'exp.lbl':'الخبرة','exp.title':'أين أنجزت العمل',
-      'exp.desc':'دور داخل عملية حرجة، وممارسة بُنيت عميلًا بعد عميل — وعمل بنية تحتية يربط بينهما.',
-      'e1.role':'مشغّل غرفة تحكم','e1.tag':'حالي','e1.org':'موانئ دبي العالمية — ميناء السخنة، مصر',
-      'e1.p':'أول خط للمتابعة لكل ما يحدث في الميناء: أنظمة الأمن، أنظمة السلامة، والناس التي تعتمد عليها.',
-      'e1.b1':'متابعة الكاميرات والإنتركم وأمن المحيط بشكل مستمر',
-      'e1.b2':'تشغيل لوحات إنذار الحريق وأنظمة السلامة والاستجابة للتنبيهات',
-      'e1.b3':'التنسيق مع خطوط الملاحة وسلطات الميناء وفرق اللوجستيات',
-      'e1.b4':'تطبيق إجراءات أمن الموانئ الدولية وتوثيق الحوادث',
-      'e1.b5':'الحفاظ على سجل تشغيل دقيق بين الورديات',
-      'e2.role':'مطوّر ومدير مواقع ووردبريس','e2.tag':'مستمر','e2.org':'عمل حر — عن بُعد، بعقود مدفوعة',
-      'e2.p':'أخذ العميل من حساب استضافة فاضي إلى موقع حيّ وشغّال — ثم الحفاظ عليه محدَّثًا وسريعًا.',
-      'e2.b1':'إعداد الاستضافة والدومينات و DNS وشهادات SSL والبريد المؤسسي',
-      'e2.b2':'تثبيت وإعداد ووردبريس والقوالب والإضافات',
-      'e2.b3':'بناء متاجر متعددة البائعين (Dokan) ومنصات كورسات (LearnPress) ومتاجر (WooCommerce)',
-      'e2.b4':'تشخيص تعارض الإضافات وأخطاء 500 والتصميم المكسور والبطء',
-      'e2.b5':'إدارة النسخ الاحتياطية ونسخ التجربة والتحديثات الآمنة على المواقع الحيّة',
-      'e2.b6':'تسليم موقع يستطيع العميل إدارته بنفسه',
-      'e3.role':'دعم تقني وشبكات','e3.tag':'مستقل','e3.org':'بنية تحتية للشركات الصغيرة والمنزل',
-      'e3.p':'العمل غير اللامع الذي يجعل الأجهزة تتحدث مع بعضها — ويُبقي شبكة مكتب صغير أو منزل قابلة للاستخدام.',
-      'e3.b1':'إعداد الراوترات والواي فاي و DHCP و DNS وتتبع أعطال الاتصال',
-      'e3.b2':'تشغيل سيرفر منزلي على Debian Linux لحجب الإعلانات ومشاركة الملفات',
-      'e3.b3':'تشغيل نماذج ذكاء اصطناعي محليًا على عتاد عادي للاستخدام الخاص دون إنترنت',
-      'e3.b4':'إعداد أجهزة ويندوز والمستخدمين والطابعات والمجلدات المشتركة',
-      'work.lbl':'أعمال مختارة','work.title':'مواقع شغّالة فعلاً',
-      'work.desc':'عملاء حقيقيون، زيارات حقيقية، ودعم بعد الإطلاق. اضغط على أي موقع — كلهم أونلاين الآن.',
-      'w1.kind':'وكالة + متجر','w1.p':'موقع وكالة مع متجر منتجات رقمية: قوالب وإضافات ووردبريس وكتب وأدوات أتمتة — بالعربي والإنجليزي.',
-      'w2.kind':'ماركت بليس','w2.name':'فرحة','w2.p':'منصة متعددة البائعين لحجز قاعات الأفراح والتصوير والضيافة والتنسيق — مع لوحة لكل بائع ونظام حجز بالطلب.',
-      'w3.kind':'تعليم إلكتروني','w3.name':'التميز','w3.p':'منصة تعليمية بمناهج خليجية: حصص مسجلة ومباشرة، أقسام منظمة، واختبارات تفاعلية لكل وحدة.',
-      'w4.kind':'متجر','w4.p':'كتالوج ثنائي اللغة للشاشات الرقمية والشاشات الشفافة وأجهزة الهولوغرام — بمواصفات تفصيلية وأسعار واضحة وتجربة شراء سلسة.',
-      'common.visit':'زيارة الموقع',
-      'lab1.t':'سيرفر منزلي Debian','lab1.p':'حجب إعلانات على مستوى الشبكة عبر AdGuard Home مع مشاركة ملفات Samba — تصفح نظيف وملفات مشتركة بين كل الأجهزة.',
-      'lab2.t':'ذكاء اصطناعي محلي بالكامل','lab2.p':'نماذج لغوية تعمل على عتاد عادي دون أي اعتماد على السحابة — خصوصية كاملة، ومضبوطة على الإمكانيات المتاحة فعلاً.',
-      'lab3.t':'تسليم بمساعدة AI','lab3.p':'استخدام وكلاء ذكاء اصطناعي للبناء والمراجعة والاختبار — ثم التحقق من كل تغيير يدويًا قبل وصوله لموقع عميل.',
-      'skills.lbl':'القدرات','skills.title':'ما يمكن الاعتماد عليّ فيه',
-      'skills.desc':'بدون نسب مبالغ فيها. هذا عمل أنجزته فعلاً، على أنظمة حيّة، وعملاء يعتمدون على النتيجة.',
-      'g1.t':'ووردبريس والاستضافة','g1.1':'التثبيت وإعداد القوالب والإضافات','g1.2':'WooCommerce وDokan وLearnPress وElementor',
-      'g1.3':'لوحات الاستضافة والدومينات وDNS وSSL والبريد','g1.4':'النسخ الاحتياطي ونسخ التجربة والترحيل','g1.5':'استكشاف الأعطال والاستعادة والتحديث الآمن',
-      'g2.t':'الأنظمة والشبكات','g2.1':'ويندوز و Debian Linux','g2.2':'الراوترات والواي فاي و DHCP و DNS','g2.3':'TCP/IP وتتبع الاتصال',
-      'g2.4':'الكاميرات والإنتركم ولوحات الحريق','g2.5':'تركيب الأجهزة والملحقات',
-      'g3.t':'الذكاء الاصطناعي والأتمتة','g3.1':'تشغيل نماذج محلية (LM Studio، Ollama)','g3.2':'سير عمل بناء ومراجعة بمساعدة AI',
-      'g3.3':'تكامل تليجرام وواتساب','g3.4':'أتمتة سير العمل وتوجيه العملاء المحتملين','g3.5':'كتابة الأوامر والاختبار والتحقق من النتائج',
-      'how.1':'اقرأ الخطأ قبل أن تلمس أي شيء','how.2':'اختبر على نسخة تجربة، لا على موقع حيّ',
-      'how.3':'وثّق ما تغيّر ولماذا','how.4':'ردّ على العميل في نفس اليوم',
-      'svc.lbl':'الخدمات','svc.title':'ما أقدّمه للعملاء','svc.desc':'نطاق واضح، مواعيد صادقة، وموقع تقدر تديره بعد التسليم.',
-      's1.t':'تجهيز ووردبريس','s1.p':'من حساب استضافة فاضي إلى موقع جاهز وسريع — مثبَّت ومُعدّ ومُسلَّم وجاهز للاستخدام.',
-      's2.t':'إصلاح وإنقاذ','s2.p':'شاشة بيضا، خطأ 500، تصميم مكسور، تعارض إضافات، موقع مخترق. أجد السبب وأرجعه شغّال.',
-      's3.t':'الاستضافة والدومينات','s3.p':'DNS وSSL والبريد والنسخ الاحتياطي والترحيل بين الاستضافات — الجزء اللي الكل بينساه لحد ما يتعطّل.',
-      's4.t':'متاجر ومنصات كورسات','s4.p':'متاجر Dokan متعددة البائعين، منصات LearnPress، وكتالوجات WooCommerce بالعربي والإنجليزي.',
-      'contact.lbl':'تواصل','contact.title':'خلّينا نبني شيء <em>يشتغل فعلاً</em>.',
-      'contact.lead':'أبحث عن وظيفة بدوام كامل في تشغيل الأنظمة أو تشغيل المواقع — وما زلت أقبل مشاريع فريلانس مختارة. قولّي إيه المتعطّل، أو إيه اللي عايز تطلقه.',
-      'contact.emailBtn':'ابعت إيميل','contact.waBtn':'واتساب','contact.copy':'انسخ الإيميل','contact.loc':'السويس، مصر',
-      'foot.copy':'© 2026 عبدالرحمن وليد. جميع الحقوق محفوظة.','foot.made':'تصميم وصيانة: أنا','foot.top':'للأعلى',
-      mq:['ووردبريس','الاستضافة و DNS','إصلاح الإضافات','WooCommerce','Dokan','LearnPress','لينكس Debian','الشبكات','الكاميرات والإنتركم','ذكاء اصطناعي محلي','استعادة المواقع','النسخ الاحتياطي'],
-      title:'عبدالرحمن وليد — مطوّر ووردبريس وتشغيل الأنظمة',
-      desc:'مطوّر ووردبريس ومتخصص تشغيل أنظمة في السويس، مصر. أبني وأصلح وأدير مواقع ووردبريس، وأحافظ على أنظمة غرفة التحكم في الميناء شغّالة على مدار الساعة.'
+      'nav.work':'الأعمال','nav.services':'الخدمات','nav.experience':'الخبرة','nav.about':'نبذة','nav.contact':'تواصل','nav.cta':'كلّمني',
+      'hero.badge':'ووردبريس · متاح للشغل',
+      'hero.l1':'أبني مواقع',
+      'hero.l2':'بتجيب <em>شغل</em>.',
+      'hero.lede':'سبعة مواقع حيّة لعملاء بيدفعوا — ماركت بليس أفراح، منصة تعليم خليجية، ومتجرين. ولما أي واحد فيهم يتعطّل، أنا اللي برجّعه.',
+      'hero.cta1':'شوف الشغل','hero.cta2':'كلّمني واتساب',
+      'proof.title':'شغّال دلوقتي','proof.live':'أونلاين',
+      n1:'مواقع ووردبريس حيّة',n2:'متوسط الرد',n3:'عربي وإنجليزي',
+      'work.lbl':'الأعمال','work.title':'عملاء حقيقيين. <em>وشغّال</em> دلوقتي.',
+      'work.sub':'اضغط على أي كارت — كل اللي تحت ده أونلاين ومستخدم فعلاً.',
+      'w1.kind':'وكالة + متجر','w1.p':'موقع وكالة مع متجر منتجات رقمية، بالعربي والإنجليزي.',
+      'w2.kind':'ماركت بليس','w2.name':'فرحة','w2.p':'ماركت بليس أفراح: بائعين للقاعات والتصوير والضيافة، والعرسان بيحجزوا.',
+      'w3.kind':'تعليم إلكتروني','w3.name':'التميز','w3.p':'مناهج خليجية بحصص مسجلة ومباشرة واختبارات لكل وحدة.',
+      'w4.kind':'متجر','w4.p':'كتالوج ومتجر للشاشات الرقمية والشفافة وأجهزة الهولوغرام.',
+      visit:'زيارة الموقع',
+      'sv.lbl':'الخدمات','sv.title':'بعمل <em>إيه</em>.','sv.sub':'نطاق واضح، وقت صادق، وموقع تقدر تديره لوحدك بعدها.',
+      's1.t':'أبنيه','s1.p':'استضافة، تثبيت ووردبريس، قالب، إضافات، محتوى، وإطلاق.',
+      's2.t':'أصلّحه','s2.p':'شاشة بيضا، خطأ 500، تعارض إضافات، تصميم مكسور، وبطء.',
+      's3.t':'أديره','s3.p':'دومينات، DNS، SSL، إيميل، نسخ احتياطي، تحديثات، ونقل آمن.',
+      'ex.lbl':'الخبرة','ex.title':'منين اتعلّمت <em>أفضل هادي</em>.',
+      'e1.role':'مطوّر ومدير مواقع ووردبريس','e1.chip':'مستمر','e1.org':'عمل حر · بعقود مدفوعة',
+      'e1.note':'استضافة وتثبيت وإضافات وإصلاح — من حساب فاضي لموقع العميل بيديره لوحده.',
+      'e2.role':'دعم تقني وشبكات','e2.chip':'مستقل','e2.org':'شركات صغيرة وإنفراستركتشر منزلي',
+      'e2.note':'راوترات، DNS، سيرفرات Debian، طابعات، وكل مشكلة اتصال بينهم.',
+      'e3.role':'مشغّل غرفة تحكم','e3.chip':'سابق','e3.org':'موانئ دبي — ميناء السخنة',
+      'e3.note':'كاميرات وإنتركم وأنظمة حريق، في ورديات ١٢ ساعة أي تنبيه فيها بيفرق.',
+      'ab.lbl':'نبذة','ab.title':'باختصار.',
+      'ab.p1':'أنا خريج نظم معلومات إدارية من السويس. اتعلمت ووردبريس بالطريقة الوحيدة اللي بتثبت: إني أشغّله لعملاء حقيقيين محتاجينه يشتغل يوم الاتنين.',
+      'ab.p2':'أنا مش بكتب كود من الصفر — ومش هدّعي. بس فاهم الأجزاء بتمسك في بعضها إزاي، بقرأ الخطأ، وبصلّحه. العادة دي جاية من غرفة التحكم: اهدى، لاقي العطل، رجّع الخدمة.',
+      f1:'المقر',f1v:'السويس، مصر · عن بُعد',
+      f2:'التخصص',f2v:'ووردبريس واستضافة وتشغيل',
+      f3:'اللغات',f3v:'عربي · إنجليزي',
+      f4:'التعليم',f4v:'بكالوريوس نظم معلومات',
+      f5:'الحالة',f5v:'متاح لفرصة جديدة',
+      'ct.lbl':'تواصل','ct.title':'عندك موقع <em>واقع</em>؟',
+      'ct.sub':'أو موقع لسه مش موجود. قولّي محتاج إيه — وأرد عليك نفس اليوم.',
+      'ct.email':'ابعت إيميل','ct.wa':'واتساب','ct.loc':'السويس، مصر',
+      'ft.copy':'© 2026 عبدالرحمن وليد','ft.made':'تصميم وصيانة: أنا','ft.top':'للأعلى',
+      mq:['ووردبريس','استضافة و DNS','إصلاح الإضافات','WooCommerce','Dokan','LearnPress','لينكس','الشبكات','عربي / إنجليزي'],
+      title:'عبدالرحمن وليد — مطوّر ووردبريس',
+      desc:'مطوّر ووردبريس في السويس، مصر. سبعة مواقع حيّة لعملاء بيدفعوا — ماركت بليس ومنصات كورسات ومتاجر. أبنيها، وأصلّح اللي بيتعطّل منها.'
     }
   };
 
   var root = document.documentElement;
-  var HTML_KEYS = { 'about.title':1, 'contact.title':1 };
   var lang = 'en';
+  var dict = I18N.en;
 
   function applyLang(next){
-    lang = next;
-    var dict = I18N[lang];
+    lang = next === 'ar' ? 'ar' : 'en';
+    dict = I18N[lang];
     root.lang = lang;
     root.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.querySelectorAll('[data-i18n]').forEach(function(el){
-      var k = el.getAttribute('data-i18n');
-      var v = dict[k];
+      var v = dict[el.getAttribute('data-i18n')];
       if (typeof v !== 'string') return;
-      if (HTML_KEYS[k]) el.innerHTML = v; else el.textContent = v;
+      if (HTML_KEYS[el.getAttribute('data-i18n')]) el.innerHTML = v; else el.textContent = v;
     });
     document.title = dict.title;
     var md = document.querySelector('meta[name="description"]');
     if (md) md.setAttribute('content', dict.desc);
     document.getElementById('langTxt').textContent = lang === 'ar' ? 'EN' : 'AR';
     try { localStorage.setItem('aw-lang', lang); } catch(e){}
-    buildMarquee(dict.mq);
+    ticker(dict.mq);
   }
 
-  function buildMarquee(items){
-    var track = document.getElementById('mqTrack');
-    var half = items.map(function(t){ return '<span class="mq"><span>'+t+'</span><i></i></span>'; }).join('');
-    track.innerHTML = half + half;
+  function ticker(items){
+    var t = document.getElementById('tr');
+    var half = items.map(function(x){ return '<span class="tk"><span>'+x+'</span><i></i></span>'; }).join('');
+    t.innerHTML = half + half;
   }
 
-  /* ================= THEME ================= */
-  var THEME_SUN = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>';
-  var THEME_MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+  var SUN = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>';
+  var MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
   function setTheme(t){
     root.setAttribute('data-theme', t);
-    var icon = document.getElementById('themeIcon');
-    if (icon) icon.innerHTML = t === 'dark' ? THEME_MOON : THEME_SUN;
-    var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', t === 'dark' ? '#080907' : '#F4F3EC');
+    var ic = document.getElementById('themeIcon');
+    if (ic) ic.innerHTML = t === 'dark' ? MOON : SUN;
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.setAttribute('content', t === 'dark' ? '#080907' : '#F5F4ED');
     try { localStorage.setItem('aw-theme', t); } catch(e){}
   }
-  var savedTheme = null;
-  try { savedTheme = localStorage.getItem('aw-theme'); } catch(e){}
-  setTheme(savedTheme || 'dark');
+  var savedTheme = 'dark';
+  try { savedTheme = localStorage.getItem('aw-theme') || 'dark'; } catch(e){}
+  setTheme(savedTheme);
 
   document.getElementById('themeBtn').addEventListener('click', function(){
     setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
 
-  /* ================= LANGUAGE ================= */
   var savedLang = 'en';
   try { savedLang = localStorage.getItem('aw-lang') || 'en'; } catch(e){}
-  applyLang(savedLang === 'ar' ? 'ar' : 'en');
+  applyLang(savedLang);
 
   document.getElementById('langBtn').addEventListener('click', function(){
     applyLang(lang === 'ar' ? 'en' : 'ar');
   });
 
-  /* ================= DRAWER ================= */
   var drawer = document.getElementById('drawer');
   var menuBtn = document.getElementById('menuBtn');
   function closeDrawer(){
-    drawer.classList.remove('open');
+    drawer.classList.remove('on');
     menuBtn.setAttribute('aria-expanded','false');
     document.body.style.overflow = '';
   }
   menuBtn.addEventListener('click', function(){
-    var open = drawer.classList.toggle('open');
+    var open = drawer.classList.toggle('on');
     menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
     document.body.style.overflow = open ? 'hidden' : '';
   });
   drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeDrawer); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeDrawer(); });
 
-  /* ================= HEADER / PROGRESS ================= */
-  var head = document.getElementById('head');
   var bar = document.getElementById('bar');
-  function onScroll(){
-    var y = window.scrollY;
-    head.classList.toggle('scrolled', y > 16);
-    var h = document.documentElement.scrollHeight - window.innerHeight;
-    bar.style.width = (h > 0 ? Math.min(100, (y / h) * 100) : 0) + '%';
-  }
+  function onScroll(){ bar.classList.toggle('stuck', window.scrollY > 12); }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ================= REVEAL ================= */
-  var revealEls = document.querySelectorAll('.rv');
+  var els = document.querySelectorAll('.rv');
   if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
-      });
-    }, { threshold: 0.14, rootMargin: '0px 0px -60px 0px' });
-    revealEls.forEach(function(el){ io.observe(el); });
+    var io = new IntersectionObserver(function(en){
+      en.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+    els.forEach(function(el){ io.observe(el); });
   } else {
-    revealEls.forEach(function(el){ el.classList.add('in'); });
+    els.forEach(function(el){ el.classList.add('in'); });
   }
 
-  /* ================= COUNTERS ================= */
-  var counters = document.querySelectorAll('[data-count]');
+  var links = [].slice.call(document.querySelectorAll('.nav a'));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if ('IntersectionObserver' in window && secs.length) {
+    var nio = new IntersectionObserver(function(en){
+      en.forEach(function(e){
+        if (!e.isIntersecting) return;
+        links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id); });
+      });
+    }, { rootMargin: '-46% 0px -50% 0px', threshold: 0 });
+    secs.forEach(function(s){ nio.observe(s); });
+  }
+
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function runCount(el){
-    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
-    if (reduced){ el.textContent = target; return; }
-    var start = performance.now(), dur = 1400;
-    function tick(now){
-      var p = Math.min(1, (now - start) / dur);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(target * eased);
-      if (p < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-  if ('IntersectionObserver' in window) {
-    var cio = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if (en.isIntersecting){ runCount(en.target); cio.unobserve(en.target); }
-      });
-    }, { threshold: 0.6 });
-    counters.forEach(function(c){ cio.observe(c); });
-  } else counters.forEach(runCount);
-
-  /* ================= POINTER EFFECTS ================= */
-  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  if (fine && !reduced) {
-    var hero = document.querySelector('.hero');
-    hero.addEventListener('mousemove', function(e){
-      var r = hero.getBoundingClientRect();
-      hero.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
-      hero.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
-    });
-
-    document.querySelectorAll('.card').forEach(function(card){
-      card.addEventListener('mousemove', function(e){
-        var r = card.getBoundingClientRect();
-        var x = (e.clientX - r.left) / r.width - 0.5;
-        var y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.setProperty('--cx', ((x + 0.5) * 100) + '%');
-        card.style.setProperty('--cy', ((y + 0.5) * 100) + '%');
-        card.style.transform = 'perspective(900px) rotateX(' + (-y * 3.2) + 'deg) rotateY(' + (x * 3.2) + 'deg) translateY(-3px)';
-      });
-      card.addEventListener('mouseleave', function(){ card.style.transform = ''; });
-    });
-
-    document.querySelectorAll('.mag').forEach(function(btn){
-      btn.addEventListener('mousemove', function(e){
-        var r = btn.getBoundingClientRect();
-        var x = (e.clientX - r.left - r.width / 2) / r.width;
-        var y = (e.clientY - r.top - r.height / 2) / r.height;
-        btn.style.transform = 'translate(' + (x * 5) + 'px,' + (y * 5 - 2) + 'px)';
-      });
-      btn.addEventListener('mouseleave', function(){ btn.style.transform = ''; });
-    });
-  }
-
-  /* ================= ACTIVE NAV ================= */
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
-  var sections = navLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
-  if ('IntersectionObserver' in window && sections.length) {
-    var nio = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if (!en.isIntersecting) return;
-        navLinks.forEach(function(a){
-          a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id);
-        });
-      });
-    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-    sections.forEach(function(s){ nio.observe(s); });
-  }
-
-  /* ================= COPY EMAIL ================= */
-  var EMAIL = 'abdelrahman959@gmail.com';
-  var copyBtn = document.getElementById('copyBtn');
-  var copyTxt = document.getElementById('copyTxt');
-  copyBtn.addEventListener('click', function(){
-    var done = function(){
-      var prev = I18N[lang]['contact.copy'];
-      copyTxt.textContent = lang === 'ar' ? 'تم النسخ ✓' : 'Copied ✓';
-      copyTxt.classList.add('copy-state');
-      setTimeout(function(){ copyTxt.textContent = I18N[lang]['contact.copy']; copyTxt.classList.remove('copy-state'); }, 1800);
-    };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(EMAIL).then(done).catch(function(){ fallback(); });
-    } else fallback();
-    function fallback(){
-      var t = document.createElement('textarea');
-      t.value = EMAIL; t.style.position = 'fixed'; t.style.opacity = '0';
-      document.body.appendChild(t); t.select();
-      try { document.execCommand('copy'); done(); } catch(e){}
-      document.body.removeChild(t);
-    }
-  });
-
-  /* ================= SMOOTH ANCHOR OFFSET ================= */
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
     a.addEventListener('click', function(e){
       var id = a.getAttribute('href');
       if (id.length < 2) return;
-      var target = document.querySelector(id);
-      if (!target) return;
+      var t = document.querySelector(id);
+      if (!t) return;
       e.preventDefault();
-      var top = target.getBoundingClientRect().top + window.scrollY - 84;
-      window.scrollTo({ top: top, behavior: reduced ? 'auto' : 'smooth' });
+      window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 82, behavior: reduced ? 'auto' : 'smooth' });
     });
   });
 })();
