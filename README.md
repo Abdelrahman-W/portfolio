@@ -10,6 +10,7 @@ Live: **https://abdelrahman-w.github.io/portfolio/**
 - `assets/` — optimized screenshots used in the selected client-work cards.
 - Instant **EN ⇄ AR** switching with full RTL layout, driven by an in-page `i18n` dictionary.
 - **Dark / light** themes; both preferences persist in `localStorage`.
+- Color roles follow IBM Carbon's open design guidance: neutral gray surfaces, blue interactions, and a matching dark theme. See [Carbon color foundations](https://carbondesignsystem.com/building-blocks/foundations/color/).
 - Subtle scroll reveals respect `prefers-reduced-motion`.
 - Print styles so the page exports cleanly to PDF as a CV.
 - Fonts loaded from Google Fonts: Manrope, DM Sans, IBM Plex Sans Arabic.
