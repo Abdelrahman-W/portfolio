@@ -309,14 +309,20 @@ h1 em,h2 em{font-style:normal;color:var(--acc)}
 h2{font-family:var(--fd);font-weight:700;font-size:clamp(32px,4.3vw,50px);letter-spacing:-.045em;line-height:1.12}
 .sub{font-size:15px;max-width:60ch}
 .wl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;border-top:0;margin-top:30px}
-.wr{position:relative;min-height:210px;display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto 1fr;gap:8px 12px;align-items:start;padding:20px 20px 18px;border:1px solid var(--hair);border-radius:10px;background:var(--surface);transition:background .25s,border-color .25s,transform .25s}
-.wr:hover{padding-inline:20px;background:var(--surface2);border-color:var(--hair2);transform:translateY(-3px)}
-.wr .idx{grid-column:1/-1;font-size:10px;letter-spacing:.08em;color:var(--acc)}
-.wr .nm{grid-column:1;font-family:var(--fd);font-size:24px;font-weight:700;letter-spacing:-.04em}
+.wr{position:relative;min-height:0;display:flex;flex-direction:column;gap:0;align-items:stretch;padding:0;overflow:hidden;border:1px solid var(--hair);border-radius:10px;background:var(--surface);transition:background .25s,border-color .25s,transform .25s,box-shadow .25s}
+.wr:hover{padding:0;background:var(--surface);border-color:var(--hair2);transform:translateY(-3px);box-shadow:0 16px 34px -28px var(--ink)}
+.project-image{display:block;width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--surface2);border-bottom:1px solid var(--hair)}
+.project-image img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.22,.75,.2,1)}
+.wr:hover .project-image img{transform:scale(1.025)}
+.project-info{display:grid;grid-template-columns:1fr auto;gap:7px 12px;padding:17px 19px 18px;align-items:center}
+.wr .idx{grid-column:1;grid-row:1;font-size:10px;letter-spacing:.08em;color:var(--acc)}
+.wr .kind{grid-column:2;grid-row:1;font-size:10px;line-height:1.2;color:var(--muted2);text-align:end}
+.wr .nm{grid-column:1;grid-row:2;font-family:var(--fd);font-size:23px;font-weight:700;letter-spacing:-.04em}
 .wr:hover .nm{font-style:normal;color:var(--acc)}
-.wr .ds{grid-column:1/-1;font-size:13px;line-height:1.65;align-self:end}
-.wr .ds small{font-family:var(--fb);font-size:11px;color:var(--muted2)}
-.wr svg{grid-column:2;grid-row:2;width:16px;height:16px;color:var(--acc)}
+.wr .ds{grid-column:1;grid-row:3;font-size:13px;line-height:1.55;color:var(--muted)}
+.wr .ds small{display:block;font-family:var(--fb);font-size:11px;color:var(--muted2);margin-top:5px}
+.wr .project-open{grid-column:1;grid-row:4;margin-top:12px;padding-top:10px;border-top:1px solid var(--hair);font-size:11px;font-weight:700;color:var(--acc)}
+.wr svg{grid-column:2;grid-row:2/5;width:17px;height:17px;color:var(--acc);align-self:center}
 .cols{gap:16px;margin-top:30px}
 .col{padding:19px 18px 22px;border:1px solid var(--hair);border-radius:10px;background:var(--surface)}
 .col .n{font-size:11px;color:var(--acc);letter-spacing:.04em}
@@ -410,7 +416,7 @@ html[lang="ar"] .eyebrow{font-size:13px}
             <span data-i18n="hero.cta1">View selected work</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
           </a>
-          <a class="btn btn-s" href="https://wa.me/201274757241" target="_blank" rel="noopener">
+          <a class="btn btn-s wa-link" href="https://wa.me/201274757241" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 21l2.3-5.3A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8.5 9.5c.5 2 2 3.5 4 4l1.2-1.2 1.8.8v1.5c0 .6-.5 1.1-1.1 1.1-3.5-.2-6.3-3-6.4-6.4 0-.6.5-1.1 1.1-1.1h1.4l.8 1.8-1.3 1.2"/></svg>
             <span data-i18n="hero.cta2">Discuss a project</span>
           </a>
@@ -456,28 +462,20 @@ html[lang="ar"] .eyebrow{font-size:13px}
     </div>
     <div class="wl">
       <a class="wr rv" href="https://eg-app.com" target="_blank" rel="noopener">
-        <span class="idx">01</span>
-        <span class="nm">Eg App</span>
-        <span class="ds" data-i18n="w1.ds">Agency site with a digital-product store — templates, plugins and ebooks, fully bilingual.<small>eg-app.com</small></span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        <span class="project-image"><img src="assets/eg-app.jpg" alt="Eg App agency and digital store homepage" width="1200" height="675" fetchpriority="high"></span>
+        <span class="project-info"><span class="idx">01</span><span class="kind" data-i18n="w1.kind">Agency &amp; digital store</span><span class="nm">Eg App</span><span class="ds" data-i18n="w1.ds">Agency website and bilingual digital-product store.<small>WooCommerce · Arabic / English</small></span><span class="project-open" data-i18n="work.visit">Visit live site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
       </a>
       <a class="wr rv" style="--d:.05s" href="https://farha.wuaze.com" target="_blank" rel="noopener">
-        <span class="idx">02</span>
-        <span class="nm" data-i18n="w2.nm">Farha</span>
-        <span class="ds" data-i18n="w2.ds">Multi-vendor wedding marketplace — venues, photography, catering and bookings.<small>farha.wuaze.com</small></span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        <span class="project-image"><img src="assets/farha.jpg" alt="Farha wedding marketplace homepage" width="1200" height="675" loading="lazy"></span>
+        <span class="project-info"><span class="idx">02</span><span class="kind" data-i18n="w2.kind">Wedding marketplace</span><span class="nm" data-i18n="w2.nm">Farha</span><span class="ds" data-i18n="w2.ds">A multi-vendor marketplace for wedding venues and services.<small>Dokan · vendor marketplace</small></span><span class="project-open" data-i18n="work.visit">Visit live site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
       </a>
       <a class="wr rv" style="--d:.1s" href="https://tamayoz.wuaze.com" target="_blank" rel="noopener">
-        <span class="idx">03</span>
-        <span class="nm" data-i18n="w3.nm">Tamayoz</span>
-        <span class="ds" data-i18n="w3.ds">Gulf-curriculum learning platform with recorded lessons, live classes and quizzes.<small>tamayoz.wuaze.com</small></span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        <span class="project-image"><img src="assets/tamayoz.jpg" alt="Tamayoz online learning platform homepage" width="1200" height="675" loading="lazy"></span>
+        <span class="project-info"><span class="idx">03</span><span class="kind" data-i18n="w3.kind">Learning platform</span><span class="nm" data-i18n="w3.nm">Tamayoz</span><span class="ds" data-i18n="w3.ds">Online courses for Gulf curricula, with lessons and quizzes.<small>LearnPress · LMS</small></span><span class="project-open" data-i18n="work.visit">Visit live site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
       </a>
       <a class="wr rv" style="--d:.15s" href="https://screen.eg-app.com" target="_blank" rel="noopener">
-        <span class="idx">04</span>
-        <span class="nm">Screen EG</span>
-        <span class="ds" data-i18n="w4.ds">Bilingual catalogue and store for digital signage, transparent screens and hologram units.<small>screen.eg-app.com</small></span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        <span class="project-image"><img src="assets/screen-eg.jpg" alt="Screen EG digital signage store homepage" width="1200" height="675" loading="lazy"></span>
+        <span class="project-info"><span class="idx">04</span><span class="kind" data-i18n="w4.kind">Digital signage</span><span class="nm">Screen EG</span><span class="ds" data-i18n="w4.ds">Product catalogue for digital and transparent display systems.<small>WooCommerce · Arabic / English</small></span><span class="project-open" data-i18n="work.visit">Visit live site</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
       </a>
     </div>
   </div>
@@ -573,7 +571,7 @@ html[lang="ar"] .eyebrow{font-size:13px}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-9 6-9-6"/></svg>
           <span data-i18n="ct.email">Email me</span>
         </a>
-        <a class="btn btn-s" href="https://wa.me/201274757241" target="_blank" rel="noopener">
+        <a class="btn btn-s wa-link" href="https://wa.me/201274757241" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 21l2.3-5.3A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8.5 9.5c.5 2 2 3.5 4 4l1.2-1.2 1.8.8v1.5c0 .6-.5 1.1-1.1 1.1-3.5-.2-6.3-3-6.4-6.4 0-.6.5-1.1 1.1-1.1h1.4l.8 1.8-1.3 1.2"/></svg>
           <span data-i18n="ct.wa">WhatsApp</span>
         </a>
@@ -635,14 +633,14 @@ html[lang="ar"] .eyebrow{font-size:13px}
       'hero.l2':'for <em>your business.</em>',
       'hero.lede':'I handle WordPress setup, hosting, plugins, launch and ongoing support. Seven websites delivered for paying clients.',
       'hero.cta1':'View selected work','hero.cta2':'Discuss a project','hero.cv':'Download CV',
-      'hero.reassure':'WordPress setup · site support · IT operations',
+      'hero.reassure':'Open to full-time roles · available for selected projects',
       'lc.title':'Selected client sites','lc.live':'Live websites','lc.f1':'Client projects','lc.f2':'Visit each site',
-      'work.kick':'Selected work','work.title':'Selected work, <em>out in the world.</em>',
-      'work.sub':'A selection of WordPress websites delivered for paying clients.',
-      'w1.ds':'Agency site with a digital-product store — templates, plugins and ebooks, fully bilingual.<small>eg-app.com</small>',
-      'w2.nm':'Farha','w2.ds':'Multi-vendor wedding marketplace — venues, photography, catering and bookings.<small>farha.wuaze.com</small>',
-      'w3.nm':'Tamayoz','w3.ds':'Gulf-curriculum learning platform with recorded lessons, live classes and quizzes.<small>tamayoz.wuaze.com</small>',
-      'w4.ds':'Bilingual catalogue and store for digital signage, transparent screens and hologram units.<small>screen.eg-app.com</small>',
+      'work.kick':'Client work','work.title':'Websites built for <em>real businesses.</em>',
+      'work.sub':'Explore four live examples, from digital stores to a multi-vendor marketplace and an online learning platform.','work.visit':'Visit live site',
+      'w1.kind':'Agency & digital store','w1.ds':'Agency website paired with a bilingual digital-product store.<small>WooCommerce · Arabic / English</small>',
+      'w2.kind':'Wedding marketplace','w2.nm':'Farha','w2.ds':'A multi-vendor platform for venues and wedding services.<small>Dokan · multi-vendor</small>',
+      'w3.kind':'Learning platform','w3.nm':'Tamayoz','w3.ds':'Online courses for Gulf curricula, with lessons and quizzes.<small>LearnPress · LMS</small>',
+      'w4.kind':'Digital signage','w4.ds':'Product catalogue for digital and transparent display systems.<small>WooCommerce · Arabic / English</small>',
       'svc.kick':'What I do','svc.title':'Three ways I can <em>help</em>.',
       'svc.sub':'Practical help across the life of your website — from first setup to ongoing support.',
       's1.t':'Build & launch','s1.p':'Hosting, WordPress setup, themes and plugins — configured around your business needs.',
@@ -683,14 +681,14 @@ html[lang="ar"] .eyebrow{font-size:13px}
       'hero.l2':'تخدم <em>أعمالك.</em>',
       'hero.lede':'أتولى تجهيز ووردبريس والاستضافة والإضافات والإطلاق والدعم بعد النشر. أنجزت سبعة مواقع لعملاء بأعمال مدفوعة.',
       'hero.cta1':'شاهد نماذج من عملي','hero.cta2':'ناقش مشروعك','hero.cv':'نزّل السيرة الذاتية',
-      'hero.reassure':'إعداد ووردبريس · دعم المواقع · تشغيل الأنظمة',
+      'hero.reassure':'متاح لوظيفة بدوام كامل · وأستقبل مشاريع مختارة',
       'lc.title':'نماذج من مواقع العملاء','lc.live':'مواقع مباشرة','lc.f1':'مشاريع عملاء','lc.f2':'افتح الموقع',
-      'work.kick':'أعمال مختارة','work.title':'مشاريع حقيقية، <em>قيد الاستخدام.</em>',
-      'work.sub':'مجموعة من مواقع ووردبريس التي أنجزتها لعملاء بمقابل مادي.',
-      'w1.ds':'موقع وكالة مع متجر منتجات رقمية — قوالب وإضافات وكتب، بالعربي والإنجليزي.<small>eg-app.com</small>',
-      'w2.nm':'فرحة','w2.ds':'ماركت بليس أفراح متعدد البائعين — قاعات وتصوير وضيافة وحجوزات.<small>farha.wuaze.com</small>',
-      'w3.nm':'التميز','w3.ds':'منصة تعليمية بمناهج خليجية: حصص مسجلة ومباشرة واختبارات.<small>tamayoz.wuaze.com</small>',
-      'w4.ds':'كتالوج ومتجر ثنائي اللغة للشاشات الرقمية والشفافة وأجهزة الهولوغرام.<small>screen.eg-app.com</small>',
+      'work.kick':'أعمال العملاء','work.title':'مواقع تخدم <em>أعمالًا حقيقية.</em>',
+      'work.sub':'أربع نماذج مباشرة: متجر منتجات رقمية، وسوق خدمات، ومنصة تعليمية، وكتالوج للمنتجات.','work.visit':'زيارة الموقع',
+      'w1.kind':'وكالة ومتجر رقمي','w1.ds':'موقع وكالة ومتجر منتجات رقمية باللغتين العربية والإنجليزية.<small>WooCommerce · عربي / إنجليزي</small>',
+      'w2.kind':'سوق خدمات أفراح','w2.nm':'فرحة','w2.ds':'منصة تجمع قاعات الأفراح ومقدمي خدماتها في مكان واحد.<small>Dokan · بائعون متعددون</small>',
+      'w3.kind':'منصة تعليمية','w3.nm':'التميز','w3.ds':'دورات للمناهج الخليجية، مع دروس واختبارات إلكترونية.<small>LearnPress · LMS</small>',
+      'w4.kind':'شاشات رقمية','w4.ds':'كتالوج منتجات للشاشات الرقمية والشفافة وأنظمة العرض.<small>WooCommerce · عربي / إنجليزي</small>',
       'svc.kick':'الخدمات','svc.title':'مساعدة عملية لموقعك، <em>من البداية.</em>',
       'svc.sub':'من تجهيز الموقع إلى إصلاحه ومتابعته بعد الإطلاق.',
       's1.t':'إنشاء وإطلاق','s1.p':'استضافة وووردبريس وقوالب وإضافات، بإعداد يناسب احتياجات نشاطك.',
@@ -742,6 +740,8 @@ html[lang="ar"] .eyebrow{font-size:13px}
     document.title = dict.title;
     var md = document.querySelector('meta[name="description"]');
     if (md) md.setAttribute('content', dict.desc);
+    var waText = lang === 'ar' ? 'مرحبًا عبدالرحمن، أود الاستفسار عن خدماتك.' : 'Hi Abdelrahman, I would like to ask about your services.';
+    document.querySelectorAll('.wa-link').forEach(function(link){ link.href = 'https://wa.me/201274757241?text=' + encodeURIComponent(waText); });
     document.getElementById('langTxt').textContent = lang === 'ar' ? 'EN' : 'AR';
     try { localStorage.setItem('aw-lang', lang); } catch(e){}
     ribbon(dict.mq);

@@ -1,12 +1,13 @@
 # Abdelrahman Waleed — Portfolio
 
-A single-file, bilingual (English / Arabic) portfolio for **Abdelrahman Waleed** — WordPress developer based in Suez, Egypt.
+A bilingual (English / Arabic) one-page portfolio for **Abdelrahman Waleed** — WordPress developer based in Suez, Egypt.
 
 Live: **https://abdelrahman-w.github.io/portfolio/**
 
 ## What's inside
 
-- `index.html` — the entire site (~50 KB): markup, CSS, and JavaScript in one self-contained file. No build step, no dependencies, no tracking.
+- `index.html` — markup, CSS, and JavaScript in one page. No build step, no dependencies, no tracking.
+- `assets/` — optimized screenshots used in the selected client-work cards.
 - Instant **EN ⇄ AR** switching with full RTL layout, driven by an in-page `i18n` dictionary.
 - **Dark / light** themes; both preferences persist in `localStorage`.
 - Subtle scroll reveals respect `prefers-reduced-motion`.
