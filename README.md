@@ -1,0 +1,28 @@
+# Abdelrahman Waleed — Portfolio
+
+A single-file, bilingual (English / Arabic) CV site for **Abdelrahman Waleed** — WordPress developer and IT / operations specialist based in Suez, Egypt.
+
+Live: **https://abdelrahman-w.github.io/portfolio/**
+
+## What's inside
+
+- `index.html` — the entire site: markup, CSS, and JavaScript in one self-contained file. No build step, no dependencies, no tracking.
+- Instant **EN ⇄ AR** switching with full RTL layout, driven by an in-page `i18n` dictionary.
+- **Dark / light** themes; both preferences persist in `localStorage`.
+- All animations are CSS + a small amount of vanilla JS (scroll reveals, counters, pointer effects), and they respect `prefers-reduced-motion`.
+- Print styles so the page exports cleanly to PDF as a CV.
+- Fonts loaded from Google Fonts: Bricolage Grotesque, Inter, JetBrains Mono, IBM Plex Sans Arabic.
+
+## Sections
+
+Hero · Profile · Experience · Selected work (live client sites) · Capabilities · Services · Contact
+
+## Editing
+
+Everything lives in `index.html`. Text content is addressed by `data-i18n` keys — update the `I18N` object near the top of the `<script>` block (both `en` and `ar`) to change copy in either language.
+
+## Contact
+
+- Email: abdelrahman959@gmail.com
+- WhatsApp: +20 127 475 7241
+- Location: Suez, Egypt — open to remote
