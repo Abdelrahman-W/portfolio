@@ -298,6 +298,12 @@ html[dir="rtl"] .hero-right{text-align:left}
 #bot3d{width:100%;height:100%;display:block}
 .portrait{position:absolute;inset:0;width:100%;height:100%;display:none}
 .avatar-wrap.is-fallback .portrait{display:block}
+.avatar-credit{
+  margin:20px 0 0 12px;font:600 9px/1.5 var(--fm);
+  letter-spacing:.13em;text-transform:uppercase;color:var(--sub2);
+}
+.avatar-credit a{color:var(--acc);text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px}
+.avatar-credit a:hover{color:var(--terracotta)}
 .btn,.cta-btn{will-change:transform}
 
 /* Custom cursor (fine pointers only) */
@@ -806,6 +812,7 @@ html[lang="ar"] .hero-title .acc-word::after{width:40%}
               <path class="portrait-collar" d="m91 190 19 28 19-28"/>
               <path class="portrait-detail" d="M24 33h28M24 43h15M173 221h22M183 211v20"/>
             </svg>
+          <p class="avatar-credit">3D model · <a href="https://models.codelove.in/models/business-male-04/" target="_blank" rel="noopener">CodeLove · MIT</a></p>
         </div>
       </div>
     </div>
@@ -1112,7 +1119,9 @@ html[lang="ar"] .hero-title .acc-word::after{width:40%}
 <!-- ══════════════════════════════════════════════════
      SCRIPT
 ══════════════════════════════════════════════════ -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/libs/meshopt_decoder.js"></script>
 <script>
 (function(){
 'use strict';
@@ -1155,81 +1164,84 @@ if(ctx){
   window.addEventListener('pointerleave',function(){mouse.x=-1000;mouse.y=-1000},{passive:true});
 }
 
-/* ── 3D avatar: head-tracker bot (Three.js, procedural) ── */
+/* ── 3D avatar: licensed humanoid model + cursor tracking ── */
 var botWrap=document.querySelector('.avatar-wrap');
-if(botWrap&&window.THREE){
+if(botWrap&&window.THREE&&THREE.GLTFLoader){
   var botCanvas=document.getElementById('bot3d');
-  var renderer3=new THREE.WebGLRenderer({canvas:botCanvas,alpha:true,antialias:true});
-  renderer3.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
-  var scene3=new THREE.Scene();
-  var cam3=new THREE.PerspectiveCamera(36,1,0.1,60);
-  cam3.position.set(0,0.35,7.2);
-  scene3.add(new THREE.HemisphereLight(0xffffff,0x10182a,1.0));
-  var key3=new THREE.DirectionalLight(0xffffff,1.1);key3.position.set(3,4,6);scene3.add(key3);
-  var rim3=new THREE.DirectionalLight(0x315BFF,0.9);rim3.position.set(-5,2,-4);scene3.add(rim3);
-  var front3=new THREE.PointLight(0x7290FF,0.5,0);front3.position.set(0,1,6);scene3.add(front3);
+  var renderer3;
+  try{renderer3=new THREE.WebGLRenderer({canvas:botCanvas,alpha:true,antialias:true});}
+  catch(webglError){botWrap.classList.add('is-fallback')}
+  if(renderer3){
+    renderer3.setPixelRatio(Math.min(window.devicePixelRatio||1,1.6));
+    renderer3.outputEncoding=THREE.sRGBEncoding;
+    var scene3=new THREE.Scene();
+    var cam3=new THREE.PerspectiveCamera(34,1,0.1,40);
+    cam3.position.set(0,0.22,4.15);cam3.lookAt(0,0,0);
+    scene3.add(new THREE.HemisphereLight(0xf4f7ff,0x24334c,1.25));
+    var key3=new THREE.DirectionalLight(0xffffff,2.0);key3.position.set(3,5,5);scene3.add(key3);
+    var rim3=new THREE.DirectionalLight(0x5578ff,1.3);rim3.position.set(-4,2,-3);scene3.add(rim3);
+    var fill3=new THREE.PointLight(0xff9a76,.7,10);fill3.position.set(2,-1,4);scene3.add(fill3);
+    var avatarRoot=new THREE.Group();scene3.add(avatarRoot);
+    var avatar=null,headBone=null,mixer=null,avatarReady=false;
+    var targetMouse={x:0,y:0},smoothMouse={x:0,y:0};
+    var botReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var matBody=new THREE.MeshStandardMaterial({color:0x1B2942,roughness:.38,metalness:.45});
-  var matDark=new THREE.MeshStandardMaterial({color:0x0B1322,roughness:.25,metalness:.6});
-  var matAcc=new THREE.MeshStandardMaterial({color:0x315BFF,roughness:.3,metalness:.3,emissive:0x315BFF,emissiveIntensity:.5});
-  var matEye=new THREE.MeshBasicMaterial({color:0xE8F0FF});
+    function size3(){
+      var w=botWrap.clientWidth||300,h=botWrap.clientHeight||380;
+      renderer3.setSize(w,h,false);cam3.aspect=w/h;cam3.updateProjectionMatrix();
+    }
+    size3();window.addEventListener('resize',size3,{passive:true});
+    window.addEventListener('pointermove',function(e){
+      var r=botWrap.getBoundingClientRect();
+      targetMouse.x=THREE.MathUtils.clamp((e.clientX-(r.left+r.width/2))/(r.width*.65),-1,1);
+      targetMouse.y=THREE.MathUtils.clamp((e.clientY-(r.top+r.height/2))/(r.height*.65),-1,1);
+    },{passive:true});
+    botWrap.addEventListener('pointerleave',function(){targetMouse.x=0;targetMouse.y=0},{passive:true});
 
-  var bot=new THREE.Group();scene3.add(bot);
+    var loader3=new THREE.GLTFLoader();
+    loader3.setMeshoptDecoder(MeshoptDecoder);
+    loader3.load('assets/business-male-04.glb',function(gltf){
+      avatar=gltf.scene;
+      var bounds=new THREE.Box3().setFromObject(avatar),size=bounds.getSize(new THREE.Vector3()),center=bounds.getCenter(new THREE.Vector3());
+      var scale=2.45/Math.max(size.y,size.x,size.z);
+      avatar.scale.setScalar(scale);
+      avatar.position.set(-center.x*scale,-center.y*scale-.08,-center.z*scale);
+      avatar.traverse(function(node){
+        if(node.isBone&&/head/i.test(node.name))headBone=node;
+        if(node.isMesh){
+          node.castShadow=false;node.receiveShadow=false;
+          var mats=Array.isArray(node.material)?node.material:[node.material];
+          mats.forEach(function(m){if(m&&m.isMeshStandardMaterial){m.roughness=Math.max(m.roughness||.5,.42);m.envMapIntensity=.65}});
+        }
+      });
+      avatarRoot.add(avatar);avatarReady=true;
+      if(gltf.animations&&gltf.animations.length){
+        mixer=new THREE.AnimationMixer(avatar);
+        mixer.clipAction(gltf.animations[0]).play();
+      }
+      botWrap.classList.add('model-ready');
+    },undefined,function(loadError){console.error('Avatar model could not load:',loadError);botWrap.classList.add('is-fallback')});
 
-  var head=new THREE.Group();head.position.y=0.85;bot.add(head);
-  var skull=new THREE.Mesh(new THREE.SphereGeometry(1.05,48,48),matBody);
-  skull.scale.set(1,0.94,0.94);head.add(skull);
-  var visor=new THREE.Mesh(new THREE.SphereGeometry(0.8,48,48),matDark);
-  visor.scale.set(0.92,0.6,0.5);visor.position.set(0,0.02,0.62);head.add(visor);
-  var eyes=new THREE.Group();eyes.position.z=0.1;head.add(eyes);
-  var eL=new THREE.Mesh(new THREE.SphereGeometry(0.085,24,24),matEye);eL.position.set(-0.27,0.06,0.92);eyes.add(eL);
-  var eR=eL.clone();eR.position.x=0.27;eyes.add(eR);
-  var pod=new THREE.Mesh(new THREE.CylinderGeometry(0.16,0.16,0.14,24),matAcc);
-  pod.rotation.z=Math.PI/2;pod.position.set(-1.06,0,0);head.add(pod);
-  var pod2=pod.clone();pod2.position.x=1.06;head.add(pod2);
-  var ant=new THREE.Mesh(new THREE.CylinderGeometry(0.03,0.03,0.5,12),matBody);
-  ant.position.set(0,1.32,0);head.add(ant);
-  var tip=new THREE.Mesh(new THREE.SphereGeometry(0.1,24,24),matAcc.clone());
-  tip.position.set(0,1.6,0);head.add(tip);
-
-  var torso=new THREE.Mesh(new THREE.SphereGeometry(1,48,48),matBody);
-  torso.scale.set(1.15,0.72,0.82);torso.position.y=-0.75;bot.add(torso);
-  var chest=new THREE.Mesh(new THREE.SphereGeometry(0.09,20,20),matAcc);
-  chest.position.set(0,-0.55,0.8);bot.add(chest);
-
-  var mouse3={x:0,y:0};
-  window.addEventListener('pointermove',function(e){
-    var r=botWrap.getBoundingClientRect();
-    mouse3.x=((e.clientX-(r.left+r.width/2))/r.width)*2;
-    mouse3.y=((e.clientY-(r.top+r.height/2))/r.height)*2;
-  },{passive:true});
-
-  function size3(){
-    var w=botWrap.clientWidth||300,h=botWrap.clientHeight||380;
-    renderer3.setSize(w,h,false);
-    cam3.aspect=w/h;cam3.updateProjectionMatrix();
+    var clock3=new THREE.Clock();
+    (function loop3(){
+      requestAnimationFrame(loop3);
+      var dt=Math.min(clock3.getDelta(),.05),t=clock3.elapsedTime;
+      smoothMouse.x+=(targetMouse.x-smoothMouse.x)*.075;
+      smoothMouse.y+=(targetMouse.y-smoothMouse.y)*.075;
+      if(avatarReady){
+        avatarRoot.rotation.y+=((smoothMouse.x*.36)-avatarRoot.rotation.y)*.06;
+        avatarRoot.rotation.x+=((-smoothMouse.y*.12)-avatarRoot.rotation.x)*.06;
+        avatarRoot.position.y=botReduced?0:Math.sin(t*1.15)*.035;
+        if(headBone){
+          headBone.rotation.y+=(smoothMouse.x*.28-headBone.rotation.y)*.09;
+          headBone.rotation.x+=(-smoothMouse.y*.17-headBone.rotation.x)*.09;
+        }
+        if(mixer&&!botReduced)mixer.update(dt);
+      }
+      renderer3.render(scene3,cam3);
+    })();
   }
-  size3();
-  window.addEventListener('resize',size3);
-
-  var clock3=new THREE.Clock();
-  var botReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  (function loop3(){
-    requestAnimationFrame(loop3);
-    var t=clock3.getElapsedTime();
-    var ry=THREE.MathUtils.clamp(mouse3.x,-1,1)*0.55;
-    var rx=THREE.MathUtils.clamp(mouse3.y,-1,1)*0.3;
-    bot.rotation.y+=(ry-bot.rotation.y)*0.07;
-    bot.rotation.x+=(rx-bot.rotation.x)*0.07;
-    bot.position.y=botReduced?0:Math.sin(t*1.3)*0.1;
-    tip.material.emissiveIntensity=0.9+Math.sin(t*3)*0.4;
-    eyes.position.x=THREE.MathUtils.clamp(mouse3.x,-1,1)*0.1;
-    eyes.position.y=THREE.MathUtils.clamp(-mouse3.y,-1,1)*0.06;
-    renderer3.render(scene3,cam3);
-  })();
-}else if(botWrap){
-  botWrap.classList.add('is-fallback');
-}
+}else if(botWrap){botWrap.classList.add('is-fallback')}
 
 /* ── Hero headline: code-decode scramble ── */
 var SCRAMBLE='WP<>/{}[]=+*&%$#019832';
