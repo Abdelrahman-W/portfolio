@@ -295,7 +295,25 @@ html[dir="rtl"] .hero-right{text-align:left}
   box-shadow:12px 12px 0 var(--acc);
   position:relative;
 }
-.portrait{position:absolute;inset:0;width:100%;height:100%}
+#bot3d{width:100%;height:100%;display:block}
+.portrait{position:absolute;inset:0;width:100%;height:100%;display:none}
+.avatar-wrap.is-fallback .portrait{display:block}
+.btn,.cta-btn{will-change:transform}
+
+/* Custom cursor (fine pointers only) */
+@media(pointer:fine){
+  body.cursor-ready,body.cursor-ready a,body.cursor-ready button{cursor:none}
+}
+.cursor-dot,.cursor-ring{
+  position:fixed;top:0;left:0;z-index:500;pointer-events:none;
+  border-radius:50%;transform:translate(-50%,-50%);opacity:0;
+}
+.cursor-dot{width:6px;height:6px;background:var(--acc)}
+.cursor-ring{
+  width:34px;height:34px;border:1.5px solid var(--acc);
+  transition:width .25s,height .25s,opacity .25s,border-color .25s;
+}
+.cursor-ring.hot{width:52px;height:52px;opacity:1;border-color:var(--terracotta)}
 .portrait-bg{fill:#E4E8EC}
 .portrait-shape{fill:#142033}
 .portrait-shirt{fill:#315BFF}
@@ -628,7 +646,7 @@ html[lang="ar"] .hero-title .acc-word::after{width:40%}
   .work-grid{grid-template-columns:1fr}
 }
 @media(max-width:720px){
-  .hero-avatar-col{display:none}
+  .avatar-wrap{max-width:240px;height:300px;margin-top:4px}
 }
 @media(max-width:560px){
   .about-facts{grid-template-columns:1fr}
@@ -772,11 +790,11 @@ html[lang="ar"] .hero-title .acc-word::after{width:40%}
         </div>
       </div>
 
-      <!-- Right: framed illustrated portrait -->
+      <!-- Right: 3D interactive avatar (falls back to illustration) -->
       <div class="hero-avatar-col">
         <div class="avatar-wrap">
-          <div class="av-core">
-            <svg class="portrait" viewBox="0 0 220 260" role="img" aria-label="Illustrated developer avatar">
+          <canvas id="bot3d" aria-hidden="true"></canvas>
+          <svg class="portrait" viewBox="0 0 220 260" role="img" aria-label="Illustrated developer avatar">
               <path class="portrait-bg" d="M0 0h220v260H0z"/>
               <path class="portrait-shape" d="M17 260c8-55 38-79 93-79s85 24 93 79"/>
               <path class="portrait-shirt" d="m69 190 41 28 41-28 23 70H46z"/>
@@ -788,10 +806,8 @@ html[lang="ar"] .hero-title .acc-word::after{width:40%}
               <path class="portrait-collar" d="m91 190 19 28 19-28"/>
               <path class="portrait-detail" d="M24 33h28M24 43h15M173 221h22M183 211v20"/>
             </svg>
-          </div>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -1096,6 +1112,7 @@ html[lang="ar"] .hero-title .acc-word::after{width:40%}
 <!-- ══════════════════════════════════════════════════
      SCRIPT
 ══════════════════════════════════════════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
 <script>
 (function(){
 'use strict';
@@ -1137,6 +1154,130 @@ if(ctx){
   window.addEventListener('pointermove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;if(!raf&&!reducedMotion)raf=requestAnimationFrame(drawField)},{passive:true});
   window.addEventListener('pointerleave',function(){mouse.x=-1000;mouse.y=-1000},{passive:true});
 }
+
+/* ── 3D avatar: head-tracker bot (Three.js, procedural) ── */
+var botWrap=document.querySelector('.avatar-wrap');
+if(botWrap&&window.THREE){
+  var botCanvas=document.getElementById('bot3d');
+  var renderer3=new THREE.WebGLRenderer({canvas:botCanvas,alpha:true,antialias:true});
+  renderer3.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+  var scene3=new THREE.Scene();
+  var cam3=new THREE.PerspectiveCamera(36,1,0.1,60);
+  cam3.position.set(0,0.35,7.2);
+  scene3.add(new THREE.HemisphereLight(0xffffff,0x10182a,1.0));
+  var key3=new THREE.DirectionalLight(0xffffff,1.1);key3.position.set(3,4,6);scene3.add(key3);
+  var rim3=new THREE.DirectionalLight(0x315BFF,0.9);rim3.position.set(-5,2,-4);scene3.add(rim3);
+  var front3=new THREE.PointLight(0x7290FF,0.5,0);front3.position.set(0,1,6);scene3.add(front3);
+
+  var matBody=new THREE.MeshStandardMaterial({color:0x1B2942,roughness:.38,metalness:.45});
+  var matDark=new THREE.MeshStandardMaterial({color:0x0B1322,roughness:.25,metalness:.6});
+  var matAcc=new THREE.MeshStandardMaterial({color:0x315BFF,roughness:.3,metalness:.3,emissive:0x315BFF,emissiveIntensity:.5});
+  var matEye=new THREE.MeshBasicMaterial({color:0xE8F0FF});
+
+  var bot=new THREE.Group();scene3.add(bot);
+
+  var head=new THREE.Group();head.position.y=0.85;bot.add(head);
+  var skull=new THREE.Mesh(new THREE.SphereGeometry(1.05,48,48),matBody);
+  skull.scale.set(1,0.94,0.94);head.add(skull);
+  var visor=new THREE.Mesh(new THREE.SphereGeometry(0.8,48,48),matDark);
+  visor.scale.set(0.92,0.6,0.5);visor.position.set(0,0.02,0.62);head.add(visor);
+  var eyes=new THREE.Group();eyes.position.z=0.1;head.add(eyes);
+  var eL=new THREE.Mesh(new THREE.SphereGeometry(0.085,24,24),matEye);eL.position.set(-0.27,0.06,0.92);eyes.add(eL);
+  var eR=eL.clone();eR.position.x=0.27;eyes.add(eR);
+  var pod=new THREE.Mesh(new THREE.CylinderGeometry(0.16,0.16,0.14,24),matAcc);
+  pod.rotation.z=Math.PI/2;pod.position.set(-1.06,0,0);head.add(pod);
+  var pod2=pod.clone();pod2.position.x=1.06;head.add(pod2);
+  var ant=new THREE.Mesh(new THREE.CylinderGeometry(0.03,0.03,0.5,12),matBody);
+  ant.position.set(0,1.32,0);head.add(ant);
+  var tip=new THREE.Mesh(new THREE.SphereGeometry(0.1,24,24),matAcc.clone());
+  tip.position.set(0,1.6,0);head.add(tip);
+
+  var torso=new THREE.Mesh(new THREE.SphereGeometry(1,48,48),matBody);
+  torso.scale.set(1.15,0.72,0.82);torso.position.y=-0.75;bot.add(torso);
+  var chest=new THREE.Mesh(new THREE.SphereGeometry(0.09,20,20),matAcc);
+  chest.position.set(0,-0.55,0.8);bot.add(chest);
+
+  var mouse3={x:0,y:0};
+  window.addEventListener('pointermove',function(e){
+    var r=botWrap.getBoundingClientRect();
+    mouse3.x=((e.clientX-(r.left+r.width/2))/r.width)*2;
+    mouse3.y=((e.clientY-(r.top+r.height/2))/r.height)*2;
+  },{passive:true});
+
+  function size3(){
+    var w=botWrap.clientWidth||300,h=botWrap.clientHeight||380;
+    renderer3.setSize(w,h,false);
+    cam3.aspect=w/h;cam3.updateProjectionMatrix();
+  }
+  size3();
+  window.addEventListener('resize',size3);
+
+  var clock3=new THREE.Clock();
+  var botReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  (function loop3(){
+    requestAnimationFrame(loop3);
+    var t=clock3.getElapsedTime();
+    var ry=THREE.MathUtils.clamp(mouse3.x,-1,1)*0.55;
+    var rx=THREE.MathUtils.clamp(mouse3.y,-1,1)*0.3;
+    bot.rotation.y+=(ry-bot.rotation.y)*0.07;
+    bot.rotation.x+=(rx-bot.rotation.x)*0.07;
+    bot.position.y=botReduced?0:Math.sin(t*1.3)*0.1;
+    tip.material.emissiveIntensity=0.9+Math.sin(t*3)*0.4;
+    eyes.position.x=THREE.MathUtils.clamp(mouse3.x,-1,1)*0.1;
+    eyes.position.y=THREE.MathUtils.clamp(-mouse3.y,-1,1)*0.06;
+    renderer3.render(scene3,cam3);
+  })();
+}else if(botWrap){
+  botWrap.classList.add('is-fallback');
+}
+
+/* ── Hero headline: code-decode scramble ── */
+var SCRAMBLE='WP<>/{}[]=+*&%$#019832';
+function scrambleTitle(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  document.querySelectorAll('.hero-title span').forEach(function(el){
+    var final=el.textContent,len=final.length,start=performance.now(),dur=650;
+    function frame(now){
+      var p=Math.min((now-start)/dur,1),reveal=Math.floor(p*len),out='';
+      for(var i=0;i<len;i++){
+        var ch=final[i];
+        out+=(ch===' ')?' ':(i<reveal?ch:SCRAMBLE[Math.floor(Math.random()*SCRAMBLE.length)]);
+      }
+      el.textContent=out;
+      if(p<1)requestAnimationFrame(frame);else el.textContent=final;
+    }
+    requestAnimationFrame(frame);
+  });
+}
+
+/* ── Custom cursor (fine pointers) ── */
+if(window.matchMedia('(pointer:fine)').matches){
+  var curDot=document.createElement('div');curDot.className='cursor-dot';
+  var curRing=document.createElement('div');curRing.className='cursor-ring';
+  document.body.appendChild(curDot);document.body.appendChild(curRing);
+  var curX=0,curY=0,ringX=0,ringY=0,curShown=false;
+  window.addEventListener('pointermove',function(e){
+    curX=e.clientX;curY=e.clientY;
+    if(!curShown){curShown=true;document.body.classList.add('cursor-ready');curDot.style.opacity=1;curRing.style.opacity=.6}
+    curDot.style.left=curX+'px';curDot.style.top=curY+'px';
+    var hot=e.target&&e.target.closest&&e.target.closest('a,button,.wc');
+    curRing.classList.toggle('hot',!!hot);
+  },{passive:true});
+  (function ringLoop(){
+    requestAnimationFrame(ringLoop);
+    ringX+=(curX-ringX)*0.16;ringY+=(curY-ringY)*0.16;
+    curRing.style.left=ringX+'px';curRing.style.top=ringY+'px';
+  })();
+}
+
+/* ── Magnetic buttons ── */
+document.querySelectorAll('.btn-primary,.cta-btn').forEach(function(b){
+  b.addEventListener('mousemove',function(e){
+    var r=b.getBoundingClientRect();
+    b.style.transform='translate('+((e.clientX-r.left-r.width/2)*0.18).toFixed(1)+'px,'+((e.clientY-r.top-r.height/2)*0.3-2).toFixed(1)+'px)';
+  });
+  b.addEventListener('mouseleave',function(){b.style.transform=''});
+});
 
 /* ── i18n ─────────────────────────────────────── */
 var D = {
@@ -1266,6 +1407,7 @@ function applyLang(l){
   var wa = lang==='ar'?'مرحبًا عبدالرحمن، اطلعت على موقعك وأود التحدث عن مشروع.':'Hi Abdelrahman, I saw your portfolio and want to discuss a project.';
   document.querySelectorAll('.wa-link').forEach(function(a){a.href='https://wa.me/201274757241?text='+encodeURIComponent(wa)});
   document.getElementById('langTxt').textContent=lang==='ar'?'EN':'AR';
+  scrambleTitle();
   try{localStorage.setItem('aw_lang',lang)}catch(e){}
 }
 
