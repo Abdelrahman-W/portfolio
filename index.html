@@ -4,1005 +4,302 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abdelrahman Waleed — WordPress Developer</title>
-<meta name="description" content="WordPress developer in Suez, Egypt. I build, launch and manage websites for businesses. 7 live client sites.">
+<meta name="description" content="WordPress developer in Suez, Egypt. I build, launch and manage WordPress websites for businesses. 7 live client sites. Open to full-time and freelance roles.">
 <meta name="theme-color" content="#F3F0E8">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23315BFF'/%3E%3Ctext x='13' y='23' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='19' fill='%23F3F0E8' text-anchor='middle'%3EA%3C/text%3E%3Ccircle cx='22.5' cy='20.5' r='2.8' fill='%23D76A4A'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23315BFF'/%3E%3Ctext x='16' y='23' font-family='Arial,sans-serif' font-weight='900' font-size='19' fill='%23F3F0E8' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════════
-   TOKENS — editorial studio system
-   Light (default): ivory paper / ink navy / cobalt / terracotta
-═══════════════════════════════════════════ */
 :root{
-  --bg:#F3F0E8;
-  --bg1:#FBF9F4;
-  --bg2:#E7E2D7;
-  --bg3:#DAD3C4;
-  --line:rgba(23,36,55,.14);
-  --line2:rgba(23,36,55,.30);
-  --text:#172437;
-  --sub:#5A6676;
-  --sub2:#8B95A2;
-  --hi:#101B2A;
-  --acc:#315BFF;
-  --acc2:#7290FF;
-  --acc-dim:rgba(49,91,255,.09);
-  --acc-glow:rgba(49,91,255,.22);
-  --acc-on:#FFFFFF;
-  --terracotta:#D76A4A;
-  --grid:rgba(49,91,255,.05);
-  --green:#178A65;
-  --green-g:rgba(23,138,101,.10);
-  --r:6px;
-  --wrap:1140px;
-  --hh:68px;
-  --fh:'Syne',system-ui,sans-serif;
-  --fb:'Plus Jakarta Sans',system-ui,sans-serif;
-  --fm:'Geist Mono','JetBrains Mono',monospace;
-  --fa:'IBM Plex Sans Arabic',var(--fb);
+  --bg:#F3F0E8;--bg1:#FBF9F4;--bg2:#E7E2D7;--bg3:#DAD3C4;
+  --line:rgba(23,36,55,.14);--line2:rgba(23,36,55,.30);
+  --text:#172437;--sub:#5A6676;--sub2:#8B95A2;--hi:#101B2A;
+  --acc:#315BFF;--acc2:#7290FF;--acc-dim:rgba(49,91,255,.09);--acc-glow:rgba(49,91,255,.22);--acc-on:#FFFFFF;
+  --terracotta:#D76A4A;--green:#178A65;--green-g:rgba(23,138,101,.10);
+  --r:8px;--wrap:1140px;--hh:64px;
+  --fh:'Inter',system-ui,sans-serif;--fb:'Inter',system-ui,sans-serif;--fm:'Inter',system-ui,sans-serif;--fa:'IBM Plex Sans Arabic',var(--fb);
 }
 html[data-theme="dark"]{
-  --bg:#101722;
-  --bg1:#172231;
-  --bg2:#1E2B3D;
-  --bg3:#29394D;
-  --line:rgba(231,238,247,.12);
-  --line2:rgba(231,238,247,.24);
-  --text:#E8EDF4;
-  --sub:#A7B1BF;
-  --sub2:#718093;
-  --hi:#F4F6FA;
-  --acc:#8AA4FF;
-  --acc2:#BDD0FF;
-  --acc-dim:rgba(138,164,255,.12);
-  --acc-glow:rgba(138,164,255,.23);
-  --acc-on:#101722;
-  --terracotta:#E58B6C;
-  --grid:rgba(138,164,255,.05);
-  --green:#4BD3A2;
-  --green-g:rgba(75,211,162,.12);
+  --bg:#101722;--bg1:#172231;--bg2:#1E2B3D;--bg3:#29394D;
+  --line:rgba(231,238,247,.12);--line2:rgba(231,238,247,.24);
+  --text:#E8EDF4;--sub:#A7B1BF;--sub2:#718093;--hi:#F4F6FA;
+  --acc:#8AA4FF;--acc2:#BDD0FF;--acc-dim:rgba(138,164,255,.12);--acc-glow:rgba(138,164,255,.23);--acc-on:#101722;
+  --terracotta:#E58B6C;--green:#4BD3A2;--green-g:rgba(75,211,162,.12);
 }
-
-/* ═══════════════════════════════════════════
-   RESET
-═══════════════════════════════════════════ */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:calc(var(--hh) + 20px);-webkit-text-size-adjust:100%}
-body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .35s,color .35s}
-img,svg{display:block;max-width:100%}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hh)+20px);-webkit-text-size-adjust:100%}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-::selection{background:var(--acc);color:var(--acc-on)}
-:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:4px}
 .wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(20px,5vw,48px)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:4px}
+::selection{background:var(--acc);color:var(--acc-on)}
 
-/* ═══════════════════════════════════════════
-   BACKDROP — fine technical grid + signal field canvas
-═══════════════════════════════════════════ */
-body::after{
-  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:linear-gradient(var(--grid) 1px,transparent 1px),
-                   linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-  background-size:48px 48px;
-  -webkit-mask-image:linear-gradient(to bottom,#000 0%,transparent 88%);
-  mask-image:linear-gradient(to bottom,#000 0%,transparent 88%);
-}
-#signal-field{
-  position:fixed;inset:0;width:100%;height:100%;
-  z-index:0;pointer-events:none;opacity:.4;
-}
-header,main,footer{position:relative;z-index:1}
-
-/* ═══════════════════════════════════════════
-   HEADER
-═══════════════════════════════════════════ */
-.hd{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  height:var(--hh);
-  border-bottom:1px solid transparent;
-  transition:border-color .3s,background .3s,backdrop-filter .3s;
-}
-.hd.stuck{
-  background:color-mix(in srgb,var(--bg) 90%,transparent);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  border-color:var(--line);
-}
+/* Header */
+.hd{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--hh);background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .hd-in{display:flex;align-items:center;justify-content:space-between;height:var(--hh);gap:16px}
-
-/* Logo */
-.logo{display:flex;align-items:center;gap:11px;flex:none}
-.logo-mark{
-  width:36px;height:36px;border-radius:5px;
-  background:var(--hi);color:var(--bg);
-  display:grid;place-items:center;
-  font-family:var(--fh);font-size:14px;font-weight:800;flex:none;
-  transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;
-}
-.logo:hover .logo-mark{transform:rotate(-8deg) scale(1.06);box-shadow:0 8px 22px var(--acc-glow)}
-.logo-name{font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1;color:var(--hi)}
-.logo-title{font-size:11px;color:var(--sub);font-family:var(--fm);margin-top:2px}
-
-/* Nav */
-.nav{
-  display:flex;align-items:center;gap:2px;
-  background:var(--bg1);border:1px solid var(--line);
-  border-radius:6px;padding:4px;
-}
-.nav a{
-  font-size:13px;font-weight:600;color:var(--sub);
-  padding:5px 15px;border-radius:4px;
-  transition:color .2s,background .2s;white-space:nowrap;
-}
-.nav a:hover{color:var(--text)}
-.nav a.on{background:var(--acc);color:var(--acc-on)}
-
-/* Tools */
-.tools{display:flex;align-items:center;gap:7px;flex:none}
-.t-btn{
-  height:36px;border-radius:5px;border:1px solid var(--line);
-  background:var(--bg1);color:var(--sub);
-  display:inline-flex;align-items:center;justify-content:center;
-  transition:border-color .2s,color .2s,transform .2s,box-shadow .2s;
-}
-.t-btn:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-1px);box-shadow:0 4px 14px var(--acc-dim)}
-.t-btn.lang{padding:0 13px;gap:6px;font-size:12px;font-weight:700;font-family:var(--fm)}
-.t-btn.lang .dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
-.t-btn.icon{width:36px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-mark{width:34px;height:34px;border-radius:6px;background:var(--hi);color:var(--bg);display:grid;place-items:center;font-weight:800;font-size:13px}
+.logo-name{font-size:15px;font-weight:700;letter-spacing:-.01em}
+.logo-title{font-size:11px;color:var(--sub);margin-top:1px}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a{font-size:13px;font-weight:500;color:var(--sub);padding:6px 12px;border-radius:6px;transition:color .2s,background .2s}
+.nav a:hover{color:var(--text);background:var(--bg2)}
+.tools{display:flex;align-items:center;gap:8px}
+.t-btn{height:34px;border-radius:6px;border:1px solid var(--line);background:var(--bg1);color:var(--sub);display:inline-flex;align-items:center;justify-content:center;padding:0 12px;font-size:12px;font-weight:600;transition:border-color .2s,color .2s}
+.t-btn:hover{border-color:var(--acc);color:var(--acc)}
+.t-btn.icon{width:34px;padding:0}
 .t-btn.icon svg{width:16px;height:16px}
-.cta-btn{
-  height:36px;padding:0 18px;border-radius:5px;
-  background:var(--acc);color:var(--acc-on);
-  font-size:13px;font-weight:700;
-  display:inline-flex;align-items:center;gap:7px;
-  transition:transform .2s,box-shadow .2s,opacity .2s;
-}
-.cta-btn:hover{opacity:.92;transform:translateY(-2px);box-shadow:0 8px 24px var(--acc-glow)}
-.cta-btn svg{width:13px;height:13px}
+.cta-btn{height:34px;padding:0 16px;border-radius:6px;background:var(--acc);color:var(--acc-on);font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:opacity .2s}
+.cta-btn:hover{opacity:.9}
 .burger{display:none}
+@media(max-width:760px){.nav,.cta-btn{display:none}.burger{display:grid;place-items:center}}
 
-/* ═══════════════════════════════════════════
-   MOBILE DRAWER
-═══════════════════════════════════════════ */
-.dw{
-  position:fixed;inset:0;z-index:190;
-  background:var(--bg);
-  display:flex;flex-direction:column;justify-content:center;
-  padding:0 clamp(24px,6vw,48px);
-  clip-path:inset(0 0 100% 0);
-  transition:clip-path .45s cubic-bezier(.77,0,.18,1);
-  pointer-events:none;
-}
-.dw.open{clip-path:inset(0);pointer-events:auto}
-.dw a{
-  display:flex;align-items:baseline;gap:14px;
-  padding:14px 0;border-bottom:1px solid var(--line);
-  font-family:var(--fh);font-size:clamp(32px,8vw,52px);font-weight:800;
-  color:var(--text);
-  transition:color .2s,padding-left .25s;
-}
-.dw a em{font-style:normal;font-size:14px;font-family:var(--fm);color:var(--acc)}
-.dw a:hover{color:var(--acc);padding-left:12px}
-html[dir="rtl"] .dw a:hover{padding-left:0;padding-right:12px}
-.dw-foot{margin-top:28px;font-size:13px;color:var(--sub);display:flex;flex-direction:column;gap:6px}
+/* Mobile drawer */
+.dw{position:fixed;inset:0;z-index:90;background:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:0 24px;transform:translateY(-100%);transition:transform .35s ease;pointer-events:none}
+.dw.open{transform:translateY(0);pointer-events:auto}
+.dw a{display:block;padding:16px 0;border-bottom:1px solid var(--line);font-size:28px;font-weight:800;color:var(--text)}
+.dw a:hover{color:var(--acc)}
+.dw-foot{margin-top:24px;font-size:13px;color:var(--sub);display:flex;flex-direction:column;gap:6px}
 .dw-foot a:hover{color:var(--acc)}
 
-/* ═══════════════════════════════════════════
-   BUTTONS
-═══════════════════════════════════════════ */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
-  height:46px;padding:0 24px;border-radius:5px;
-  font-size:14px;font-weight:700;border:1px solid transparent;
-  transition:all .22s;cursor:pointer;
-}
-.btn svg{width:15px;height:15px;transition:transform .22s}
-.btn:hover svg{transform:translate(2px,-2px)}
-.btn-primary{background:var(--acc);color:var(--acc-on);box-shadow:0 6px 18px var(--acc-glow)}
-.btn-primary:hover{opacity:.92;transform:translateY(-2px);box-shadow:0 10px 30px var(--acc-glow)}
+/* Hero */
+.hero{padding:calc(var(--hh)+64px) 0 72px}
+.hero-inner{max-width:820px}
+.hero-eyebrow{margin-bottom:20px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:999px;background:var(--green-g);color:var(--green);font-size:12px;font-weight:600}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
+h1.hero-title{font-size:clamp(40px,7vw,72px);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:16px}
+.hero-title .acc{color:var(--acc)}
+.hero-lede{font-size:clamp(16px,1.6vw,19px);line-height:1.7;color:var(--sub);max-width:60ch;margin-bottom:28px}
+.hero-lede b{color:var(--text);font-weight:600}
+.hero-acts{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 20px;border-radius:6px;font-size:14px;font-weight:600;border:1px solid transparent;transition:all .2s}
+.btn svg{width:15px;height:15px}
+.btn-primary{background:var(--acc);color:var(--acc-on)}
+.btn-primary:hover{opacity:.9;transform:translateY(-1px)}
 .btn-ghost{background:transparent;color:var(--text);border-color:var(--line2)}
 .btn-ghost:hover{border-color:var(--acc);color:var(--acc);background:var(--acc-dim)}
-html[lang="ar"] .btn svg{transform:scaleX(-1)}
-html[lang="ar"] .btn:hover svg{transform:scaleX(-1) translate(2px,-2px)}
+.hero-hire{font-size:14px;color:var(--sub);max-width:62ch;line-height:1.6}
+.hero-stats{display:flex;gap:32px;margin-top:32px;padding-top:24px;border-top:1px solid var(--line);flex-wrap:wrap}
+.hero-stat b{display:block;font-size:24px;font-weight:800;color:var(--hi);line-height:1}
+.hero-stat span{font-size:11px;color:var(--sub);margin-top:4px;display:block;text-transform:uppercase;letter-spacing:.06em}
 
-/* ═══════════════════════════════════════════
-   BADGE
-═══════════════════════════════════════════ */
-.badge{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:5px 13px;border-radius:4px;
-  border:1px solid color-mix(in srgb,var(--green) 30%,transparent);
-  background:var(--green-g);
-  color:var(--green);font-size:12px;font-weight:600;font-family:var(--fm);
-}
-.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{
-  0%,100%{opacity:1;box-shadow:0 0 0 0 var(--green)}
-  60%{opacity:.4;box-shadow:0 0 10px 3px var(--green)}
-}
-
-/* ═══════════════════════════════════════════
-   HERO
-═══════════════════════════════════════════ */
-.hero{
-  min-height:min(920px,100svh);display:flex;align-items:center;
-  padding-top:calc(var(--hh) + 48px);padding-bottom:72px;
-  position:relative;overflow:hidden;
-}
-.hero-inner{
-  position:relative;z-index:1;width:100%;
-  display:grid;grid-template-columns:minmax(0,1fr);
-  gap:clamp(40px,7vw,96px);align-items:center;
-}
-.hero-text-col{position:relative}
-.hero-text-col::before{
-  content:'PORTFOLIO / 2026';position:absolute;top:-56px;left:0;
-  font-family:var(--fm);font-size:10px;font-weight:600;
-  letter-spacing:.18em;color:var(--sub2);
-}
-html[dir="rtl"] .hero-text-col::before{content:'بورتفوليو / 2026';left:auto;right:0}
-
-.hero-eyebrow{margin-bottom:28px;animation:fadeUp .7s .05s both}
-.hero-title{
-  font-family:var(--fh);
-  font-size:clamp(50px,7.8vw,108px);
-  font-weight:800;line-height:.98;letter-spacing:-.05em;
-  max-width:12ch;animation:fadeUp .7s .15s both;
-}
-.hero-title .acc-word{position:relative;color:var(--acc)}
-.hero-title .acc-word::after{
-  content:'';position:absolute;bottom:-.06em;left:0;
-  width:62%;height:5px;background:var(--terracotta);
-  transform:rotate(-2deg);transform-origin:left;
-}
-.hero-row{
-  display:flex;align-items:flex-end;justify-content:space-between;
-  gap:clamp(20px,4vw,56px);margin-top:clamp(28px,4vw,44px);
-  border-top:1px solid var(--line);padding-top:22px;
-}
-.hero-left{animation:fadeUp .7s .25s both}
-.hero-right{animation:fadeUp .7s .35s both;flex:none;text-align:right}
-html[dir="rtl"] .hero-right{text-align:left}
-.hero-hire{margin-top:22px;font-size:14px;line-height:1.7;color:var(--sub);max-width:62ch}
-.hero-hire{animation:fadeUp .7s .3s both}
-.hero-lede{
-  font-size:clamp(15px,1.3vw,17px);line-height:1.75;
-  color:var(--sub);max-width:44ch;margin-bottom:24px;
-}
-.hero-lede b{color:var(--text);font-weight:600}
-.hero-acts{display:flex;flex-wrap:wrap;gap:10px}
-
-/* Stats */
-.stats{display:flex;flex-direction:column;gap:16px}
-.stat-item b{
-  display:block;font-family:var(--fh);
-  font-size:clamp(24px,2.8vw,34px);font-weight:800;
-  line-height:1;color:var(--hi);
-}
-.stat-item span{font-size:10.5px;color:var(--sub);font-family:var(--fm);margin-top:3px;display:block;letter-spacing:.08em;text-transform:uppercase}
-.stat-div{width:1px;height:26px;background:var(--line2)}
-
-.btn,.cta-btn{will-change:transform}
-
-/* Custom cursor (fine pointers only) */
-@media(pointer:fine){
-  body.cursor-ready,body.cursor-ready a,body.cursor-ready button{cursor:none}
-}
-.cursor-dot,.cursor-ring{
-  position:fixed;top:0;left:0;z-index:500;pointer-events:none;
-  border-radius:50%;transform:translate(-50%,-50%);opacity:0;
-}
-.cursor-dot{width:6px;height:6px;background:var(--acc)}
-.cursor-ring{
-  width:34px;height:34px;border:1.5px solid var(--acc);
-  transition:width .25s,height .25s,opacity .25s,border-color .25s;
-}
-.cursor-ring.hot{width:52px;height:52px;opacity:1;border-color:var(--terracotta)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-
-/* Scroll hint */
-.scroll-hint{
-  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:8px;
-  color:var(--sub2);font-size:10px;font-family:var(--fm);letter-spacing:.12em;
-  animation:fadeIn 1s 1.4s both;z-index:1;
-}
-.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--acc),transparent);animation:dropLine 1.8s ease-in-out infinite}
-@keyframes dropLine{0%,100%{opacity:0;transform:scaleY(.3) translateY(-10px)}55%{opacity:1;transform:scaleY(1) translateY(0)}}
-
-/* ═══════════════════════════════════════════
-   SECTIONS
-═══════════════════════════════════════════ */
-.sec{padding:clamp(80px,10vw,130px) 0;border-top:1px solid var(--line);position:relative}
-.sec-kicker{
-  font-family:var(--fm);font-size:11px;font-weight:700;
-  color:var(--acc);letter-spacing:.14em;text-transform:uppercase;
-  display:flex;align-items:center;gap:10px;margin-bottom:16px;
-}
-.sec-kicker::after{content:'';flex:1;max-width:40px;height:1px;background:var(--acc)}
-html[dir="rtl"] .sec-kicker::after{display:none}
-html[dir="rtl"] .sec-kicker::before{content:'';flex:1;max-width:40px;height:1px;background:var(--acc)}
-.sec-h{
-  font-family:var(--fh);
-  font-size:clamp(32px,4.5vw,52px);font-weight:800;
-  line-height:1.08;letter-spacing:-.03em;
-  max-width:18ch;margin-bottom:14px;
-}
+/* Sections */
+.sec{padding:clamp(64px,8vw,96px) 0;border-top:1px solid var(--line)}
+.sec-kicker{font-size:11px;font-weight:700;color:var(--acc);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+.sec-h{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:10px}
 .sec-h em{font-style:normal;color:var(--acc)}
-.sec-sub{font-size:16px;line-height:1.65;color:var(--sub);max-width:52ch}
+.sec-sub{font-size:16px;color:var(--sub);max-width:60ch;line-height:1.6;margin-bottom:32px}
 
-/* ═══════════════════════════════════════════
-   WORK GRID
-═══════════════════════════════════════════ */
-.work-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);
-  gap:1px;background:var(--line);
-  border:1px solid var(--line);border-radius:6px;
-  overflow:hidden;margin-top:clamp(36px,5vw,56px);
-}
-.wc{
-  background:var(--bg);display:flex;flex-direction:column;
-  position:relative;overflow:hidden;
-  transition:background .3s;
-}
-.wc:hover{background:var(--bg1)}
-.wc-num{
-  position:absolute;top:20px;left:24px;z-index:2;
-  font-family:var(--fm);font-size:10px;font-weight:700;
-  color:var(--sub2);letter-spacing:.12em;
-}
-html[dir="rtl"] .wc-num{left:auto;right:24px}
-.wc-img{
-  aspect-ratio:16/9;overflow:hidden;position:relative;
-  background:var(--bg2);border-bottom:1px solid var(--line);
-}
-.wc-img img{
-  width:100%;height:100%;object-fit:cover;
-  transition:transform .6s cubic-bezier(.22,.75,.2,1),filter .4s;
-  filter:saturate(.85);
-}
-.wc:hover .wc-img img{transform:scale(1.04);filter:saturate(1.05)}
-.wc-img::after{
-  content:'↗';position:absolute;inset:0;
-  display:grid;place-items:center;
-  font-size:36px;color:#fff;
-  background:rgba(16,27,42,.55);
-  opacity:0;transition:opacity .3s;font-family:var(--fh);
-}
-html[dir="rtl"] .wc-img::after{content:'↖'}
-.wc:hover .wc-img::after{opacity:1}
-.wc-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
-.wc-kind{
-  font-family:var(--fm);font-size:10px;font-weight:700;
-  color:var(--acc);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;
-}
-.wc-name{
-  font-family:var(--fh);font-size:clamp(21px,2.4vw,27px);font-weight:800;
-  letter-spacing:-.03em;line-height:1.1;transition:color .2s;
-}
-.wc:hover .wc-name{color:var(--acc)}
-.wc-desc{font-size:13.5px;line-height:1.6;color:var(--sub);margin-top:8px}
-.wc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
-.wc-tag{
-  font-family:var(--fm);font-size:10px;padding:3px 8px;
-  border-radius:3px;background:var(--bg2);color:var(--sub);
-  border:1px solid var(--line);
-}
-.wc-cta{
-  margin-top:18px;padding-top:16px;border-top:1px solid var(--line);
-  display:inline-flex;align-items:center;gap:7px;
-  font-size:12px;font-weight:700;font-family:var(--fm);
-  color:var(--acc);transition:color .2s,gap .2s;
-}
-html[dir="rtl"] .wc-cta{flex-direction:row-reverse}
-.wc:hover .wc-cta{gap:11px}
-.wc-cta svg{width:13px;height:13px;transition:transform .22s}
-.wc:hover .wc-cta svg{transform:translate(2px,-2px)}
-html[dir="rtl"] .wc:hover .wc-cta svg{transform:translate(-2px,-2px)}
+/* Work grid */
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:640px){.work-grid{grid-template-columns:1fr}}
+.wc{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--bg1);transition:transform .2s,box-shadow .2s}
+.wc:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--acc-glow)}
+.wc-img{aspect-ratio:16/9;overflow:hidden;background:var(--bg2)}
+.wc-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.wc:hover .wc-img img{transform:scale(1.03)}
+.wc-body{padding:16px}
+.wc-kind{font-size:10px;font-weight:700;color:var(--acc);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.wc-name{font-size:18px;font-weight:700;margin-bottom:6px}
+.wc-desc{font-size:13px;color:var(--sub);line-height:1.55;margin-bottom:10px}
+.wc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.wc-tag{font-size:10px;padding:3px 8px;border-radius:4px;background:var(--bg2);color:var(--sub);border:1px solid var(--line)}
+.wc-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--acc)}
+.wc-link svg{width:13px;height:13px}
 
-/* ═══════════════════════════════════════════
-   TERMINAL
-═══════════════════════════════════════════ */
-.term-wrap{
-  margin-top:clamp(32px,4vw,48px);
-  border:1px solid var(--line);border-radius:6px;
-  background:var(--bg1);overflow:hidden;
-}
-.term-top{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:12px 18px;border-bottom:1px solid var(--line);
-  background:var(--bg2);
-}
-.term-dots{display:flex;gap:6px}
-.term-dot{width:11px;height:11px;border-radius:50%;background:var(--line2)}
-.term-dot.r{background:#EF4444}.term-dot.y{background:#EAB308}.term-dot.g{background:#22C55E}
-.term-tabs{display:flex;gap:2px}
-.term-tab{
-  font-family:var(--fm);font-size:11.5px;padding:4px 11px;
-  border-radius:4px;color:var(--sub);cursor:pointer;
-  transition:background .2s,color .2s;
-}
-.term-tab.on{background:var(--acc-dim);color:var(--acc)}
-.term-info{font-family:var(--fm);font-size:11px;color:var(--sub2)}
-.term-body{
-  padding:20px 22px;font-family:var(--fm);font-size:13px;
-  line-height:1.75;min-height:180px;overflow-x:auto;
-}
-.tl{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}
-.tp{color:var(--acc);font-weight:700;flex:none;user-select:none}
-.tc{color:var(--sub)}
-.to{padding-left:20px;color:var(--sub);margin-bottom:8px}
-.to.ok{color:var(--green)}
-.to.warn{color:#EAB308}
-html[dir="rtl"] .to{padding-left:0;padding-right:20px;direction:ltr;text-align:left}
+/* Services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:760px){.svc-grid{grid-template-columns:1fr}}
+.sc{border:1px solid var(--line);border-radius:var(--r);padding:20px;background:var(--bg1)}
+.sc h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.sc p{font-size:13px;color:var(--sub);line-height:1.6;margin-bottom:12px}
+.sc ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.sc li{font-size:12px;color:var(--sub);display:flex;align-items:center;gap:6px}
+.sc li::before{content:"✓";color:var(--green);font-weight:700}
 
-/* ═══════════════════════════════════════════
-   SERVICES
-═══════════════════════════════════════════ */
-.svc-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:var(--line);
-  border:1px solid var(--line);border-radius:6px;overflow:hidden;
-  margin-top:clamp(36px,5vw,56px);
-}
-.sc{
-  background:var(--bg);padding:28px 24px 32px;
-  display:flex;flex-direction:column;
-  transition:background .25s;
-}
-.sc:hover{background:var(--bg1)}
-.sc-num{
-  font-family:var(--fm);font-size:10px;font-weight:700;
-  color:var(--acc);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px;
-}
-.sc-icon{
-  width:46px;height:46px;border-radius:4px;
-  border:1px solid var(--line);
-  background:var(--acc-dim);
-  display:grid;place-items:center;margin-bottom:16px;
-  transition:box-shadow .25s;
-}
-.sc:hover .sc-icon{box-shadow:0 0 20px var(--acc-dim)}
-.sc-icon svg{width:22px;height:22px;color:var(--acc)}
-.sc-title{
-  font-family:var(--fh);font-size:20px;font-weight:800;
-  letter-spacing:-.02em;margin-bottom:10px;color:var(--hi);
-}
-.sc-desc{font-size:13.5px;line-height:1.65;color:var(--sub);flex:1}
-.sc-list{
-  list-style:none;margin-top:20px;border-top:1px solid var(--line);
-  padding-top:16px;display:flex;flex-direction:column;gap:7px;
-}
-.sc-list li{
-  display:flex;align-items:center;gap:7px;
-  font-family:var(--fm);font-size:11.5px;color:var(--sub);
-}
-.sc-list li svg{width:13px;height:13px;color:var(--green);flex:none}
+/* About */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+.about p{font-size:15px;color:var(--sub);line-height:1.7;margin-bottom:12px}
+.about p b{color:var(--text)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.fact{padding:12px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg1)}
+.fact-label{font-size:10px;color:var(--acc);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.fact-val{font-size:14px;font-weight:600;margin-top:4px}
+.timeline{display:flex;flex-direction:column;gap:16px}
+.ti{padding-left:16px;border-left:2px solid var(--line)}
+html[dir="rtl"] .ti{padding-left:0;padding-right:16px;border-left:none;border-right:2px solid var(--line)}
+.ti.now{border-color:var(--acc)}
+.ti-role{font-size:15px;font-weight:700}
+.ti-org{font-size:12px;color:var(--sub);margin:2px 0 4px}
+.ti-desc{font-size:13px;color:var(--sub);line-height:1.55}
 
-/* ═══════════════════════════════════════════
-   ABOUT
-═══════════════════════════════════════════ */
-.about-wrap{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:clamp(32px,6vw,80px);margin-top:clamp(36px,5vw,56px);
-  align-items:start;
-}
-.about-text p{font-size:16px;line-height:1.75;color:var(--sub);margin-bottom:16px}
-.about-text p b{color:var(--text);font-weight:600}
-.about-facts{
-  display:grid;grid-template-columns:1fr 1fr;gap:1px;
-  background:var(--line);border:1px solid var(--line);
-  border-radius:6px;overflow:hidden;margin-top:28px;
-}
-.af{padding:14px 16px;background:var(--bg1)}
-.af-label{font-family:var(--fm);font-size:10px;color:var(--acc);text-transform:uppercase;letter-spacing:.12em}
-.af-val{font-size:14px;font-weight:600;color:var(--text);margin-top:4px}
+/* Contact */
+.ct{text-align:center;padding:clamp(64px,8vw,96px) 0;border-top:1px solid var(--line)}
+.ct h2{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:10px}
+.ct h2 em{font-style:normal;color:var(--acc)}
+.ct p{font-size:16px;color:var(--sub);margin-bottom:24px}
+.ct-acts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:24px}
+.ct-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;font-size:13px;color:var(--sub)}
+.ct-links a,.ct-links span{padding:6px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg1)}
+.ct-links a:hover{border-color:var(--acc);color:var(--acc)}
 
-/* Timeline */
-.timeline{display:flex;flex-direction:column;gap:0}
-.ti{position:relative;padding:0 0 28px 24px;border-left:1px solid var(--line)}
-html[dir="rtl"] .ti{padding:0 24px 28px 0;border-left:none;border-right:1px solid var(--line)}
-.ti:last-child{padding-bottom:0}
-.ti-dot{
-  position:absolute;left:-5px;top:3px;
-  width:9px;height:9px;border-radius:50%;
-  background:var(--bg2);border:1.5px solid var(--line2);
-  transition:all .3s;
-}
-html[dir="rtl"] .ti-dot{left:auto;right:-5px}
-.ti.now .ti-dot{background:var(--acc);border-color:var(--acc);box-shadow:0 0 12px var(--acc-glow)}
-.ti-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:4px}
-.ti-role{font-size:16px;font-weight:700;color:var(--hi);font-family:var(--fh);letter-spacing:-.01em}
-.ti-chip{
-  font-family:var(--fm);font-size:10px;padding:2px 8px;
-  border-radius:3px;border:1px solid var(--line);color:var(--sub);font-weight:700;
-}
-.ti.now .ti-chip{border-color:var(--acc);color:var(--acc);background:var(--acc-dim)}
-.ti-org{font-size:12px;color:var(--sub2);font-family:var(--fm);margin-bottom:8px}
-.ti-desc{font-size:13.5px;line-height:1.6;color:var(--sub)}
+/* Footer */
+.ft{padding:24px 0;border-top:1px solid var(--line);text-align:center;font-size:13px;color:var(--sub)}
 
-/* ═══════════════════════════════════════════
-   CONTACT
-═══════════════════════════════════════════ */
-.ct-sec{
-  border-top:1px solid var(--line);
-  padding:clamp(80px,10vw,130px) 0;
-  text-align:center;position:relative;overflow:hidden;
-}
-.ct-bg{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  font-family:var(--fh);font-size:clamp(100px,18vw,240px);font-weight:800;
-  color:transparent;-webkit-text-stroke:1px var(--line);
-  user-select:none;pointer-events:none;white-space:nowrap;letter-spacing:-.04em;
-}
-.ct-inner{position:relative;max-width:680px;margin:0 auto}
-.ct-h{
-  font-family:var(--fh);font-size:clamp(38px,5.5vw,68px);font-weight:800;
-  letter-spacing:-.04em;line-height:1.05;margin-top:16px;margin-bottom:14px;
-}
-.ct-h em{font-style:normal;color:var(--acc)}
-.ct-sub{font-size:16px;line-height:1.65;color:var(--sub);max-width:48ch;margin:0 auto 32px}
-.ct-acts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-.ct-links{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:0;
-  margin-top:36px;padding-top:28px;border-top:1px solid var(--line);
-}
-.ct-link{
-  display:inline-flex;align-items:center;gap:7px;
-  padding:10px 20px;border-right:1px solid var(--line);
-  font-size:13px;color:var(--sub);
-  transition:color .2s;position:relative;
-}
-.ct-link:last-child{border-right:none}
-html[dir="rtl"] .ct-link{border-right:none;border-left:1px solid var(--line)}
-html[dir="rtl"] .ct-link:last-child{border-left:none}
-.ct-link:hover{color:var(--acc)}
-.ct-link svg{width:14px;height:14px}
-.copy-tip{
-  position:absolute;top:-30px;left:50%;transform:translateX(-50%);
-  background:var(--acc);color:var(--acc-on);
-  font-size:11px;font-family:var(--fm);padding:3px 9px;border-radius:4px;
-  opacity:0;pointer-events:none;transition:opacity .2s,top .2s;white-space:nowrap;
-}
-.ct-link.copied .copy-tip{opacity:1;top:-36px}
-
-/* ═══════════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════════ */
-.ft{border-top:1px solid var(--line);padding:32px 0}
-.ft-in{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.ft-left{font-size:13px;color:var(--sub)}
-.ft-brand{font-family:var(--fh);font-size:16px;font-weight:800;letter-spacing:-.02em;color:var(--hi);margin-bottom:4px}
-.ft-top-btn{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:12px;font-family:var(--fm);color:var(--sub);
-  transition:color .2s;
-}
-.ft-top-btn:hover{color:var(--acc)}
-.ft-top-btn svg{width:13px;height:13px}
-
-/* ═══════════════════════════════════════════
-   ARABIC / RTL
-═══════════════════════════════════════════ */
-html[lang="ar"] body{font-family:var(--fa);line-height:1.85}
-html[lang="ar"] .hero-title,
-html[lang="ar"] .sec-h,
-html[lang="ar"] .wc-name,
-html[lang="ar"] .sc-title,
-html[lang="ar"] .ti-role,
-html[lang="ar"] .ct-h,
-html[lang="ar"] .ft-brand{font-family:var(--fa);letter-spacing:0}
-html[lang="ar"] .hero-title .acc-word::after{width:40%}
-
-/* ═══════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════ */
-@media(max-width:940px){
-  .hero-inner{grid-template-columns:1fr;gap:36px}
-  .hero-text-col::before{top:-48px}
-  .hero-row{flex-direction:column;align-items:flex-start;gap:24px}
-  .hero-right{text-align:left}
-  html[dir="rtl"] .hero-right{text-align:right}
-  .stats{flex-direction:row;flex-wrap:wrap;gap:20px}
-  .stat-div{width:1px;height:24px}
-  .about-wrap{grid-template-columns:1fr}
-  .svc-grid{grid-template-columns:1fr}
-}
-@media(max-width:760px){
-  .nav,.cta-btn{display:none}
-  .burger{display:grid;place-items:center}
-  .work-grid{grid-template-columns:1fr}
-}
-@media(max-width:560px){
-  .about-facts{grid-template-columns:1fr}
-  .hero-title{font-size:clamp(46px,13vw,64px)}
-  .ct-h{font-size:clamp(32px,10vw,56px)}
-  .ct-links{flex-direction:column;align-items:center}
-  .ct-link{border:none;border-bottom:1px solid var(--line)}
-  .ct-link:last-child{border-bottom:none}
-}
-
-/* ═══════════════════════════════════════════
-   SCROLL REVEAL
-═══════════════════════════════════════════ */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .65s cubic-bezier(.22,.75,.2,1),transform .65s cubic-bezier(.22,.75,.2,1);transition-delay:var(--d,0s)}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){
-  .rv{opacity:1!important;transform:none!important}
-  *{animation-duration:.001ms!important;transition-duration:.001ms!important}
-}
-
-/* Print */
-@media print{
-  .hd,.dw,.scroll-hint,.ct-bg,body::after,#signal-field{display:none!important}
-  body{background:#fff;color:#000}
-  .sec,.ct-sec,.ft{border-color:#ddd}
-  .rv{opacity:1!important;transform:none!important}
-}
+/* Theme/lang btns already styled */
+@media(max-width:480px){.hero-stats{gap:20px}.hero-stat b{font-size:20px}}
 </style>
 </head>
 <body>
-
-<!-- Technical grid is drawn by body::after; signal field by canvas -->
-<canvas id="signal-field" aria-hidden="true"></canvas>
-
-<!-- ══════════════════════════════════════════════════
-     HEADER
-══════════════════════════════════════════════════ -->
-<header class="hd" id="hd">
+<header class="hd">
   <div class="wrap hd-in">
-    <a class="logo" href="#top">
-      <span class="logo-mark">AW</span>
-      <span>
-        <span class="logo-name">Abdelrahman Waleed</span>
-        <span class="logo-title" data-i18n="mark.sub">WordPress · IT Ops</span>
-      </span>
-    </a>
-
-    <nav class="nav" aria-label="Main">
-      <a href="#work"     data-i18n="nav.work">Work</a>
-      <a href="#services" data-i18n="nav.svc">Services</a>
-      <a href="#about"    data-i18n="nav.about">About</a>
-      <a href="#contact"  data-i18n="nav.contact">Contact</a>
-    </nav>
-
+    <a class="logo" href="#top"><span class="logo-mark">AW</span><span><span class="logo-name">Abdelrahman Waleed</span><span class="logo-title" data-i18n="mark.sub">WordPress · IT Ops</span></span></a>
+    <nav class="nav"><a href="#work" data-i18n="nav.work">Work</a><a href="#services" data-i18n="nav.svc">Services</a><a href="#about" data-i18n="nav.about">About</a><a href="#contact" data-i18n="nav.contact">Contact</a></nav>
     <div class="tools">
-      <button class="t-btn lang" id="langBtn" aria-label="Switch language">
-        <span class="dot"></span><span id="langTxt">AR</span>
-      </button>
-      <button class="t-btn icon" id="themeBtn" aria-label="Toggle theme">
-        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
-          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>
-        </svg>
-      </button>
-      <a class="cta-btn" href="#contact">
-        <span data-i18n="nav.cta">Let's talk</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
-      </a>
-      <button class="t-btn icon burger" id="menuBtn" aria-expanded="false" aria-label="Open menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 17h16"/></svg>
-      </button>
+      <button class="t-btn" id="langBtn" aria-label="Switch language"><span id="langTxt">AR</span></button>
+      <button class="t-btn icon" id="themeBtn" aria-label="Toggle theme"><svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/></svg></button>
+      <a class="cta-btn" href="assets/Abdelrahman-Waleed-CV.pdf" download>CV</a>
+      <button class="t-btn icon burger" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 17h16"/></svg></button>
     </div>
   </div>
 </header>
-
-<!-- Mobile drawer -->
 <div class="dw" id="dw">
-  <a href="#work">    <em>01</em><span data-i18n="nav.work">Work</span></a>
-  <a href="#services"><em>02</em><span data-i18n="nav.svc">Services</span></a>
-  <a href="#about">   <em>03</em><span data-i18n="nav.about">About</span></a>
-  <a href="#contact"> <em>04</em><span data-i18n="nav.contact">Contact</span></a>
-  <div class="dw-foot">
-    <a href="mailto:abdelrahman959@gmail.com">abdelrahman959@gmail.com</a>
-    <a href="tel:+201274757241" dir="ltr">+20 127 475 7241</a>
-  </div>
+  <a href="#work" data-i18n="nav.work">Work</a>
+  <a href="#services" data-i18n="nav.svc">Services</a>
+  <a href="#about" data-i18n="nav.about">About</a>
+  <a href="#contact" data-i18n="nav.contact">Contact</a>
+  <div class="dw-foot"><a href="mailto:abdelrahman959@gmail.com">abdelrahman959@gmail.com</a><a href="tel:+201274757241">+20 127 475 7241</a></div>
 </div>
 
 <main>
-<!-- ══════════════════════════════════════════════════
-     HERO
-══════════════════════════════════════════════════ -->
-<section class="hero" id="top">
-  <div class="wrap">
-    <div class="hero-inner">
-
-      <!-- Left: text -->
-      <div class="hero-text-col">
-        <div class="hero-eyebrow">
-          <span class="badge"><span class="badge-dot"></span><span data-i18n="hero.badge">Available — Suez, Egypt</span></span>
-        </div>
-
-        <h1 class="hero-title">
-          <span data-i18n-html="hero.l1">WordPress</span><br>
-          <span class="acc-word" data-i18n="hero.l2">sites that work.</span>
-        </h1>
-
-        <div class="hero-row">
-          <div class="hero-left">
-            <p class="hero-lede" data-i18n="hero.lede">
-              I build, launch and manage <b>WordPress websites</b> for businesses — from blank hosting to a live site with real traffic, and I keep them running.
-            </p>
-            <div class="hero-acts">
-              <a class="btn btn-primary" href="#work">
-                <span data-i18n="hero.cta1">View work</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
-              </a>
-              <a class="btn btn-ghost" href="mailto:abdelrahman959@gmail.com">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-9 6-9-6"/></svg>
-                <span data-i18n="hero.cta2">Email me</span>
-              </a>
-              <a class="btn btn-ghost wa-link" href="https://wa.me/201274757241" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 21l2.3-5.3A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8.5 9.5c.5 2 2 3.5 4 4l1.2-1.2 1.8.8v1.5c0 .6-.5 1.1-1.1 1.1-3.5-.2-6.3-3-6.4-6.4 0-.6.5-1.1 1.1-1.1h1.4l.8 1.8-1.3 1.2"/></svg>
-                <span data-i18n="hero.cta3">WhatsApp</span>
-              </a>
-              <a class="btn btn-ghost" href="assets/Abdelrahman-Waleed-CV.pdf" download="Abdelrahman-Waleed-CV.pdf">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M20 21H4"/></svg>
-                <span data-i18n="hero.cta4">Download CV</span>
-              </a>
-            </div>
-            <p class="hero-hire" data-i18n="hero.hire">Open to full-time WordPress / IT ops roles and selected freelance projects. Remote-friendly (GMT+2).</p>
-          </div>
-
-          <div class="hero-right">
-            <div class="stats">
-              <div class="stat-item">
-                <b>7</b>
-                <span data-i18n="stat.sites">Live client sites</span>
-              </div>
-              <div class="stat-div" aria-hidden="true"></div>
-              <div class="stat-item">
-                <b>PHP</b>
-                <span data-i18n="stat.stack">WordPress + WooCommerce</span>
-              </div>
-              <div class="stat-div" aria-hidden="true"></div>
-              <div class="stat-item">
-                <b>24 h</b>
-                <span data-i18n="stat.support">Response time</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="badge"><span class="badge-dot"></span><span data-i18n="hero.badge">Available — Suez, Egypt</span></span>
+    <h1 class="hero-title">WordPress <span class="acc">sites that work.</span></h1>
+    <p class="hero-lede" data-i18n="hero.lede">I build, launch and manage <b>WordPress websites</b> for businesses — from blank hosting to a live site with real traffic, and I keep them running.</p>
+    <div class="hero-acts">
+      <a class="btn btn-primary" href="#work" data-i18n="hero.cta1">View work</a>
+      <a class="btn btn-ghost" href="mailto:abdelrahman959@gmail.com" data-i18n="hero.cta2">Email me</a>
+      <a class="btn btn-ghost" href="https://wa.me/201274757241" target="_blank" rel="noopener" data-i18n="hero.cta3">WhatsApp</a>
+      <a class="btn btn-ghost" href="assets/Abdelrahman-Waleed-CV.pdf" download data-i18n="hero.cta4">Download CV</a>
     </div>
-  </div>
-
-  <div class="scroll-hint" aria-hidden="true">
-    <span>SCROLL</span>
-    <span class="scroll-line"></span>
+    <p class="hero-hire" data-i18n="hero.hire">Open to full-time WordPress / IT ops roles and selected freelance projects. Remote-friendly (GMT+2).</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><b>7</b><span data-i18n="stat.sites">Live client sites</span></div>
+      <div class="hero-stat"><b>PHP</b><span data-i18n="stat.stack">WordPress + WooCommerce</span></div>
+      <div class="hero-stat"><b>24h</b><span data-i18n="stat.support">Response time</span></div>
+    </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     WORK
-══════════════════════════════════════════════════ -->
 <section class="sec" id="work">
   <div class="wrap">
-    <div class="rv">
-      <p class="sec-kicker"><span>01</span><span data-i18n="work.kicker">Selected work</span></p>
-      <h2 class="sec-h" data-i18n="work.h">Websites built for <em>real businesses.</em></h2>
-      <p class="sec-sub" data-i18n="work.sub">Four live examples across e-commerce, marketplace, learning, and product catalogues. Click any card to visit the live site.</p>
-    </div>
-
-    <div class="work-grid rv" style="--d:.1s">
-
-      <!-- Eg App -->
-      <a class="wc" href="https://eg-app.com" target="_blank" rel="noopener" aria-label="Visit Eg App — live site">
-        <span class="wc-num">01</span>
-        <div class="wc-img">
-          <img src="assets/eg-app.jpg" alt="Eg App homepage screenshot" width="1200" height="675" fetchpriority="high">
-        </div>
+    <p class="sec-kicker" data-i18n="work.kicker">Selected work</p>
+    <h2 class="sec-h" data-i18n="work.h">Websites built for <em>real businesses.</em></h2>
+    <p class="sec-sub" data-i18n="work.sub">Four live examples across e-commerce, marketplace, learning, and product catalogues.</p>
+    <div class="work-grid">
+      <a class="wc" href="https://eg-app.com" target="_blank" rel="noopener">
+        <div class="wc-img"><img src="assets/eg-app.jpg" alt="Eg App" loading="lazy"></div>
         <div class="wc-body">
           <p class="wc-kind" data-i18n="w1.kind">Agency & Digital Store</p>
           <h3 class="wc-name">Eg App</h3>
           <p class="wc-desc" data-i18n="w1.ds">Agency website and bilingual digital-product store. WooCommerce with digital delivery and Arabic/English support.</p>
-          <div class="wc-tags">
-            <span class="wc-tag">WooCommerce</span>
-            <span class="wc-tag">AR / EN</span>
-            <span class="wc-tag">Digital Delivery</span>
-          </div>
-          <span class="wc-cta">
-            <span data-i18n="work.visit">Visit live site</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
-          </span>
+          <div class="wc-tags"><span class="wc-tag">WooCommerce</span><span class="wc-tag">AR / EN</span><span class="wc-tag">Digital Delivery</span></div>
+          <span class="wc-link" data-i18n="work.visit">Visit live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </div>
       </a>
-
-      <!-- Farha -->
-      <a class="wc" href="https://farha.wuaze.com" target="_blank" rel="noopener" aria-label="Visit Farha — live site">
-        <span class="wc-num">02</span>
-        <div class="wc-img">
-          <img src="assets/farha.jpg" alt="Farha wedding marketplace screenshot" width="1200" height="675" loading="lazy">
-        </div>
+      <a class="wc" href="https://farha.wuaze.com" target="_blank" rel="noopener">
+        <div class="wc-img"><img src="assets/farha.jpg" alt="Farha" loading="lazy"></div>
         <div class="wc-body">
           <p class="wc-kind" data-i18n="w2.kind">Wedding Marketplace</p>
-          <h3 class="wc-name" data-i18n="w2.nm">Farha</h3>
+          <h3 class="wc-name">Farha</h3>
           <p class="wc-desc" data-i18n="w2.ds">Multi-vendor platform for wedding venues and service providers. Vendor dashboards, bookings, and location filtering.</p>
-          <div class="wc-tags">
-            <span class="wc-tag">Dokan</span>
-            <span class="wc-tag">Multi-vendor</span>
-            <span class="wc-tag">Custom Filter</span>
-          </div>
-          <span class="wc-cta">
-            <span data-i18n="work.visit">Visit live site</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
-          </span>
+          <div class="wc-tags"><span class="wc-tag">Dokan</span><span class="wc-tag">Multi-vendor</span><span class="wc-tag">Custom Filter</span></div>
+          <span class="wc-link" data-i18n="work.visit">Visit live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </div>
       </a>
-
-      <!-- Tamayoz -->
-      <a class="wc" href="https://tamayoz.wuaze.com" target="_blank" rel="noopener" aria-label="Visit Tamayoz — live site">
-        <span class="wc-num">03</span>
-        <div class="wc-img">
-          <img src="assets/tamayoz.jpg" alt="Tamayoz learning platform screenshot" width="1200" height="675" loading="lazy">
-        </div>
+      <a class="wc" href="https://tamayoz.wuaze.com" target="_blank" rel="noopener">
+        <div class="wc-img"><img src="assets/tamayoz.jpg" alt="Tamayoz" loading="lazy"></div>
         <div class="wc-body">
           <p class="wc-kind" data-i18n="w3.kind">Learning Platform</p>
-          <h3 class="wc-name" data-i18n="w3.nm">Tamayoz</h3>
+          <h3 class="wc-name">Tamayoz</h3>
           <p class="wc-desc" data-i18n="w3.ds">Online courses for Gulf curricula — interactive lessons, timed quizzes, student dashboards and progress tracking.</p>
-          <div class="wc-tags">
-            <span class="wc-tag">LearnPress</span>
-            <span class="wc-tag">LMS</span>
-            <span class="wc-tag">Student Portal</span>
-          </div>
-          <span class="wc-cta">
-            <span data-i18n="work.visit">Visit live site</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
-          </span>
+          <div class="wc-tags"><span class="wc-tag">LearnPress</span><span class="wc-tag">LMS</span><span class="wc-tag">Student Portal</span></div>
+          <span class="wc-link" data-i18n="work.visit">Visit live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </div>
       </a>
-
-      <!-- Screen EG -->
-      <a class="wc" href="https://screen.eg-app.com" target="_blank" rel="noopener" aria-label="Visit Screen EG — live site">
-        <span class="wc-num">04</span>
-        <div class="wc-img">
-          <img src="assets/screen-eg.jpg" alt="Screen EG product catalogue screenshot" width="1200" height="675" loading="lazy">
-        </div>
+      <a class="wc" href="https://screen.eg-app.com" target="_blank" rel="noopener">
+        <div class="wc-img"><img src="assets/screen-eg.jpg" alt="Screen EG" loading="lazy"></div>
         <div class="wc-body">
           <p class="wc-kind" data-i18n="w4.kind">Digital Signage</p>
           <h3 class="wc-name">Screen EG</h3>
           <p class="wc-desc" data-i18n="w4.ds">Product catalogue for digital display screens and transparent commercial hardware with bilingual spec sheets.</p>
-          <div class="wc-tags">
-            <span class="wc-tag">WooCommerce</span>
-            <span class="wc-tag">Catalog</span>
-            <span class="wc-tag">AR / EN</span>
-          </div>
-          <span class="wc-cta">
-            <span data-i18n="work.visit">Visit live site</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
-          </span>
+          <div class="wc-tags"><span class="wc-tag">WooCommerce</span><span class="wc-tag">Catalog</span><span class="wc-tag">AR / EN</span></div>
+          <span class="wc-link" data-i18n="work.visit">Visit live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </div>
       </a>
     </div>
-
-    <!-- Terminal -->
-    <div class="term-wrap rv" style="--d:.18s">
-      <div class="term-top">
-        <div class="term-dots">
-          <span class="term-dot r"></span><span class="term-dot y"></span><span class="term-dot g"></span>
-        </div>
-        <div class="term-tabs">
-          <button class="term-tab on" data-t="stack">stack.sh</button>
-          <button class="term-tab" data-t="status">status.log</button>
-          <button class="term-tab" data-t="infra">infra.sh</button>
-        </div>
-        <span class="term-info">bash · suez@abdelrahman</span>
-      </div>
-      <div class="term-body" id="termBody"></div>
-    </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     SERVICES
-══════════════════════════════════════════════════ -->
 <section class="sec" id="services">
   <div class="wrap">
-    <div class="rv">
-      <p class="sec-kicker"><span>02</span><span data-i18n="svc.kicker">What I do</span></p>
-      <h2 class="sec-h" data-i18n="svc.h">Three ways I can <em>help you.</em></h2>
-      <p class="sec-sub" data-i18n="svc.sub">New site, broken site, or a site you need someone to look after — I cover all three.</p>
-    </div>
-    <div class="svc-grid rv" style="--d:.1s">
+    <p class="sec-kicker" data-i18n="svc.kicker">What I do</p>
+    <h2 class="sec-h" data-i18n="svc.h">Three ways I can <em>help you.</em></h2>
+    <p class="sec-sub" data-i18n="svc.sub">New site, broken site, or a site you need someone to look after — I cover all three.</p>
+    <div class="svc-grid">
       <div class="sc">
-        <p class="sc-num">01</p>
-        <div class="sc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
-            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
-            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-          </svg>
-        </div>
-        <h3 class="sc-title" data-i18n="s1.t">Build &amp; Launch</h3>
-        <p class="sc-desc" data-i18n="s1.d">Hosting, DNS, WordPress install, theme setup, plugins configured around your business — delivered to a live URL you own.</p>
-        <ul class="sc-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="s1.f1">Domain, DNS &amp; Cloudflare</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="s1.f2">WooCommerce &amp; Dokan stores</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="s1.f3">Arabic / English bilingual</span></li>
-        </ul>
+        <h3 data-i18n="s1.t">Build & Launch</h3>
+        <p data-i18n="s1.d">Hosting, DNS, WordPress install, theme setup, plugins configured around your business — delivered to a live URL you own.</p>
+        <ul><li data-i18n="s1.f1">Domain, DNS & Cloudflare</li><li data-i18n="s1.f2">WooCommerce & Dokan stores</li><li data-i18n="s1.f3">Arabic / English bilingual</li></ul>
       </div>
       <div class="sc">
-        <p class="sc-num">02</p>
-        <div class="sc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
-            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-          </svg>
-        </div>
-        <h3 class="sc-title" data-i18n="s2.t">Fix &amp; Rescue</h3>
-        <p class="sc-desc" data-i18n="s2.d">White screen, 500 error, hacked pages, broken checkout, slow loads. I find the root cause and fix it — not just the symptom.</p>
-        <ul class="sc-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="s2.f1">Fatal error &amp; debug recovery</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="s2.f2">Plugin conflict resolution</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="s2.f3">Malware cleanup &amp; hardening</span></li>
-        </ul>
+        <h3 data-i18n="s2.t">Fix & Rescue</h3>
+        <p data-i18n="s2.d">White screen, 500 error, hacked pages, broken checkout, slow loads. I find the root cause and fix it — not just the symptom.</p>
+        <ul><li data-i18n="s2.f1">Fatal error & debug recovery</li><li data-i18n="s2.f2">Plugin conflict resolution</li><li data-i18n="s2.f3">Malware cleanup & hardening</li></ul>
       </div>
       <div class="sc">
-        <p class="sc-num">03</p>
-        <div class="sc-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
-            <rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/>
-            <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
-          </svg>
-        </div>
-        <h3 class="sc-title" data-i18n="s3.t">Manage &amp; Maintain</h3>
-        <p class="sc-desc" data-i18n="s3.d">Updates, backups, SSL, email routing, migrations. The quiet work that keeps your business online without you thinking about it.</p>
-        <ul class="sc-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="s3.f1">Automated off-site backups</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="s3.f2">Zero-downtime migrations</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="s3.f3">Email (DKIM / SPF / DMARC)</span></li>
-        </ul>
+        <h3 data-i18n="s3.t">Manage & Maintain</h3>
+        <p data-i18n="s3.d">Updates, backups, SSL, email routing, migrations. The quiet work that keeps your business online without you thinking about it.</p>
+        <ul><li data-i18n="s3.f1">Automated off-site backups</li><li data-i18n="s3.f2">Zero-downtime migrations</li><li data-i18n="s3.f3">Email (DKIM / SPF / DMARC)</li></ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     ABOUT
-══════════════════════════════════════════════════ -->
 <section class="sec" id="about">
   <div class="wrap">
-    <div class="rv">
-      <p class="sec-kicker"><span>03</span><span data-i18n="about.kicker">Background</span></p>
-      <h2 class="sec-h" data-i18n="about.h">Who you'd be <em>working with.</em></h2>
-    </div>
-    <div class="about-wrap rv" style="--d:.08s">
-      <div class="about-text">
+    <p class="sec-kicker" data-i18n="about.kicker">Background</p>
+    <h2 class="sec-h" data-i18n="about.h">Who you'd be <em>working with.</em></h2>
+    <div class="about">
+      <div>
         <p data-i18n="about.p1">I'm Abdelrahman — a WordPress developer and IT generalist from Suez, Egypt. I work directly with business owners: no middlemen, no vague timelines.</p>
         <p data-i18n="about.p2">My work covers everything from the server config to the plugin logic. Earlier experience operating critical systems at a major port taught me to stay methodical under pressure — a skill that transfers well to production debugging.</p>
-        <div class="about-facts">
-          <div class="af"><p class="af-label" data-i18n="f.base">Base</p><p class="af-val" data-i18n="f.basev">Suez, Egypt (GMT+2)</p></div>
-          <div class="af"><p class="af-label" data-i18n="f.focus">Focus</p><p class="af-val" data-i18n="f.focusv">WordPress &amp; IT ops</p></div>
-          <div class="af"><p class="af-label" data-i18n="f.edu">Education</p><p class="af-val" data-i18n="f.eduv">B.Sc. Information Systems</p></div>
-          <div class="af"><p class="af-label" data-i18n="f.status">Status</p><p class="af-val" data-i18n="f.statusv">Open to new roles</p></div>
+        <div class="facts">
+          <div class="fact"><p class="fact-label" data-i18n="f.base">Base</p><p class="fact-val" data-i18n="f.basev">Suez, Egypt (GMT+2)</p></div>
+          <div class="fact"><p class="fact-label" data-i18n="f.focus">Focus</p><p class="fact-val" data-i18n="f.focusv">WordPress & IT ops</p></div>
+          <div class="fact"><p class="fact-label" data-i18n="f.edu">Education</p><p class="fact-val" data-i18n="f.eduv">B.Sc. Information Systems</p></div>
+          <div class="fact"><p class="fact-label" data-i18n="f.status">Status</p><p class="fact-val" data-i18n="f.statusv">Open to new roles</p></div>
         </div>
       </div>
-
       <div class="timeline">
         <div class="ti now">
-          <span class="ti-dot"></span>
-          <div class="ti-top">
-            <h4 class="ti-role" data-i18n="e1.role">WordPress Developer &amp; Site Manager</h4>
-            <span class="ti-chip" data-i18n="e1.chip">Now</span>
-          </div>
+          <p class="ti-role" data-i18n="e1.role">WordPress Developer & Site Manager</p>
           <p class="ti-org" data-i18n="e1.org">Freelance · paid client projects</p>
           <p class="ti-desc" data-i18n="e1.desc">Setup to launch, then keeping sites updated, backed up, and fast. Seven paying clients delivered so far.</p>
         </div>
         <div class="ti">
-          <span class="ti-dot"></span>
-          <div class="ti-top">
-            <h4 class="ti-role" data-i18n="e2.role">IT &amp; Network Support</h4>
-            <span class="ti-chip" data-i18n="e2.chip">Independent</span>
-          </div>
-          <p class="ti-org" data-i18n="e2.org">Small businesses &amp; home networks</p>
+          <p class="ti-role" data-i18n="e2.role">IT & Network Support</p>
+          <p class="ti-org" data-i18n="e2.org">Small businesses & home networks</p>
           <p class="ti-desc" data-i18n="e2.desc">Routers, Debian servers, DNS, printers — the connectivity work nobody else wants to trace.</p>
         </div>
         <div class="ti">
-          <span class="ti-dot"></span>
-          <div class="ti-top">
-            <h4 class="ti-role" data-i18n="e3.role">Control Room Operator</h4>
-            <span class="ti-chip" data-i18n="e3.chip">Past</span>
-          </div>
+          <p class="ti-role" data-i18n="e3.role">Control Room Operator</p>
           <p class="ti-org" data-i18n="e3.org">DP World — Sokhna Port</p>
           <p class="ti-desc" data-i18n="e3.desc">Monitored CCTV, access control and fire-safety systems in a live international port environment.</p>
         </div>
@@ -1011,367 +308,113 @@ html[lang="ar"] .hero-title .acc-word::after{width:40%}
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════
-     CONTACT
-══════════════════════════════════════════════════ -->
-<section class="ct-sec" id="contact">
-  <span class="ct-bg" aria-hidden="true">HELLO</span>
+<section class="ct" id="contact">
   <div class="wrap">
-    <div class="ct-inner rv">
-      <span class="badge"><span class="badge-dot"></span><span data-i18n="ct.badge">Available for work</span></span>
-      <h2 class="ct-h" data-i18n="ct.h">Let's talk about <em>your site.</em></h2>
-      <p class="ct-sub" data-i18n="ct.sub">Open to a full-time WordPress / IT ops role and to selected freelance projects. Reach out and tell me what you need.</p>
-      <div class="ct-acts">
-        <a class="btn btn-primary wa-link" href="https://wa.me/201274757241" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 21l2.3-5.3A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8.5 9.5c.5 2 2 3.5 4 4l1.2-1.2 1.8.8v1.5c0 .6-.5 1.1-1.1 1.1-3.5-.2-6.3-3-6.4-6.4 0-.6.5-1.1 1.1-1.1h1.4l.8 1.8-1.3 1.2"/></svg>
-          <span data-i18n="ct.wa">Message on WhatsApp</span>
-        </a>
-        <a class="btn btn-ghost" href="mailto:abdelrahman959@gmail.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-9 6-9-6"/></svg>
-          <span data-i18n="ct.email">Send email</span>
-        </a>
-      </div>
-      <div class="ct-links">
-        <button class="ct-link" id="copyEmail" aria-label="Copy email address">
-          <span class="copy-tip" data-i18n="ct.copied">Copied!</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-          abdelrahman959@gmail.com
-        </button>
-        <a class="ct-link" href="tel:+201274757241" dir="ltr">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          +20 127 475 7241
-        </a>
-        <span class="ct-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span data-i18n="ct.loc">Suez, Egypt</span>
-        </span>
-      </div>
+    <span class="badge"><span class="badge-dot"></span><span data-i18n="ct.badge">Available for work</span></span>
+    <h2 data-i18n="ct.h">Let's talk about <em>your site.</em></h2>
+    <p data-i18n="ct.sub">Open to a full-time WordPress / IT ops role and to selected freelance projects. Reach out and tell me what you need.</p>
+    <div class="ct-acts">
+      <a class="btn btn-primary" href="https://wa.me/201274757241" target="_blank" rel="noopener" data-i18n="ct.wa">Message on WhatsApp</a>
+      <a class="btn btn-ghost" href="mailto:abdelrahman959@gmail.com" data-i18n="ct.email">Send email</a>
+      <a class="btn btn-ghost" href="assets/Abdelrahman-Waleed-CV.pdf" download data-i18n="hero.cta4">Download CV</a>
+    </div>
+    <div class="ct-links">
+      <a href="mailto:abdelrahman959@gmail.com">abdelrahman959@gmail.com</a>
+      <a href="tel:+201274757241">+20 127 475 7241</a>
+      <span>Suez, Egypt</span>
     </div>
   </div>
 </section>
 </main>
 
-<!-- ══════════════════════════════════════════════════
-     FOOTER
-══════════════════════════════════════════════════ -->
-<footer class="ft">
-  <div class="wrap ft-in">
-    <div class="ft-left">
-      <div class="ft-brand">Abdelrahman Waleed</div>
-      <span data-i18n="ft.copy">© 2026 — WordPress Developer &amp; IT Operations</span>
-    </div>
-    <a class="ft-top-btn" href="#top">
-      <span data-i18n="ft.top">Back to top</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-    </a>
-  </div>
-</footer>
+<footer class="ft">© 2026 — Abdelrahman Waleed · WordPress Developer & IT Operations</footer>
 
-<!-- ══════════════════════════════════════════════════
-     SCRIPT
-══════════════════════════════════════════════════ -->
 <script>
 (function(){
 'use strict';
 
-/* ── Signal field: quiet interactive technical map ── */
-var field=document.getElementById('signal-field'),ctx=field&&field.getContext('2d');
-if(ctx){
-  var points=[],mouse={x:-1000,y:-1000},raf=0,lastFrame=0;
-  var reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function resizeField(){
-    var dpr=Math.min(window.devicePixelRatio||1,1.5);
-    field.width=Math.floor(innerWidth*dpr);field.height=Math.floor(innerHeight*dpr);
-    field.style.width=innerWidth+'px';field.style.height=innerHeight+'px';
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    var cols=Math.ceil(innerWidth/118),rows=Math.ceil(innerHeight/118);points=[];
-    for(var y=0;y<rows;y++)for(var x=0;x<cols;x++)points.push({x:0,y:0,ox:(x+.5)*118+(Math.random()-.5)*38,oy:(y+.5)*118+(Math.random()-.5)*38,p:Math.random()*6.28});
-  }
-  function drawField(time){
-    raf=0;
-    if(!reducedMotion&&time-lastFrame<38){raf=requestAnimationFrame(drawField);return}
-    lastFrame=time;
-    ctx.clearRect(0,0,innerWidth,innerHeight);
-    for(var i=0;i<points.length;i++){
-      var a=points[i],ax=a.ox+Math.sin(time*.00022+a.p)*13,ay=a.oy+Math.cos(time*.00018+a.p)*11;
-      a.x=ax;a.y=ay;
-      var md=Math.hypot(mouse.x-ax,mouse.y-ay);
-      if(md<170){a.x+=((mouse.x-ax)/md)*8;a.y+=((mouse.y-ay)/md)*8}
-      for(var j=i+1;j<points.length;j++){
-        var b=points[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
-        if(d<154){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(49,91,255,'+((1-d/154)*.13).toFixed(3)+')';ctx.lineWidth=.65;ctx.stroke()}
-      }
-      ctx.beginPath();ctx.arc(a.x,a.y,md<130?1.8:1.05,0,Math.PI*2);
-      ctx.fillStyle=md<130?'rgba(215,106,74,.8)':'rgba(49,91,255,.42)';ctx.fill();
-    }
-    if(!reducedMotion)raf=requestAnimationFrame(drawField);
-  }
-  resizeField();drawField(0);
-  window.addEventListener('resize',function(){resizeField();if(!raf&&!reducedMotion)raf=requestAnimationFrame(drawField)},{passive:true});
-  window.addEventListener('pointermove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;if(!raf&&!reducedMotion)raf=requestAnimationFrame(drawField)},{passive:true});
-  window.addEventListener('pointerleave',function(){mouse.x=-1000;mouse.y=-1000},{passive:true});
-}
-
-/* ── Hero headline: code-decode scramble ── */
-var SCRAMBLE='WP<>/{}[]=+*&%$#019832';
-function scrambleTitle(){
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  document.querySelectorAll('.hero-title span').forEach(function(el){
-    var final=el.textContent,len=final.length,start=performance.now(),dur=650;
-    function frame(now){
-      var p=Math.min((now-start)/dur,1),reveal=Math.floor(p*len),out='';
-      for(var i=0;i<len;i++){
-        var ch=final[i];
-        out+=(ch===' ')?' ':(i<reveal?ch:SCRAMBLE[Math.floor(Math.random()*SCRAMBLE.length)]);
-      }
-      el.textContent=out;
-      if(p<1)requestAnimationFrame(frame);else el.textContent=final;
-    }
-    requestAnimationFrame(frame);
-  });
-}
-
-/* ── Custom cursor (fine pointers) ── */
-if(window.matchMedia('(pointer:fine)').matches){
-  var curDot=document.createElement('div');curDot.className='cursor-dot';
-  var curRing=document.createElement('div');curRing.className='cursor-ring';
-  document.body.appendChild(curDot);document.body.appendChild(curRing);
-  var curX=0,curY=0,ringX=0,ringY=0,curShown=false;
-  window.addEventListener('pointermove',function(e){
-    curX=e.clientX;curY=e.clientY;
-    if(!curShown){curShown=true;document.body.classList.add('cursor-ready');curDot.style.opacity=1;curRing.style.opacity=.6}
-    curDot.style.left=curX+'px';curDot.style.top=curY+'px';
-    var hot=e.target&&e.target.closest&&e.target.closest('a,button,.wc');
-    curRing.classList.toggle('hot',!!hot);
-  },{passive:true});
-  (function ringLoop(){
-    requestAnimationFrame(ringLoop);
-    ringX+=(curX-ringX)*0.16;ringY+=(curY-ringY)*0.16;
-    curRing.style.left=ringX+'px';curRing.style.top=ringY+'px';
-  })();
-}
-
-/* ── Magnetic buttons ── */
-document.querySelectorAll('.btn-primary,.cta-btn').forEach(function(b){
-  b.addEventListener('mousemove',function(e){
-    var r=b.getBoundingClientRect();
-    b.style.transform='translate('+((e.clientX-r.left-r.width/2)*0.18).toFixed(1)+'px,'+((e.clientY-r.top-r.height/2)*0.3-2).toFixed(1)+'px)';
-  });
-  b.addEventListener('mouseleave',function(){b.style.transform=''});
-});
-
-/* ── i18n ─────────────────────────────────────── */
-var D = {
-  en:{
-    'mark.sub':'WordPress · IT Ops',
-    'nav.work':'Work','nav.svc':'Services','nav.about':'About','nav.contact':'Contact','nav.cta':"Let's talk",
-    'hero.badge':'Available — Suez, Egypt',
-    'hero.l1':'WordPress',
-    'hero.l2':'sites that work.',
-    'hero.lede':'I build, launch and manage <b>WordPress websites</b> for businesses — from blank hosting to a live site with real traffic, and I keep them running.',
-    'hero.cta1':'View work','hero.cta2':'Email me','hero.cta3':'WhatsApp','hero.cta4':'Download CV','hero.hire':'Open to full-time WordPress / IT ops roles and selected freelance projects. Remote-friendly (GMT+2).',
-    'stat.sites':'Live client sites','stat.stack':'WordPress + WooCommerce','stat.support':'Response time',
-    'work.kicker':'Selected work',
-    'work.h':'Websites built for <em>real businesses.</em>',
-    'work.sub':'Four live examples across e-commerce, marketplace, learning, and product catalogues. Click any card to visit the live site.',
-    'work.visit':'Visit live site',
-    'w1.kind':'Agency & Digital Store',
-    'w1.ds':'Agency website and bilingual digital-product store. WooCommerce with digital delivery and Arabic/English support.',
-    'w2.kind':'Wedding Marketplace','w2.nm':'Farha',
-    'w2.ds':'Multi-vendor platform for wedding venues and service providers. Vendor dashboards, bookings, and location filtering.',
-    'w3.kind':'Learning Platform','w3.nm':'Tamayoz',
-    'w3.ds':'Online courses for Gulf curricula — interactive lessons, timed quizzes, student dashboards and progress tracking.',
-    'w4.kind':'Digital Signage',
-    'w4.ds':'Product catalogue for digital display screens and transparent commercial hardware with bilingual spec sheets.',
-    'svc.kicker':'What I do',
-    'svc.h':'Three ways I can <em>help you.</em>',
-    'svc.sub':'New site, broken site, or a site you need someone to look after — I cover all three.',
-    's1.t':'Build & Launch','s1.d':'Hosting, DNS, WordPress install, theme setup, plugins configured around your business — delivered to a live URL you own.',
-    's1.f1':'Domain, DNS & Cloudflare','s1.f2':'WooCommerce & Dokan stores','s1.f3':'Arabic / English bilingual',
-    's2.t':'Fix & Rescue','s2.d':'White screen, 500 error, hacked pages, broken checkout, slow loads. I find the root cause and fix it — not just the symptom.',
-    's2.f1':'Fatal error & debug recovery','s2.f2':'Plugin conflict resolution','s2.f3':'Malware cleanup & hardening',
-    's3.t':'Manage & Maintain','s3.d':'Updates, backups, SSL, email routing, migrations. The quiet work that keeps your business online without you thinking about it.',
-    's3.f1':'Automated off-site backups','s3.f2':'Zero-downtime migrations','s3.f3':'Email (DKIM / SPF / DMARC)',
-    'about.kicker':'Background','about.h':'Who you\'d be <em>working with.</em>',
-    'about.p1':"I'm Abdelrahman — a WordPress developer and IT generalist from Suez, Egypt. I work directly with business owners: no middlemen, no vague timelines.",
-    'about.p2':"My work covers everything from the server config to the plugin logic. Earlier experience operating critical systems at a major port taught me to stay methodical under pressure — a skill that transfers well to production debugging.",
-    'f.base':'Base','f.basev':'Suez, Egypt (GMT+2)',
-    'f.focus':'Focus','f.focusv':'WordPress & IT ops',
-    'f.edu':'Education','f.eduv':'B.Sc. Information Systems',
-    'f.status':'Status','f.statusv':'Open to new roles',
-    'e1.role':'WordPress Developer & Site Manager','e1.chip':'Now','e1.org':'Freelance · paid client projects',
-    'e1.desc':'Setup to launch, then keeping sites updated, backed up, and fast. Seven paying clients delivered so far.',
-    'e2.role':'IT & Network Support','e2.chip':'Independent','e2.org':'Small businesses & home networks',
-    'e2.desc':'Routers, Debian servers, DNS, printers — the connectivity work nobody else wants to trace.',
-    'e3.role':'Control Room Operator','e3.chip':'Past','e3.org':'DP World — Sokhna Port',
-    'e3.desc':'Monitored CCTV, access control and fire-safety systems in a live international port environment.',
-    'ct.badge':'Available for work',
-    'ct.h':'Let\'s talk about <em>your site.</em>',
-    'ct.sub':'Open to a full-time WordPress / IT ops role and to selected freelance projects. Reach out and tell me what you need.',
-    'ct.wa':'Message on WhatsApp','ct.email':'Send email','ct.copied':'Copied!','ct.loc':'Suez, Egypt',
-    'ft.copy':'© 2026 — WordPress Developer & IT Operations','ft.top':'Back to top'
-  },
-  ar:{
-    'mark.sub':'ووردبريس · تشغيل أنظمة',
-    'nav.work':'الأعمال','nav.svc':'الخدمات','nav.about':'نبذة','nav.contact':'تواصل','nav.cta':'تحدث معي',
-    'hero.badge':'متاح للعمل — السويس، مصر',
-    'hero.l1':'مواقع ووردبريس',
-    'hero.l2':'تخدم أعمالك.',
-    'hero.lede':'أبني وأطلق وأدير <b>مواقع ووردبريس</b> للشركات — من الاستضافة الفارغة لموقع حيّ بزوار حقيقيين، وأبقيها تعمل.',
-    'hero.cta1':'شاهد الأعمال','hero.cta2':'راسلني','hero.cta3':'واتساب','hero.cta4':'تحميل CV','hero.hire':'أبحث عن وظيفة WordPress / IT ops بدوام كامل أو مشاريع فريلانس مختارة. متاح للعمل عن بُعد (GMT+2).',
-    'stat.sites':'مواقع عملاء حية','stat.stack':'WordPress + WooCommerce','stat.support':'وقت الاستجابة',
-    'work.kicker':'نماذج من الأعمال',
-    'work.h':'مواقع بُنيت <em>لأعمال حقيقية.</em>',
-    'work.sub':'أربعة أمثلة حية: متجر رقمي، سوق خدمات، منصة تعليمية، وكتالوج منتجات. اضغط أي بطاقة لزيارة الموقع.',
-    'work.visit':'زيارة الموقع',
-    'w1.kind':'وكالة ومتجر رقمي',
-    'w1.ds':'موقع وكالة ومتجر منتجات رقمية ثنائي اللغة. WooCommerce مع تسليم رقمي فوري.',
-    'w2.kind':'سوق خدمات أفراح','w2.nm':'فرحة',
-    'w2.ds':'منصة متعددة البائعين لقاعات الأفراح ومقدمي الخدمات. لوحات تحكم للبائعين وفلتر الموقع.',
-    'w3.kind':'منصة تعليمية','w3.nm':'التميز',
-    'w3.ds':'دورات للمناهج الخليجية — دروس تفاعلية، اختبارات موقوتة، لوحات تقدم للطلاب.',
-    'w4.kind':'شاشات رقمية',
-    'w4.ds':'كتالوج منتجات للشاشات الرقمية والتجارية مع مواصفات تقنية ثنائية اللغة.',
-    'svc.kicker':'الخدمات',
-    'svc.h':'ثلاث طرق يمكنني <em>مساعدتك بها.</em>',
-    'svc.sub':'موقع جديد، موقع معطل، أو موقع تحتاج شخصاً يتابعه — أغطي الثلاثة.',
-    's1.t':'بناء وإطلاق','s1.d':'استضافة وDNS وتثبيت ووردبريس وإعداد القالب والإضافات حسب احتياج عملك — يُسلَّم على URL حيّ تملكه.',
-    's1.f1':'الدومين وDNS وCloudflare','s1.f2':'متاجر WooCommerce وDokan','s1.f3':'ثنائية اللغة عربي/إنجليزي',
-    's2.t':'إصلاح وإنقاذ','s2.d':'شاشة بيضاء، خطأ 500، صفحات مخترقة، دفع معطل، تحميل بطيء. أعثر على السبب الجذري وأصلحه — لا مجرد العرض.',
-    's2.f1':'استرداد الأخطاء الحرجة','s2.f2':'حل تعارض الإضافات','s2.f3':'تنظيف الاختراق وتأمين الموقع',
-    's3.t':'إدارة وصيانة','s3.d':'تحديثات ونسخ احتياطي وSSL وبريد إلكتروني ونقل. العمل الصامت الذي يبقي نشاطك التجاري أونلاين.',
-    's3.f1':'نسخ احتياطي تلقائي خارجي','s3.f2':'نقل بدون توقف','s3.f3':'بريد إلكتروني (DKIM / SPF / DMARC)',
-    'about.kicker':'نبذة','about.h':'من ستعمل <em>معه.</em>',
-    'about.p1':'أنا عبدالرحمن — مطوّر ووردبريس ومتخصص IT من السويس، مصر. أعمل مباشرة مع أصحاب الأعمال: بلا وسطاء، بلا جداول زمنية مبهمة.',
-    'about.p2':'عملي يغطي كل شيء من إعدادات السيرفر لمنطق الإضافات. تجربة سابقة في تشغيل أنظمة حرجة بميناء دولي علمتني أبقى منهجياً تحت الضغط — مهارة تنتقل بشكل مثالي لتشخيص أعطال الإنتاج.',
-    'f.base':'المقر','f.basev':'السويس، مصر (GMT+2)',
-    'f.focus':'التخصص','f.focusv':'ووردبريس وتشغيل الأنظمة',
-    'f.edu':'التعليم','f.eduv':'بكالوريوس نظم معلومات',
-    'f.status':'الحالة','f.statusv':'متاح لفرصة جديدة',
-    'e1.role':'مطوّر ومدير مواقع ووردبريس','e1.chip':'حالياً','e1.org':'عمل حر · مشاريع مدفوعة',
-    'e1.desc':'من الإعداد للإطلاق، ثم إبقاء المواقع محدّثة ومنسوخة وسريعة. سبعة عملاء مكتملون حتى الآن.',
-    'e2.role':'دعم IT وشبكات','e2.chip':'مستقل','e2.org':'شركات صغيرة وشبكات منزلية',
-    'e2.desc':'راوترات، سيرفرات Debian، DNS، طابعات — أعمال الاتصال التي لا يريد أحد تتبعها.',
-    'e3.role':'مشغّل غرفة تحكم','e3.chip':'سابق','e3.org':'موانئ دبي — ميناء السخنة',
-    'e3.desc':'مراقبة كاميرات المراقبة وأنظمة التحكم بالدخول والسلامة في بيئة ميناء دولي حيّ.',
-    'ct.badge':'متاح للعمل',
-    'ct.h':'لنتحدث عن <em>موقعك.</em>',
-    'ct.sub':'متاح لدور بدوام كامل في ووردبريس أو تشغيل الأنظمة، وكذلك لمشاريع مختارة. تواصل وأخبرني بما تحتاجه.',
-    'ct.wa':'رسالة واتساب','ct.email':'إرسال إيميل','ct.copied':'تم النسخ!','ct.loc':'السويس، مصر',
-    'ft.copy':'© 2026 — مطوّر ووردبريس وتشغيل أنظمة','ft.top':'للأعلى'
-  }
-};
-
-var root = document.documentElement;
-var lang = 'en';
-
-function applyLang(l){
-  lang = l==='ar'?'ar':'en';
-  root.lang = lang;
-  root.dir  = lang==='ar'?'rtl':'ltr';
-  document.querySelectorAll('[data-i18n]').forEach(function(el){
-    var k = el.getAttribute('data-i18n'), v=D[lang][k];
-    if(typeof v!=='string')return;
-    el.textContent=v;
-  });
-  document.querySelectorAll('[data-i18n-html]').forEach(function(el){
-    var k = el.getAttribute('data-i18n-html'), v=D[lang][k];
-    if(typeof v!=='string')return;
-    el.innerHTML=v;
-  });
-  ['hero.lede','work.h','svc.h','about.h','ct.h'].forEach(function(k){
-    document.querySelectorAll('[data-i18n="'+k+'"]').forEach(function(el){
-      var v=D[lang][k]; if(typeof v==='string')el.innerHTML=v;
-    });
-  });
-  document.title = lang==='ar'?'عبدالرحمن وليد — مطوّر ووردبريس':'Abdelrahman Waleed — WordPress Developer';
-  var wa = lang==='ar'?'مرحبًا عبدالرحمن، اطلعت على موقعك وأود التحدث عن مشروع.':'Hi Abdelrahman, I saw your portfolio and want to discuss a project.';
-  document.querySelectorAll('.wa-link').forEach(function(a){a.href='https://wa.me/201274757241?text='+encodeURIComponent(wa)});
-  document.getElementById('langTxt').textContent=lang==='ar'?'EN':'AR';
-  scrambleTitle();
-  try{localStorage.setItem('aw_lang',lang)}catch(e){}
-}
-
 /* Theme */
-var SUN='<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>';
-var MOON='<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+var root=document.documentElement;
 function applyTheme(th){
   root.setAttribute('data-theme',th);
   var ic=document.getElementById('themeIcon');
-  if(ic)ic.innerHTML=th==='light'?SUN:MOON;
+  if(ic)ic.innerHTML=th==='light'?'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/>':'<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
   var m=document.querySelector('meta[name="theme-color"]');
   if(m)m.setAttribute('content',th==='light'?'#F3F0E8':'#101722');
   try{localStorage.setItem('aw_theme_v2',th)}catch(e){}
 }
-var savedTheme='light';
-try{savedTheme=localStorage.getItem('aw_theme_v2')||'light'}catch(e){}
+var savedTheme='light';try{savedTheme=localStorage.getItem('aw_theme_v2')||'light'}catch(e){}
 applyTheme(savedTheme);
-document.getElementById('themeBtn').addEventListener('click',function(){
-  applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');
-});
+document.getElementById('themeBtn').addEventListener('click',function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark')});
 
 /* Language */
-var savedLang='en';
-try{savedLang=localStorage.getItem('aw_lang')||'en'}catch(e){}
+var D={
+en:{
+'mark.sub':'WordPress · IT Ops','nav.work':'Work','nav.svc':'Services','nav.about':'About','nav.contact':'Contact',
+'hero.badge':'Available — Suez, Egypt','hero.lede':'I build, launch and manage <b>WordPress websites</b> for businesses — from blank hosting to a live site with real traffic, and I keep them running.',
+'hero.cta1':'View work','hero.cta2':'Email me','hero.cta3':'WhatsApp','hero.cta4':'Download CV','hero.hire':'Open to full-time WordPress / IT ops roles and selected freelance projects. Remote-friendly (GMT+2).',
+'stat.sites':'Live client sites','stat.stack':'WordPress + WooCommerce','stat.support':'Response time',
+'work.kicker':'Selected work','work.h':'Websites built for <em>real businesses.</em>','work.sub':'Four live examples across e-commerce, marketplace, learning, and product catalogues.','work.visit':'Visit live site',
+'w1.kind':'Agency & Digital Store','w1.ds':'Agency website and bilingual digital-product store. WooCommerce with digital delivery and Arabic/English support.',
+'w2.kind':'Wedding Marketplace','w2.ds':'Multi-vendor platform for wedding venues and service providers. Vendor dashboards, bookings, and location filtering.',
+'w3.kind':'Learning Platform','w3.ds':'Online courses for Gulf curricula — interactive lessons, timed quizzes, student dashboards and progress tracking.',
+'w4.kind':'Digital Signage','w4.ds':'Product catalogue for digital display screens and transparent commercial hardware with bilingual spec sheets.',
+'svc.kicker':'What I do','svc.h':'Three ways I can <em>help you.</em>','svc.sub':'New site, broken site, or a site you need someone to look after — I cover all three.',
+'s1.t':'Build & Launch','s1.d':'Hosting, DNS, WordPress install, theme setup, plugins configured around your business — delivered to a live URL you own.','s1.f1':'Domain, DNS & Cloudflare','s1.f2':'WooCommerce & Dokan stores','s1.f3':'Arabic / English bilingual',
+'s2.t':'Fix & Rescue','s2.d':'White screen, 500 error, hacked pages, broken checkout, slow loads. I find the root cause and fix it — not just the symptom.','s2.f1':'Fatal error & debug recovery','s2.f2':'Plugin conflict resolution','s2.f3':'Malware cleanup & hardening',
+'s3.t':'Manage & Maintain','s3.d':'Updates, backups, SSL, email routing, migrations. The quiet work that keeps your business online without you thinking about it.','s3.f1':'Automated off-site backups','s3.f2':'Zero-downtime migrations','s3.f3':'Email (DKIM / SPF / DMARC)',
+'about.kicker':'Background','about.h':'Who you\'d be <em>working with.</em>','about.p1':"I'm Abdelrahman — a WordPress developer and IT generalist from Suez, Egypt. I work directly with business owners: no middlemen, no vague timelines.",'about.p2':"My work covers everything from the server config to the plugin logic. Earlier experience operating critical systems at a major port taught me to stay methodical under pressure — a skill that transfers well to production debugging.",
+'f.base':'Base','f.basev':'Suez, Egypt (GMT+2)','f.focus':'Focus','f.focusv':'WordPress & IT ops','f.edu':'Education','f.eduv':'B.Sc. Information Systems','f.status':'Status','f.statusv':'Open to new roles',
+'e1.role':'WordPress Developer & Site Manager','e1.chip':'Now','e1.org':'Freelance · paid client projects','e1.desc':'Setup to launch, then keeping sites updated, backed up, and fast. Seven paying clients delivered so far.',
+'e2.role':'IT & Network Support','e2.chip':'Independent','e2.org':'Small businesses & home networks','e2.desc':'Routers, Debian servers, DNS, printers — the connectivity work nobody else wants to trace.',
+'e3.role':'Control Room Operator','e3.chip':'Past','e3.org':'DP World — Sokhna Port','e3.desc':'Monitored CCTV, access control and fire-safety systems in a live international port environment.',
+'ct.badge':'Available for work','ct.h':'Let\'s talk about <em>your site.</em>','ct.sub':'Open to a full-time WordPress / IT ops role and to selected freelance projects. Reach out and tell me what you need.','ct.wa':'Message on WhatsApp','ct.email':'Send email','ct.loc':'Suez, Egypt',
+'ft.copy':'© 2026 — WordPress Developer & IT Operations'
+},
+ar:{
+'mark.sub':'ووردبريس · تشغيل أنظمة','nav.work':'الأعمال','nav.svc':'الخدمات','nav.about':'نبذة','nav.contact':'تواصل',
+'hero.badge':'متاح للعمل — السويس، مصر','hero.lede':'أبني وأطلق وأدير <b>مواقع ووردبريس</b> للشركات — من الاستضافة الفارغة لموقع حيّ بزوار حقيقيين، وأبقيها تعمل.',
+'hero.hire':'أبحث عن وظيفة WordPress / IT ops بدوام كامل أو مشاريع فريلانس مختارة. متاح للعمل عن بُعد (GMT+2).',
+'stat.sites':'مواقع عملاء حية','stat.stack':'WordPress + WooCommerce','stat.support':'وقت الاستجابة',
+'work.kicker':'نماذج من الأعمال','work.h':'مواقع بُنيت <em>لأعمال حقيقية.</em>','work.sub':'أربعة أمثلة حية: متجر رقمي، سوق خدمات، منصة تعليمية، وكتالوج منتجات.','work.visit':'زيارة الموقع',
+'w1.kind':'وكالة ومتجر رقمي','w1.ds':'موقع وكالة ومتجر منتجات رقمية ثنائي اللغة. WooCommerce مع تسليم رقمي فوري.',
+'w2.kind':'سوق خدمات أفراح','w2.ds':'منصة متعددة البائعين لقاعات الأفراح ومقدمي الخدمات. لوحات تحكم للبائعين وفلتر الموقع.',
+'w3.kind':'منصة تعليمية','w3.ds':'دورات للمناهج الخليجية — دروس تفاعلية، اختبارات موقوتة، لوحات تقدم للطلاب.',
+'w4.kind':'شاشات رقمية','w4.ds':'كتالوج منتجات للشاشات الرقمية والتجارية مع مواصفات تقنية ثنائية اللغة.',
+'svc.kicker':'الخدمات','svc.h':'ثلاث طرق يمكنني <em>مساعدتك بها.</em>','svc.sub':'موقع جديد، موقع معطل، أو موقع تحتاج شخصاً يتابعه — أغطي الثلاثة.',
+'s1.t':'بناء وإطلاق','s1.d':'استضافة وDNS وتثبيت ووردبريس وإعداد القالب والإضافات حسب احتياج عملك — يُسلَّم على URL حيّ تملكه.','s1.f1':'الدومين وDNS وCloudflare','s1.f2':'متاجر WooCommerce وDokan','s1.f3':'ثنائية اللغة عربي/إنجليزي',
+'s2.t':'إصلاح وإنقاذ','s2.d':'شاشة بيضاء، خطأ 500، صفحات مخترقة، دفع معطل، تحميل بطيء. أعثر على السبب الجذري وأصلحه — لا مجرد العرض.','s2.f1':'استرداد الأخطاء الحرجة','s2.f2':'حل تعارض الإضافات','s2.f3':'تنظيف الاختراق وتأمين الموقع',
+'s3.t':'إدارة وصيانة','s3.d':'تحديثات ونسخ احتياطي وSSL وبريد إلكتروني ونقل. العمل الصامت الذي يبقي نشاطك التجاري أونلاين.','s3.f1':'نسخ احتياطي تلقائي خارجي','s3.f2':'نقل بدون توقف','s3.f3':'بريد إلكتروني (DKIM / SPF / DMARC)',
+'about.kicker':'نبذة','about.h':'من ستعمل <em>معه.</em>','about.p1':'أنا عبدالرحمن — مطوّر ووردبريس ومتخصص IT من السويس، مصر. أعمل مباشرة مع أصحاب الأعمال: بلا وسطاء، بلا جداول زمنية مبهمة.','about.p2':'عملي يغطي كل شيء من إعدادات السيرفر لمنطق الإضافات. تجربة سابقة في تشغيل أنظمة حرجة بميناء دولي علمتني أبقى منهجياً تحت الضغط — مهارة تنتقل بشكل مثالي لتشخيص أعطال الإنتاج.',
+'f.base':'المقر','f.basev':'السويس، مصر (GMT+2)','f.focus':'التخصص','f.focusv':'ووردبريس وتشغيل الأنظمة','f.edu':'التعليم','f.eduv':'بكالوريوس نظم معلومات','f.status':'الحالة','f.statusv':'متاح لفرصة جديدة',
+'e1.role':'مطوّر ومدير مواقع ووردبريس','e1.chip':'حالياً','e1.org':'عمل حر · مشاريع مدفوعة','e1.desc':'من الإعداد للإطلاق، ثم إبقاء المواقع محدّثة ومنسوخة وسريعة. سبعة عملاء مكتملون حتى الآن.',
+'e2.role':'دعم IT وشبكات','e2.chip':'مستقل','e2.org':'شركات صغيرة وشبكات منزلية','e2.desc':'راوترات، سيرفرات Debian، DNS، طابعات — أعمال الاتصال التي لا يريد أحد تتبعها.',
+'e3.role':'مشغّل غرفة تحكم','e3.chip':'سابق','e3.org':'موانئ دبي — ميناء السخنة','e3.desc':'مراقبة كاميرات المراقبة وأنظمة التحكم بالدخول والسلامة في بيئة ميناء دولي حيّ.',
+'ct.badge':'متاح للعمل','ct.h':'لنتحدث عن <em>موقعك.</em>','ct.sub':'متاح لدور بدوام كامل في ووردبريس أو تشغيل الأنظمة، وكذلك لمشاريع مختارة. تواصل وأخبرني بما تحتاجه.','ct.wa':'رسالة واتساب','ct.email':'إرسال إيميل','ct.loc':'السويس، مصر',
+'ft.copy':'© 2026 — مطوّر ووردبريس وتشغيل أنظمة'
+}
+};
+var root=document.documentElement;
+var lang='en';
+function applyLang(l){
+  lang=l==='ar'?'ar':'en';
+  root.lang=lang;root.dir=lang==='ar'?'rtl':'ltr';
+  document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n'),v=D[lang][k];if(typeof v==='string')el.textContent=v;});
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el){var k=el.getAttribute('data-i18n-html'),v=D[lang][k];if(typeof v==='string')el.innerHTML=v;});
+  document.title=lang==='ar'?'عبدالرحمن وليد — مطوّر ووردبريس':'Abdelrahman Waleed — WordPress Developer';
+  var wa=lang==='ar'?'مرحبًا عبدالرحمن، اطلعت على موقعك وأود التحدث عن مشروع.':'Hi Abdelrahman, I saw your portfolio and want to discuss a project.';
+  document.querySelectorAll('.wa-link').forEach(function(a){a.href='https://wa.me/201274757241?text='+encodeURIComponent(wa)});
+  document.getElementById('langTxt').textContent=lang==='ar'?'EN':'AR';
+  try{localStorage.setItem('aw_lang',lang)}catch(e){}
+}
+var savedLang='en';try{savedLang=localStorage.getItem('aw_lang')||'en'}catch(e){}
 applyLang(savedLang);
 document.getElementById('langBtn').addEventListener('click',function(){applyLang(lang==='ar'?'en':'ar')});
-
-/* Terminal */
-function renderTerm(key){
-  var lines=TERM[key]||TERM.stack;
-  var html=lines.map(function(l){
-    var out='';
-    if(l.p)out+='<div class="tl"><span class="tp">'+l.p+'</span><span class="tc">'+l.c+'</span></div>';
-    if(l.o!==undefined){
-      var cls='to'+(l.ok?' ok':l.warn?' warn':'');
-      out+='<div class="'+cls+'">'+l.o+'</div>';
-    }
-    return out;
-  }).join('');
-  document.getElementById('termBody').innerHTML=html;
-}
-var TERM = {
-  stack:[
-    {p:'abdelrahman@suez:~$',c:'cat ~/stack.txt'},
-    {o:'WordPress · WooCommerce · Dokan · LearnPress · Elementor',ok:true},
-    {o:'Cloudflare · cPanel · hPanel · Plesk · Linux (Debian)'},
-    {p:'abdelrahman@suez:~$',c:'php -v && wp --version'},
-    {o:'PHP 8.2.28 · WordPress-CLI 2.11.0',ok:true},
-  ],
-  status:[
-    {p:'abdelrahman@suez:~$',c:'check-uptime --all-sites'},
-    {o:'[✓] eg-app.com          UP  · 100%  30d · SSL OK',ok:true},
-    {o:'[✓] farha.wuaze.com     UP  · 99.9% 30d · SSL OK',ok:true},
-    {o:'[✓] tamayoz.wuaze.com   UP  · 100%  30d · SSL OK',ok:true},
-    {o:'[✓] screen.eg-app.com   UP  · 100%  30d · SSL OK',ok:true},
-    {p:'abdelrahman@suez:~$',c:'echo "All sites healthy ✓"'},
-    {o:'All sites healthy ✓',ok:true},
-  ],
-  infra:[
-    {p:'abdelrahman@suez:~$',c:'crontab -l | grep backup'},
-    {o:'0 3 * * * rsync -avz /var/www/ remote:/backups/',warn:true},
-    {o:'0 4 * * * mysqldump --all-databases | gzip > /bk/db.sql.gz',warn:true},
-    {p:'abdelrahman@suez:~$',c:'certbot certificates | grep Expiry'},
-    {o:'Expiry Date: 2026-12-28 (VALID: 48 days)',ok:true},
-  ]
-};
-renderTerm('stack');
-document.querySelectorAll('.term-tab').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    document.querySelectorAll('.term-tab').forEach(function(b){b.classList.remove('on')});
-    btn.classList.add('on');
-    renderTerm(btn.getAttribute('data-t'));
-  });
-});
 
 /* Mobile drawer */
 var dw=document.getElementById('dw'),burger=document.getElementById('menuBtn');
 function closeDw(){dw.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow=''}
-burger.addEventListener('click',function(){
-  var open=dw.classList.toggle('open');
-  burger.setAttribute('aria-expanded',open?'true':'false');
-  document.body.style.overflow=open?'hidden':'';
-});
+burger.addEventListener('click',function(){var open=dw.classList.toggle('open');burger.setAttribute('aria-expanded',open?'true':'false');document.body.style.overflow=open?'hidden':''});
 dw.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeDw)});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDw()});
 
@@ -1379,52 +422,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDw()});
 var hd=document.getElementById('hd');
 window.addEventListener('scroll',function(){hd.classList.toggle('stuck',scrollY>20)},{passive:true});
 
-/* Copy email */
-document.getElementById('copyEmail').addEventListener('click',function(){
-  var el=this;
-  (navigator.clipboard?navigator.clipboard.writeText('abdelrahman959@gmail.com'):Promise.reject())
-  .catch(function(){
-    var ta=document.createElement('textarea');ta.value='abdelrahman959@gmail.com';
-    document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
-  }).finally(function(){
-    el.classList.add('copied');setTimeout(function(){el.classList.remove('copied')},2000);
-  });
-});
-
-/* Scroll reveals */
-var rvels=document.querySelectorAll('.rv');
-if('IntersectionObserver' in window){
-  var io=new IntersectionObserver(function(en){
-    en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
-  },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-  rvels.forEach(function(el){io.observe(el)});
-}else{rvels.forEach(function(el){el.classList.add('in')})}
-
-/* Active nav */
-var navLinks=[].slice.call(document.querySelectorAll('.nav a'));
-var secs=navLinks.map(function(a){return document.querySelector(a.getAttribute('href'))}).filter(Boolean);
-if('IntersectionObserver' in window&&secs.length){
-  var nio=new IntersectionObserver(function(en){
-    en.forEach(function(e){
-      if(e.isIntersecting)navLinks.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)});
-    });
-  },{rootMargin:'-40% 0px -40% 0px',threshold:0});
-  secs.forEach(function(s){nio.observe(s)});
-}
-
-/* Smooth scroll */
-var reduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click',function(e){
-    var id=a.getAttribute('href');
-    if(id.length<2)return;
-    var target=document.querySelector(id);
-    if(!target)return;
-    e.preventDefault();
-    closeDw();
-    window.scrollTo({top:target.getBoundingClientRect().top+scrollY-parseInt(getComputedStyle(root).getPropertyValue('--hh'))-20,behavior:reduced?'auto':'smooth'});
-  });
-});
+/* Copy email (optional, kept simple) */
+document.querySelectorAll('a[href^="mailto:"]').forEach(function(){});
 
 })();
 </script>
